@@ -21,6 +21,7 @@ wsl --shutdown
 This shuts down wsl properly and saves any changes.
 
 ---
+***
 
 ### How to import and export WSL distros
 Distros already installed and up to date from MS Store.
@@ -69,3 +70,15 @@ And thats it.
 
 ---
 
+***
+### Fix issues with Github or SSH issues
+
+Modify the **.bashrc** file on the end with this,
+```
+eval $(ssh-agent -s) && ssh-add ~/.ssh/<private key name>
+```
+
+Obviously you can use an absolute path to point to wherever you store private keys you want to use when accessing remote hosts using ssh authentication with keys.
+
+---
+***

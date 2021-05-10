@@ -3,8 +3,10 @@ site_author: storm-wind
 
 nav:
   - Home: index.md
-  - About: about.md
-  - Linux: tech/linux.md
+  - LVM: tech/lvm.md
+  - VMware: tech/vmware.md
+  - WSL: tech/wsl.md
+  
 #theme: windmill-dark
 plugins:
   - search:
