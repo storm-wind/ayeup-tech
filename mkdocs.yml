@@ -1,4 +1,4 @@
-site_name: My Documentation
+site_name: To Not Forget
 site_author: storm-wind
 
 nav:
@@ -11,8 +11,5 @@ plugins:
       min_search_length: 3
       prebuild_index: true
 #theme: bootstrap
-#theme: bootstrap4
-#theme:
-#  name: gitbook
 theme:
   name:  material
