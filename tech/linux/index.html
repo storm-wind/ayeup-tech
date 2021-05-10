@@ -34,6 +34,7 @@
         var pageToc = [
           {title: "WSL - Windows Linux Subsystem", url: "#_top", children: [
               {title: "Some tips etc on how to use Windows WSL", url: "#some-tips-etc-on-how-to-use-windows-wsl" },
+              {title: "This shuts down wsl properly and saves any changes.", url: "#this-shuts-down-wsl-properly-and-saves-any-changes" },
               {title: "How to import/export WSL distros", url: "#how-to-importexport-wsl-distros" },
           ]},
         ];
@@ -79,13 +80,11 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>If there is an issue connecting to some stuff defined in your WSL it is most likely DNS. To stop auto generation of <strong>resolv.conf</strong> you need to create a file <strong>/etc/wsl.conf</strong> and add the following, </p>
 <pre><code>[network] 
 generateResolvConf = false
-
 </code></pre>
 <p>Then in a windows cmd line session,</p>
 <pre><code>wsl --shutdown
 </code></pre>
-<p>This shuts down wsl properly and saves any changes. </p>
-<hr />
+<h2 id="this-shuts-down-wsl-properly-and-saves-any-changes">This shuts down wsl properly and saves any changes.</h2>
 <h2 id="how-to-importexport-wsl-distros">How to import/export WSL distros</h2>
 <p>Distros already installed and up to date from MS Store.</p>
 <h4 id="import-a-wsl-distro">Import a WSL distro</h4>
@@ -97,7 +96,7 @@ generateResolvConf = false
 <pre><code>wsl --import &lt;Name of distro&gt; &lt;path to save the &lt;backupname&gt;.tar filename
 </code></pre>
 <h4 id="export-a-wsl-distro">Export a WSL distro</h4>
-<p>Open *<em>cmd</em> prompt as admin.</p>
+<p>Open <strong>cmd</strong> prompt as admin.</p>
 <pre><code>wsl --list --all
 </code></pre>
 <p>Pick your distro for export.</p>
