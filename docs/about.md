@@ -1,5 +1,7 @@
 # About
 
-My local documentation site. Hosted locally for local people.
+Some technical documentation so I don't forget how to do stuff.
+
+
 
 
