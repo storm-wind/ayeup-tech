@@ -1,12 +1,18 @@
 site_name: My Documentation
+site_author: storm-wind
+
 nav:
   - Home: index.md
   - About: about.md
   - Linux: tech/linux.md
-theme: windmill-dark
+#theme: windmill-dark
+plugins:
+  - search:
+      min_search_length: 3
+      prebuild_index: true
 #theme: bootstrap
 #theme: bootstrap4
 #theme:
 #  name: gitbook
-#theme:
-#  name:  material
+theme:
+  name:  material
