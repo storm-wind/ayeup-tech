@@ -33,8 +33,9 @@
         
         var pageToc = [
           {title: "WSL - Windows Linux Subsystem", url: "#_top", children: [
-              {title: "Some tips etc on how to use Windows WSL", url: "#some-tips-etc-on-how-to-use-windows-wsl" },
-              {title: "This shuts down wsl properly and saves any changes", url: "#this-shuts-down-wsl-properly-and-saves-any-changes" },
+              {title: "Some tips etc on how to use Windows WSL.", url: "#some-tips-etc-on-how-to-use-windows-wsl" },
+              {title: "This shuts down wsl properly and saves any changes.", url: "#this-shuts-down-wsl-properly-and-saves-any-changes" },
+              {title: "And thats it.", url: "#and-thats-it" },
           ]},
         ];
 
@@ -74,16 +75,16 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="wsl-windows-linux-subsystem">WSL - Windows Linux Subsystem</h1>
-<h2 id="some-tips-etc-on-how-to-use-windows-wsl">Some tips etc on how to use Windows WSL</h2>
+<h2 id="some-tips-etc-on-how-to-use-windows-wsl">Some tips etc on how to use Windows WSL.</h2>
 <h4 id="stop-resolvconf-updating-with-local-dns">Stop resolv.conf updating with local DNS</h4>
-<p>If there is an issue connecting to some stuff defined in your WSL it is most likely DNS. To stop auto generation of <strong>resolv.conf</strong> you need to create a file <strong>/etc/wsl.conf</strong> and add the following, </p>
+<p>If there is an issue connecting to some stuff defined in your WSL it is most likely DNS. To stop auto generation of <strong>resolv.conf</strong> you need to create a file <strong>/etc/wsl.conf</strong> and add the following,</p>
 <pre><code>[network] 
 generateResolvConf = false
 </code></pre>
 <p>Then in a windows cmd line session,</p>
 <pre><code>wsl --shutdown
 </code></pre>
-<h2 id="this-shuts-down-wsl-properly-and-saves-any-changes">This shuts down wsl properly and saves any changes</h2>
+<h2 id="this-shuts-down-wsl-properly-and-saves-any-changes">This shuts down wsl properly and saves any changes.</h2>
 <h3 id="how-to-importexport-wsl-distros">How to import/export WSL distros</h3>
 <p>Distros already installed and up to date from MS Store.</p>
 <h4 id="import-a-wsl-distro">Import a WSL distro</h4>
@@ -107,7 +108,7 @@ generateResolvConf = false
 <p>Pick your distro</p>
 <pre><code>wsl --unregister &lt;Name of distro&gt;
 </code></pre>
-<hr />
+<h2 id="and-thats-it">And thats it.</h2>
 
   <br>
     
