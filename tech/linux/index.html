@@ -33,7 +33,9 @@
         
         var pageToc = [
           {title: "WSL - Windows Linux Subsystem", url: "#_top", children: [
+              {title: "Some tips etc on how to use Windows WSL", url: "#some-tips-etc-on-how-to-use-windows-wsl" },
               {title: "Stop resolv.conf updating with local DNS", url: "#stop-resolvconf-updating-with-local-dns" },
+              {title: "---", url: "#-" },
           ]},
           {title: "How to import/export WSL distros", url: "#how-to-importexport-wsl-distros", children: [
               {title: "Import a WSL distro", url: "#import-a-wsl-distro" },
@@ -78,7 +80,8 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="wsl-windows-linux-subsystem">WSL - Windows Linux Subsystem</h1>
-<p>Some tips etc on how to use Windows WSL</p>
+<h2 id="some-tips-etc-on-how-to-use-windows-wsl">Some tips etc on how to use Windows WSL</h2>
+<hr />
 <h2 id="stop-resolvconf-updating-with-local-dns">Stop resolv.conf updating with local DNS</h2>
 <p>If there is an issue connecting to some stuff defined in your WSL it is most likely DNS. To stop auto generation of <strong>resolv.conf</strong> you need to create a file <strong>/etc/wsl.conf</strong> and add the following, </p>
 <pre><code>[network] 
@@ -89,7 +92,7 @@ generateResolvConf = false
 <pre><code>wsl --shutdown
 </code></pre>
 <p>This shuts down wsl properly and saves any changes. </p>
-<hr />
+<h2 id="-">---</h2>
 <h1 id="how-to-importexport-wsl-distros">How to import/export WSL distros</h1>
 <p>Distros already installed and up to date from MS Store.</p>
 <h3 id="import-a-wsl-distro">Import a WSL distro</h3>
