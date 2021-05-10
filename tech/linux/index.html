@@ -35,6 +35,11 @@
           {title: "WSL - Windows Linux Subsystem", url: "#_top", children: [
               {title: "Stop resolv.conf updating with local DNS", url: "#stop-resolvconf-updating-with-local-dns" },
           ]},
+          {title: "How to import/export WSL distros", url: "#how-to-importexport-wsl-distros", children: [
+              {title: "Import a WSL distro", url: "#import-a-wsl-distro" },
+              {title: "Export a WSL distro", url: "#export-a-wsl-distro" },
+              {title: "To Uninstall imported WSL distros", url: "#to-uninstall-imported-wsl-distros" },
+          ]},
         ];
 
     </script>
@@ -84,6 +89,30 @@ generateResolvConf = false
 <pre><code>wsl --shutdown
 </code></pre>
 <p>This shuts down wsl properly and saves any changes. </p>
+<hr />
+<h1 id="how-to-importexport-wsl-distros">How to import/export WSL distros</h1>
+<p>Distros already installed and up to date from MS Store.</p>
+<h3 id="import-a-wsl-distro">Import a WSL distro</h3>
+<p>Open <strong>cmd</strong> prompt as admin.</p>
+<pre><code>wsl --list --all
+</code></pre>
+<p>This will list all the WSL distros on your computer.</p>
+<p>To import,</p>
+<pre><code>wsl --import &lt;Name of distro&gt; &lt;path to save the &lt;backupname&gt;.tar filename
+</code></pre>
+<h3 id="export-a-wsl-distro">Export a WSL distro</h3>
+<p>Open *<em>cmd</em> prompt as admin.</p>
+<pre><code>wsl --list --all
+</code></pre>
+<p>Pick your distro for export.</p>
+<pre><code>wsl --export &lt;Name of distro&gt; &lt;name of export&gt;.tar file to export to
+</code></pre>
+<h3 id="to-uninstall-imported-wsl-distros">To Uninstall imported WSL distros</h3>
+<pre><code>wsl --list --all
+</code></pre>
+<p>Pick your distro</p>
+<pre><code>wsl --unregister &lt;Name of distro&gt;
+</code></pre>
 
   <br>
     
