@@ -11,19 +11,19 @@
         <meta name="author" content="storm-wind">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
-        <title>About - To Not Forget</title>
+        <title>VMware - To Not Forget</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
       
     
@@ -53,7 +53,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#about" class="md-skip">
+        <a href="#most-common-cli-commands-for-vmware-esxi" class="md-skip">
           Skip to content
         </a>
       
@@ -72,7 +72,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="To Not Forget" class="md-header__button md-logo" aria-label="To Not Forget" data-md-component="logo">
+    <a href="../.." title="To Not Forget" class="md-header__button md-logo" aria-label="To Not Forget" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              VMware
             
           </span>
         </div>
@@ -152,7 +152,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="To Not Forget" class="md-nav__button md-logo" aria-label="To Not Forget" data-md-component="logo">
+    <a href="../.." title="To Not Forget" class="md-nav__button md-logo" aria-label="To Not Forget" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -171,7 +171,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -196,7 +196,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        About
+        VMware
       </a>
       
     </li>
@@ -211,8 +211,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../tech/linux/" class="md-nav__link">
-        Linux
+      <a href="../wsl/" class="md-nav__link">
+        WSL
       </a>
     </li>
   
@@ -248,8 +248,89 @@
               
                 
                 
-                <h1 id="about">About</h1>
-<p>Some technical documentation so I don't forget how to do stuff.</p>
+                <h1 id="most-common-cli-commands-for-vmware-esxi">Most common CLI commands for VMWare ESXi.</h1>
+<p>Use SSH or esxi shells.</p>
+<hr />
+<pre><code>vim-cmd vmsvc/getallvms
+</code></pre>
+<p>List all VMs running on the host. Also provides vmid, required for commands below.</p>
+<hr />
+<pre><code>vim-cmd vmsvc/power.off vmid
+</code></pre>
+<p>Power off specified VM.</p>
+<hr />
+<pre><code>vim-cmd vmsvc/power.on vmid
+</code></pre>
+<p>Power off specified VM.</p>
+<hr />
+<pre><code>vim-cmd vmsvc/power.reboot vmid
+</code></pre>
+<p>Reboot specified VM.</p>
+<hr />
+<pre><code>vim-cmd solo/registervm /vmfs/volume/datastore/subdir/vm-file.vmx
+</code></pre>
+<p>Register the VM stored at location on the ESX host inventory.</p>
+<hr />
+<pre><code>vim-cmd vmsvc/unregister vmid
+</code></pre>
+<p>Unregister VM from the host. Does not remove the VM's files from the datastore.</p>
+<hr />
+<pre><code>vim-cmd vmsvc/destroy vmid
+</code></pre>
+<p>Delete the specified VM. The VMDK and VMX files will be deleted from storage as well.</p>
+<hr />
+<pre><code>vim-cmd vmsvc/tools.install vmid    
+</code></pre>
+<p>Initiates an installation of VMWare Tools on the VM</p>
+<hr />
+<pre><code>vim-cmd hostsvc/maintenance_mode_enter
+</code></pre>
+<p>Put the host into maintenance mode.</p>
+<hr />
+<pre><code>vim-cmd hostsvc/maintenance_mode_exit
+</code></pre>
+<p>Take the host out of maintenance mode.</p>
+<hr />
+<pre><code>vim-cmd hostsvc/net/info
+</code></pre>
+<p>Show networking information of the host.</p>
+<hr />
+<pre><code>chkconfig -l
+</code></pre>
+<p>Show services running on the host. Can also be used to change startup configuration.</p>
+<hr />
+<pre><code>esxtop  
+</code></pre>
+<p>Display list of processes and its usage of resources. Works similar to linux top.</p>
+<hr />
+<pre><code>esxcfg-info 
+</code></pre>
+<p>Show host's configuration and information.</p>
+<hr />
+<pre><code>esxcfg-nics -l
+</code></pre>
+<p>Show current NIC configuration.</p>
+<hr />
+<pre><code>esxcfg-vswitch -l   
+</code></pre>
+<p>Show current vSwitch configuration.</p>
+<hr />
+<pre><code>vmkerrcode -l   
+</code></pre>
+<p>Display a reference list of VMKernel return codes and descriptions.</p>
+<hr />
+<pre><code>dcui
+</code></pre>
+<p>Start the console UI (when accessing through SSH).</p>
+<hr />
+<pre><code>vsish   
+</code></pre>
+<p>Run the VMWare Interactive Shell (from SSH).</p>
+<hr />
+<pre><code>decodeSel /var/log/ipmi_sel.raw
+</code></pre>
+<p>Read IPMI system log of physical server.
+Replace vmid with the value you retrieved from the getallvms command (first one in the table).Replace path with the full path and file name of a VMX-file (= configuration file of a VM).</p>
                 
               
               
@@ -268,7 +349,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -283,13 +364,13 @@
         </a>
       
       
-        <a href="../tech/linux/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../wsl/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Linux
+              WSL
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -318,10 +399,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
     
   </body>

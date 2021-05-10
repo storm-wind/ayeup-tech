@@ -16,7 +16,7 @@
     
     
       
-        <title>Linux - To Not Forget</title>
+        <title>WSL - To Not Forget</title>
       
     
     
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux
+              WSL
             
           </span>
         </div>
@@ -186,8 +186,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
-        About
+      <a href="../vmware/" class="md-nav__link">
+        VMware
       </a>
     </li>
   
@@ -211,12 +211,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Linux
+          WSL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Linux
+        WSL
       </a>
       
         
@@ -264,6 +264,13 @@
         <li class="md-nav__item">
   <a href="#to-uninstall-imported-wsl-distros" class="md-nav__link">
     To Uninstall imported WSL distros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-issues-with-github-or-ssh-issues" class="md-nav__link">
+    Fix issues with Github or SSH issues
   </a>
   
 </li>
@@ -336,6 +343,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fix-issues-with-github-or-ssh-issues" class="md-nav__link">
+    Fix issues with Github or SSH issues
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -387,6 +401,14 @@ generateResolvConf = false
 </code></pre>
 <p>And thats it.</p>
 <hr />
+<hr />
+<h3 id="fix-issues-with-github-or-ssh-issues">Fix issues with Github or SSH issues</h3>
+<p>Modify the <strong>.bashrc</strong> file on the end with this,</p>
+<pre><code>eval $(ssh-agent -s) &amp;&amp; ssh-add ~/.ssh/&lt;private key name&gt;
+</code></pre>
+<p>Obviously you can use an absolute path to point to wherever you store private keys you want to use when accessing remote hosts using ssh authentication with keys.</p>
+<hr />
+<hr />
                 
               
               
@@ -405,7 +427,7 @@ generateResolvConf = false
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../../about/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../vmware/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -414,7 +436,7 @@ generateResolvConf = false
               <span class="md-footer__direction">
                 Previous
               </span>
-              About
+              VMware
             </div>
           </div>
         </a>
