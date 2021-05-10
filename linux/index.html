@@ -76,10 +76,11 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>Some tips etc on how to use Windows WSL</p>
 <h2 id="stop-resolvconf-updating-with-local-dns">Stop resolv.conf updating with local DNS</h2>
 <p>If there is an issue connecting to some stuff defined in your WSL it is most likely DNS. To stop auto generation of <strong>resolv.conf</strong> you need to create a file <strong>/etc/wsl.conf</strong> and add the following, </p>
-<p><code>[network] 
-generateResolvConf = false</code> 
-Then in a windows cmd line session,
-<code>wsl --shutdown</code></p>
+<pre><code>[network] 
+generateResolvConf = false
+</code></pre>
+<p>Then in a windows cmd line session,</p>
+<p><code>wsl --shutdown</code></p>
 <p>This shuts down wsl properly and saves any changes. </p>
 
   <br>
