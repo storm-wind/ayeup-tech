@@ -78,9 +78,11 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>If there is an issue connecting to some stuff defined in your WSL it is most likely DNS. To stop auto generation of <strong>resolv.conf</strong> you need to create a file <strong>/etc/wsl.conf</strong> and add the following, </p>
 <pre><code>[network] 
 generateResolvConf = false
+
 </code></pre>
 <p>Then in a windows cmd line session,</p>
-<p><code>wsl --shutdown</code></p>
+<pre><code>wsl --shutdown
+</code></pre>
 <p>This shuts down wsl properly and saves any changes. </p>
 
   <br>
