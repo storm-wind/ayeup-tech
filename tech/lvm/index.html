@@ -225,6 +225,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#expand-partition-for-active-partition" class="md-nav__link">
+    Expand partition for active partition
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -295,6 +302,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#expand-partition-for-active-partition" class="md-nav__link">
+    Expand partition for active partition
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -328,6 +342,89 @@ lvextend -l +100%FREE /dev/centos/var
 <pre><code>lvextend  -L &lt;+size&gt;   &lt;Logical volume name path&gt;
 
 xfs_growfs /dev/mapper/centos-var
+</code></pre>
+<hr />
+<hr />
+<h3 id="expand-partition-for-active-partition">Expand partition for active partition</h3>
+<p>How to expand a live partition.
+This example uses /dev/sda2</p>
+<pre><code>fdisk /dev/sda
+</code></pre>
+<p>You will get something like this below,</p>
+<pre><code>Command (m for help): p
+
+Disk /dev/sda: 68.7 GB, 68719476736 bytes, 134217728 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000bffd8
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     1050623      524288   83  Linux
+/dev/sda2         1050624    36716543    17832960   8e  Linux LVM
+</code></pre>
+<p>So you have checked which one is which, now we delete the partition <strong>/dev/sda2</strong>.</p>
+<pre><code>Command (m for help): d
+Partition number (1,2, default 2): 2
+Partition 2 is deleted
+</code></pre>
+<p>Now we create a new partion with a new end block.</p>
+<pre><code>Command (m for help): n
+Partition type:
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended
+Select (default p): p
+Partition number (2-4, default 2):
+First sector (1050624-134217727, default 1050624): 1050624
+Last sector, +sectors or +size{K,M,G} (1050624-134217727, default 134217727): 73433086
+Partition 2 of type Linux and of size 34.5 GiB is set
+</code></pre>
+<p>Lets check what is now existing</p>
+<pre><code>Command (m for help): p
+
+Disk /dev/sda: 68.7 GB, 68719476736 bytes, 134217728 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000bffd8
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     1050623      524288   83  Linux
+/dev/sda2         1050624    73433086    36191231+  83  Linux
+</code></pre>
+<p>Also, change partition type, using option <code>t</code> and code <code>8e</code> to change to <strong>Linux LVM</strong>.</p>
+<pre><code>Command (m for help): wq
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+
+WARNING: Re-reading the partition table failed with error 16: Device or resource busy.
+The kernel still uses the old table. The new table will be used at
+the next reboot or after you run partprobe(8) or kpartx(8)
+Syncing disks.
+</code></pre>
+<p>Then run the following</p>
+<pre><code>partprobe
+partx -u /dev/sda
+cat /proc/partitions | grep sda
+   8        0   67108864 sda
+   8        1     524288 sda1
+   8        2   36191231 sda2
+</code></pre>
+<p>Now run</p>
+<pre><code>pvresize /dev/sda2
+</code></pre>
+<p>You'll get this below</p>
+<pre><code>  Physical volume &quot;/dev/sda2&quot; changed
+  1 physical volume(s) resized or updated / 0 physical volume(s) not resized
+</code></pre>
+<p>Now run</p>
+<pre><code>pvs
+</code></pre>
+<pre><code>  PV         VG   Fmt  Attr PSize  PFree
+  /dev/sda2  rhel lvm2 a--  34.51g 17.51g
 </code></pre>
                 
               
