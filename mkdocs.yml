@@ -2,7 +2,7 @@ site_name: My Documentation
 nav:
   - Home: index.md
   - About: about.md
-  - Linux: linux.md
+  - Linux: tech/linux.md
 theme: windmill-dark
 #theme: bootstrap
 #theme: bootstrap4
