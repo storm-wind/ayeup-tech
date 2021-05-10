@@ -1,0 +1,11 @@
+site_name: My Documentation
+nav:
+  - Home: index.md
+  - About: about.md
+theme: windmill-dark
+#theme: bootstrap
+#theme: bootstrap4
+#theme:
+#  name: gitbook
+#theme:
+#  name:  material
