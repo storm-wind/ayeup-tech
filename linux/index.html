@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>About - My Documentation</title>
+    <title>Linux - My Documentation</title>
     <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -32,7 +32,8 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "About", url: "#_top", children: [
+          {title: "WSL - Windows Linux Subsystem", url: "#_top", children: [
+              {title: "Stop resolv.conf updating with local DNS", url: "#stop-resolvconf-updating-with-local-dns" },
           ]},
         ];
 
@@ -59,21 +60,11 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
-    <div class="wm-article-nav pull-right">
-      <a href="../linux/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../linux/" class="btn btn-xs btn-link">
-        Linux
-      </a>
-    </div>
-    
     <div class="wm-article-nav">
-      <a href=".." class="btn btn-xs btn-default pull-left">
+      <a href="../about/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href=".." class="btn btn-xs btn-link">
-        Home
+        Previous</a><a href="../about/" class="btn btn-xs btn-link">
+        About
       </a>
     </div>
     
@@ -81,8 +72,15 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="about">About</h1>
-<p>Some technical documentation so I don't forget how to do stuff.</p>
+    <h1 id="wsl-windows-linux-subsystem">WSL - Windows Linux Subsystem</h1>
+<p>Some tips etc on how to use Windows WSL</p>
+<h2 id="stop-resolvconf-updating-with-local-dns">Stop resolv.conf updating with local DNS</h2>
+<p>If there is an issue connecting to some stuff defined in your WSL it is most likely DNS. To stop auto generation of <strong>resolv.conf</strong> you need to create a file <strong>/etc/wsl.conf</strong> and add the following, </p>
+<p><code>[network] 
+generateResolvConf = false</code> 
+Then in a windows cmd line session,
+<code>wsl --shutdown</code></p>
+<p>This shuts down wsl properly and saves any changes. </p>
 
   <br>
     
@@ -94,21 +92,11 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
-    <div class="wm-article-nav pull-right">
-      <a href="../linux/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../linux/" class="btn btn-xs btn-link">
-        Linux
-      </a>
-    </div>
-    
     <div class="wm-article-nav">
-      <a href=".." class="btn btn-xs btn-default pull-left">
+      <a href="../about/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href=".." class="btn btn-xs btn-link">
-        Home
+        Previous</a><a href="../about/" class="btn btn-xs btn-link">
+        About
       </a>
     </div>
     
