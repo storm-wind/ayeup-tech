@@ -3,7 +3,9 @@ site_author: storm-wind
 
 nav:
   - Home: index.md
+  - Docker: tech/docker.md
   - LVM: tech/lvm.md
+  - Podman: tech/podman.md
   - VMware: tech/vmware.md
   - WSL: tech/wsl.md
   
