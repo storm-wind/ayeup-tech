@@ -16,7 +16,7 @@
     
     
       
-        <title>Podman - To Not Forget</title>
+        <title>Docker - To Not Forget</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#podman" class="md-skip">
+        <a href="#docker" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Podman
+              Docker
             
           </span>
         </div>
@@ -184,34 +184,27 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
-        Docker
-      </a>
-    </li>
-  
-
     
-      
-      
-      
-
   
   
-  
-    <li class="md-nav__item">
-      <a href="../lvm/" class="md-nav__link">
-        LVM
-      </a>
-    </li>
-  
-
     
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
-
+      <label class="md-nav__link" for="__nav_2">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
   
   
     
@@ -226,12 +219,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Podman
+          Docker
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Podman
+        Docker
       </a>
       
         
@@ -249,9 +242,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bind-podman-container-to-local-directory" class="md-nav__link">
-    Bind podman container to local directory
+  <a href="#docker-commands" class="md-nav__link">
+    Docker Commands
   </a>
+  
+    <nav class="md-nav" aria-label="Docker Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portainer-docker-cmd" class="md-nav__link">
+    Portainer Docker cmd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-docker-images" class="md-nav__link">
+    Handling Docker images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-docker-image-to-server" class="md-nav__link">
+    Deploy Docker image to server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -262,30 +282,30 @@
     </li>
   
 
-    
-      
-      
-      
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lvm/" class="md-nav__link">
+        LVM
+      </a>
+    </li>
+  
 
+          
+            
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
-      
-      <label class="md-nav__link" for="__nav_5">
-        Proxmox
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Proxmox" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          Proxmox
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+    <li class="md-nav__item">
+      <a href="../podman/" class="md-nav__link">
+        Podman
+      </a>
+    </li>
+  
+
           
             
   
@@ -293,7 +313,7 @@
   
     <li class="md-nav__item">
       <a href="../proxmox/" class="md-nav__link">
-        Test
+        Proxmox
       </a>
     </li>
   
@@ -312,10 +332,37 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Windows
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Windows" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../vmware/" class="md-nav__link">
-        VMware
+      <a href="../../windows/wsl/" class="md-nav__link">
+        WSL
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -327,10 +374,37 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Platforms
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Platforms" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Platforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../wsl/" class="md-nav__link">
-        WSL
+      <a href="../../platforms/vmware/" class="md-nav__link">
+        VMware
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -361,9 +435,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bind-podman-container-to-local-directory" class="md-nav__link">
-    Bind podman container to local directory
+  <a href="#docker-commands" class="md-nav__link">
+    Docker Commands
   </a>
+  
+    <nav class="md-nav" aria-label="Docker Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portainer-docker-cmd" class="md-nav__link">
+    Portainer Docker cmd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-docker-images" class="md-nav__link">
+    Handling Docker images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-docker-image-to-server" class="md-nav__link">
+    Deploy Docker image to server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -380,10 +481,80 @@
               
                 
                 
-                <h1 id="podman">Podman</h1>
-<p>Podman is Redhats answer to Docker. You can un docker continaers as a <strong>systemd</strong> service.</p>
-<h3 id="bind-podman-container-to-local-directory">Bind podman container to local directory</h3>
-<p>sudo podman run -it -p 80:80 --name nginx-proxy -v /opt/podman/nginx/conf.d:/etc/nginx/conf.d nginx sh</p>
+                <h1 id="docker">Docker</h1>
+<p>Some stuff I came across while playing with docker.</p>
+<hr />
+<h2 id="docker-commands">Docker Commands</h2>
+<hr />
+<h3 id="portainer-docker-cmd">Portainer Docker cmd</h3>
+<pre><code>docker run -d -p 9000:9000  --restart always --name portainer -v /&lt;volume location&gt;/portainer/data:/data -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce
+
+</code></pre>
+<h3 id="handling-docker-images">Handling Docker images</h3>
+<p>Save a docker image ready to be deployed to another server.</p>
+<pre><code>docker save -o &lt;image-name&gt;.tar &lt;image-name&gt;
+</code></pre>
+<p>A breakdown of the command</p>
+<pre><code>docker save -o &lt;image-name&gt; &lt;commited image name&gt;
+</code></pre>
+<h3 id="deploy-docker-image-to-server">Deploy Docker image to server</h3>
+<pre><code>docker load -i &lt;image-name.tar
+</code></pre>
+<hr />
+<h1 id="docker-scripts">Docker Scripts</h1>
+<hr />
+<h3 id="docker-cleanup-script">Docker cleanup script</h3>
+<p>This script deletes docker containers that haven't being running for a few days.</p>
+<pre><code>#!/bin/bash
+# Script to clean up docker containers no longer running after a few days
+
+exec 2&gt;&amp;1
+{
+        /usr/bin/docker rm $(docker ps -a | grep -v Up\ | grep  '.*Exited\ .*days\ .*' | awk '{print $1}')
+
+}
+</code></pre>
+<h1 id="docker-compose">docker-compose</h1>
+<p>Deploy multiple contianers in a stack using docker-compose, my preferred way of using docker.</p>
+<h3 id="firefly-docker-compose-example">Firefly docker-compose example</h3>
+<pre><code>---
+networks:
+  firefly_iii_net:
+    driver: bridge
+services:
+  firefly_iii_app:
+    image: jc5x/firefly-iii:latest
+    depends_on:
+      - firefly_iii_db
+    networks:
+      - firefly_iii_net
+    ports:
+      - &quot;8081:80&quot;
+    env_file: .env
+    volumes:
+      -
+        source: firefly_iii_export
+        target: /var/www/firefly-iii/storage/export
+        type: volume
+      -
+        source: firefly_iii_upload
+        target: /var/www/firefly-iii/storage/upload
+        type: volume
+  firefly_iii_db: 
+    image: &quot;postgres:10&quot;
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=firefly
+    networks: 
+      - firefly_iii_net
+    volumes: 
+      - firefly_iii_db:/var/lib/postgresql/data
+version: &quot;3.2&quot;
+volumes: 
+  firefly_iii_db: ~
+  firefly_iii_export: ~
+  firefly_iii_upload: ~
+</code></pre>
                 
               
               
@@ -402,7 +573,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../lvm/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -411,19 +582,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              LVM
+              Home
             </div>
           </div>
         </a>
       
       
-        <a href="../proxmox/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../lvm/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Test
+              LVM
             </div>
           </div>
           <div class="md-footer__button md-icon">

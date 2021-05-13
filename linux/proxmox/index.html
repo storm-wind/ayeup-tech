@@ -16,7 +16,7 @@
     
     
       
-        <title>LVM - To Not Forget</title>
+        <title>Proxmox - To Not Forget</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-use-lvm" class="md-skip">
+        <a href="#proxmox-initial-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LVM
+              Proxmox
             
           </span>
         </div>
@@ -184,6 +184,29 @@
 
   
   
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
   
     <li class="md-nav__item">
       <a href="../docker/" class="md-nav__link">
@@ -192,11 +215,32 @@
     </li>
   
 
-    
-      
-      
-      
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lvm/" class="md-nav__link">
+        LVM
+      </a>
+    </li>
+  
 
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../podman/" class="md-nav__link">
+        Podman
+      </a>
+    </li>
+  
+
+          
+            
   
   
     
@@ -211,12 +255,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          LVM
+          Proxmox
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        LVM
+        Proxmox
       </a>
       
         
@@ -234,15 +278,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#expand-an-existing-lvm" class="md-nav__link">
-    Expand an existing LVM
+  <a href="#disable-commercial-repo" class="md-nav__link">
+    Disable Commercial Repo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#expand-partition-for-active-partition" class="md-nav__link">
-    Expand partition for active partition
+  <a href="#add-pve-community-repo" class="md-nav__link">
+    Add PVE Community Repo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-nag" class="md-nav__link">
+    Remove nag
   </a>
   
 </li>
@@ -254,18 +305,9 @@
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../podman/" class="md-nav__link">
-        Podman
-      </a>
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -281,16 +323,16 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
-      <label class="md-nav__link" for="__nav_5">
-        Proxmox
+      <label class="md-nav__link" for="__nav_3">
+        Windows
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Proxmox" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+      <nav class="md-nav" aria-label="Windows" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Proxmox
+          Windows
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -299,8 +341,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxmox/" class="md-nav__link">
-        Test
+      <a href="../../windows/wsl/" class="md-nav__link">
+        WSL
       </a>
     </li>
   
@@ -319,25 +361,37 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Platforms
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Platforms" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Platforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../vmware/" class="md-nav__link">
+      <a href="../../platforms/vmware/" class="md-nav__link">
         VMware
       </a>
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../wsl/" class="md-nav__link">
-        WSL
-      </a>
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -368,15 +422,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#expand-an-existing-lvm" class="md-nav__link">
-    Expand an existing LVM
+  <a href="#disable-commercial-repo" class="md-nav__link">
+    Disable Commercial Repo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#expand-partition-for-active-partition" class="md-nav__link">
-    Expand partition for active partition
+  <a href="#add-pve-community-repo" class="md-nav__link">
+    Add PVE Community Repo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-nag" class="md-nav__link">
+    Remove nag
   </a>
   
 </li>
@@ -394,109 +455,26 @@
               
                 
                 
-                <h1 id="how-to-use-lvm">How to use LVM</h1>
-<p>LVM is used to manage disk capacity with Linux. </p>
-<hr />
-<hr />
-<h3 id="expand-an-existing-lvm">Expand an existing LVM</h3>
-<p>This assumes you have added an extra disk on VMware to the VM affected.</p>
-<pre><code>echo &quot;- - -&quot; &gt; /sys/class/scsi_host/scan0
-lsblk
-fdisk /dev/sdd
-pvcreate /dev/sdd1
-vgs
-vgextend centos /dev/sdd1
-vgs
-pvscan
-lvextend -l +100%FREE /dev/centos/var
+                <h1 id="proxmox-initial-setup">ProxMox Initial setup</h1>
+<h3 id="disable-commercial-repo">Disable Commercial Repo</h3>
+<pre><code>sed -i &quot;s/^deb/\#deb/&quot; /etc/apt/sources.list.d/pve-enterprise.list
+apt-get update
 </code></pre>
-<p>or for specifc sizes,</p>
-<pre><code>lvextend  -L &lt;+size&gt;   &lt;Logical volume name path&gt;
-
-xfs_growfs /dev/mapper/centos-var
+<h3 id="add-pve-community-repo">Add PVE Community Repo</h3>
+<pre><code>echo &quot;deb http://download.proxmox.com/debian/pve $(grep &quot;VERSION=&quot; /etc/os-release | sed -n 's/.*(\(.*\)).*/\1/p') pve-no-subscription&quot; &gt; /etc/apt/sources.list.d/pve-no-enterprise.list
+apt-get update
+</code></pre>
+<h3 id="remove-nag">Remove nag</h3>
+<pre><code>echo &quot;DPkg::Post-Invoke { \&quot;dpkg -V proxmox-widget-toolkit | grep -q '/proxmoxlib\.js$'; if [ \$? -eq 1 ]; then { echo 'Removing subscription nag from UI...'; sed -i '/data.status/{s/\!//;s/Active/NoMoreNagging/}' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js; }; fi\&quot;; };&quot; &gt; /etc/apt/apt.conf.d/no-nag-script
+apt --reinstall install proxmox-widget-toolkit
 </code></pre>
 <hr />
-<hr />
-<h3 id="expand-partition-for-active-partition">Expand partition for active partition</h3>
-<p>How to expand a live partition.
-This example uses /dev/sda2</p>
-<pre><code>fdisk /dev/sda
-</code></pre>
-<p>You will get something like this below,</p>
-<pre><code>Command (m for help): p
+<h1 id="install-qemu-agent">Install <strong>qemu</strong> agent</h1>
+<pre><code>apt-get install -y qemu-guest-agent
 
-Disk /dev/sda: 68.7 GB, 68719476736 bytes, 134217728 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk label type: dos
-Disk identifier: 0x000bffd8
+systemctl enable qemu-guest-agent
 
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048     1050623      524288   83  Linux
-/dev/sda2         1050624    36716543    17832960   8e  Linux LVM
-</code></pre>
-<p>So you have checked which one is which, now we delete the partition <strong>/dev/sda2</strong>.</p>
-<pre><code>Command (m for help): d
-Partition number (1,2, default 2): 2
-Partition 2 is deleted
-</code></pre>
-<p>Now we create a new partion with a new end block.</p>
-<pre><code>Command (m for help): n
-Partition type:
-   p   primary (1 primary, 0 extended, 3 free)
-   e   extended
-Select (default p): p
-Partition number (2-4, default 2):
-First sector (1050624-134217727, default 1050624): 1050624
-Last sector, +sectors or +size{K,M,G} (1050624-134217727, default 134217727): 73433086
-Partition 2 of type Linux and of size 34.5 GiB is set
-</code></pre>
-<p>Lets check what is now existing</p>
-<pre><code>Command (m for help): p
-
-Disk /dev/sda: 68.7 GB, 68719476736 bytes, 134217728 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk label type: dos
-Disk identifier: 0x000bffd8
-
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048     1050623      524288   83  Linux
-/dev/sda2         1050624    73433086    36191231+  83  Linux
-</code></pre>
-<p>Also, change partition type, using option <code>t</code> and code <code>8e</code> to change to <strong>Linux LVM</strong>.</p>
-<pre><code>Command (m for help): wq
-The partition table has been altered!
-
-Calling ioctl() to re-read partition table.
-
-WARNING: Re-reading the partition table failed with error 16: Device or resource busy.
-The kernel still uses the old table. The new table will be used at
-the next reboot or after you run partprobe(8) or kpartx(8)
-Syncing disks.
-</code></pre>
-<p>Then run the following</p>
-<pre><code>partprobe
-partx -u /dev/sda
-cat /proc/partitions | grep sda
-   8        0   67108864 sda
-   8        1     524288 sda1
-   8        2   36191231 sda2
-</code></pre>
-<p>Now run</p>
-<pre><code>pvresize /dev/sda2
-</code></pre>
-<p>You'll get this below</p>
-<pre><code>  Physical volume &quot;/dev/sda2&quot; changed
-  1 physical volume(s) resized or updated / 0 physical volume(s) not resized
-</code></pre>
-<p>Now run</p>
-<pre><code>pvs
-</code></pre>
-<pre><code>  PV         VG   Fmt  Attr PSize  PFree
-  /dev/sda2  rhel lvm2 a--  34.51g 17.51g
+systemctl start qemu-guest-agent
 </code></pre>
                 
               
@@ -516,7 +494,7 @@ cat /proc/partitions | grep sda
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../docker/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../podman/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -525,19 +503,19 @@ cat /proc/partitions | grep sda
               <span class="md-footer__direction">
                 Previous
               </span>
-              Docker
+              Podman
             </div>
           </div>
         </a>
       
       
-        <a href="../podman/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../windows/wsl/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Podman
+              WSL
             </div>
           </div>
           <div class="md-footer__button md-icon">
