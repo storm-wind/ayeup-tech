@@ -3,11 +3,15 @@ site_author: storm-wind
 
 nav:
   - Home: index.md
-  - Docker: tech/docker.md
-  - LVM: tech/lvm.md
-  - Podman: tech/podman.md
-  - VMware: tech/vmware.md
-  - WSL: tech/wsl.md
+  - Linux:
+    - Docker: linux/docker.md
+    - LVM: linux/lvm.md
+    - Podman: linux/podman.md
+    - Proxmox: linux/proxmox.md
+  - Windows:
+    - WSL: windows/wsl.md
+  - Platforms:
+    - VMware: platforms/vmware.md
   
 #theme: windmill-dark
 plugins:

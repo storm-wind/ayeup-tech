@@ -16,7 +16,7 @@
     
     
       
-        <title>LVM - To Not Forget</title>
+        <title>WSL - To Not Forget</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-use-lvm" class="md-skip">
+        <a href="#wsl-windows-linux-subsystem" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LVM
+              WSL
             
           </span>
         </div>
@@ -185,10 +185,73 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
+      <a href="../../linux/docker/" class="md-nav__link">
         Docker
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/lvm/" class="md-nav__link">
+        LVM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/podman/" class="md-nav__link">
+        Podman
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/proxmox/" class="md-nav__link">
+        Proxmox
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -197,6 +260,29 @@
       
       
 
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Windows
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Windows" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
   
   
     
@@ -211,12 +297,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          LVM
+          WSL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        LVM
+        WSL
       </a>
       
         
@@ -234,15 +320,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#expand-an-existing-lvm" class="md-nav__link">
-    Expand an existing LVM
+  <a href="#stop-resolvconf-updating-with-local-dns" class="md-nav__link">
+    Stop resolv.conf updating with local DNS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#expand-partition-for-active-partition" class="md-nav__link">
-    Expand partition for active partition
+  <a href="#how-to-import-and-export-wsl-distros" class="md-nav__link">
+    How to import and export WSL distros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-a-wsl-distro" class="md-nav__link">
+    Import a WSL distro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-a-wsl-distro" class="md-nav__link">
+    Export a WSL distro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-uninstall-imported-wsl-distros" class="md-nav__link">
+    To Uninstall imported WSL distros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-issues-with-github-or-ssh-issues" class="md-nav__link">
+    Fix issues with Github or SSH issues
   </a>
   
 </li>
@@ -254,18 +368,9 @@
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../podman/" class="md-nav__link">
-        Podman
-      </a>
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -277,25 +382,37 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Platforms
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Platforms" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Platforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../vmware/" class="md-nav__link">
+      <a href="../../platforms/vmware/" class="md-nav__link">
         VMware
       </a>
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../wsl/" class="md-nav__link">
-        WSL
-      </a>
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -326,15 +443,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#expand-an-existing-lvm" class="md-nav__link">
-    Expand an existing LVM
+  <a href="#stop-resolvconf-updating-with-local-dns" class="md-nav__link">
+    Stop resolv.conf updating with local DNS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#expand-partition-for-active-partition" class="md-nav__link">
-    Expand partition for active partition
+  <a href="#how-to-import-and-export-wsl-distros" class="md-nav__link">
+    How to import and export WSL distros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-a-wsl-distro" class="md-nav__link">
+    Import a WSL distro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-a-wsl-distro" class="md-nav__link">
+    Export a WSL distro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-uninstall-imported-wsl-distros" class="md-nav__link">
+    To Uninstall imported WSL distros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-issues-with-github-or-ssh-issues" class="md-nav__link">
+    Fix issues with Github or SSH issues
   </a>
   
 </li>
@@ -352,110 +497,53 @@
               
                 
                 
-                <h1 id="how-to-use-lvm">How to use LVM</h1>
-<p>LVM is used to manage disk capacity with Linux. </p>
+                <h1 id="wsl-windows-linux-subsystem">WSL - Windows Linux Subsystem</h1>
+<p>Some tips etc on how to use Windows WSL.</p>
+<hr />
+<h3 id="stop-resolvconf-updating-with-local-dns">Stop resolv.conf updating with local DNS</h3>
+<p>If there is an issue connecting to some stuff defined in your WSL it is most likely DNS. To stop auto generation of <strong>resolv.conf</strong> you need to create a file <strong>/etc/wsl.conf</strong> and add the following,</p>
+<pre><code>[network]
+generateResolvConf = false
+</code></pre>
+<p>Then in a windows cmd line session,</p>
+<pre><code>wsl --shutdown
+</code></pre>
+<p>This shuts down wsl properly and saves any changes.</p>
 <hr />
 <hr />
-<h3 id="expand-an-existing-lvm">Expand an existing LVM</h3>
-<p>This assumes you have added an extra disk on VMware to the VM affected.</p>
-<pre><code>echo &quot;- - -&quot; &gt; /sys/class/scsi_host/scan0
-lsblk
-fdisk /dev/sdd
-pvcreate /dev/sdd1
-vgs
-vgextend centos /dev/sdd1
-vgs
-pvscan
-lvextend -l +100%FREE /dev/centos/var
+<h3 id="how-to-import-and-export-wsl-distros">How to import and export WSL distros</h3>
+<p>Distros already installed and up to date from MS Store.</p>
+<h3 id="import-a-wsl-distro">Import a WSL distro</h3>
+<p>Open <strong>cmd</strong> prompt as admin.</p>
+<pre><code>wsl --list --all
 </code></pre>
-<p>or for specifc sizes,</p>
-<pre><code>lvextend  -L &lt;+size&gt;   &lt;Logical volume name path&gt;
-
-xfs_growfs /dev/mapper/centos-var
+<p>This will list all the WSL distros on your computer.</p>
+<p>To import,</p>
+<pre><code>wsl --import &lt;Name of distro&gt; &lt;path to save the &lt;backupname&gt;.tar filename
 </code></pre>
+<h3 id="export-a-wsl-distro">Export a WSL distro</h3>
+<p>Open <strong>cmd</strong> prompt as admin.</p>
+<pre><code>wsl --list --all
+</code></pre>
+<p>Pick your distro for export.</p>
+<pre><code>wsl --export &lt;Name of distro&gt; &lt;name of export&gt;.tar file to export to
+</code></pre>
+<h3 id="to-uninstall-imported-wsl-distros">To Uninstall imported WSL distros</h3>
+<pre><code>wsl --list --all
+</code></pre>
+<p>Pick your distro</p>
+<pre><code>wsl --unregister &lt;Name of distro&gt;
+</code></pre>
+<p>And thats it.</p>
 <hr />
 <hr />
-<h3 id="expand-partition-for-active-partition">Expand partition for active partition</h3>
-<p>How to expand a live partition.
-This example uses /dev/sda2</p>
-<pre><code>fdisk /dev/sda
+<h3 id="fix-issues-with-github-or-ssh-issues">Fix issues with Github or SSH issues</h3>
+<p>Modify the <strong>.bashrc</strong> file on the end with this,</p>
+<pre><code>eval $(ssh-agent -s) &amp;&amp; ssh-add ~/.ssh/&lt;private key name&gt;
 </code></pre>
-<p>You will get something like this below,</p>
-<pre><code>Command (m for help): p
-
-Disk /dev/sda: 68.7 GB, 68719476736 bytes, 134217728 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk label type: dos
-Disk identifier: 0x000bffd8
-
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048     1050623      524288   83  Linux
-/dev/sda2         1050624    36716543    17832960   8e  Linux LVM
-</code></pre>
-<p>So you have checked which one is which, now we delete the partition <strong>/dev/sda2</strong>.</p>
-<pre><code>Command (m for help): d
-Partition number (1,2, default 2): 2
-Partition 2 is deleted
-</code></pre>
-<p>Now we create a new partion with a new end block.</p>
-<pre><code>Command (m for help): n
-Partition type:
-   p   primary (1 primary, 0 extended, 3 free)
-   e   extended
-Select (default p): p
-Partition number (2-4, default 2):
-First sector (1050624-134217727, default 1050624): 1050624
-Last sector, +sectors or +size{K,M,G} (1050624-134217727, default 134217727): 73433086
-Partition 2 of type Linux and of size 34.5 GiB is set
-</code></pre>
-<p>Lets check what is now existing</p>
-<pre><code>Command (m for help): p
-
-Disk /dev/sda: 68.7 GB, 68719476736 bytes, 134217728 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk label type: dos
-Disk identifier: 0x000bffd8
-
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048     1050623      524288   83  Linux
-/dev/sda2         1050624    73433086    36191231+  83  Linux
-</code></pre>
-<p>Also, change partition type, using option <code>t</code> and code <code>8e</code> to change to <strong>Linux LVM</strong>.</p>
-<pre><code>Command (m for help): wq
-The partition table has been altered!
-
-Calling ioctl() to re-read partition table.
-
-WARNING: Re-reading the partition table failed with error 16: Device or resource busy.
-The kernel still uses the old table. The new table will be used at
-the next reboot or after you run partprobe(8) or kpartx(8)
-Syncing disks.
-</code></pre>
-<p>Then run the following</p>
-<pre><code>partprobe
-partx -u /dev/sda
-cat /proc/partitions | grep sda
-   8        0   67108864 sda
-   8        1     524288 sda1
-   8        2   36191231 sda2
-</code></pre>
-<p>Now run</p>
-<pre><code>pvresize /dev/sda2
-</code></pre>
-<p>You'll get this below</p>
-<pre><code>  Physical volume &quot;/dev/sda2&quot; changed
-  1 physical volume(s) resized or updated / 0 physical volume(s) not resized
-</code></pre>
-<p>Now run</p>
-<pre><code>pvs
-</code></pre>
-<pre><code>  PV         VG   Fmt  Attr PSize  PFree
-  /dev/sda2  rhel lvm2 a--  34.51g 17.51g
-</code></pre>
+<p>Obviously you can use an absolute path to point to wherever you store private keys you want to use when accessing remote hosts using ssh authentication with keys.</p>
+<hr />
+<hr />
                 
               
               
@@ -474,7 +562,7 @@ cat /proc/partitions | grep sda
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../docker/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../linux/proxmox/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -483,19 +571,19 @@ cat /proc/partitions | grep sda
               <span class="md-footer__direction">
                 Previous
               </span>
-              Docker
+              Proxmox
             </div>
           </div>
         </a>
       
       
-        <a href="../podman/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../platforms/vmware/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Podman
+              VMware
             </div>
           </div>
           <div class="md-footer__button md-icon">
