@@ -11,6 +11,9 @@ nav:
   - Windows:
     - WSL: windows/wsl.md
   - Platforms:
+    - AWS: platforms/awscli.md    
+    - Cloudflare:
+      - Argo: platforms/argo.md
     - VMware: platforms/vmware.md
   
 #theme: windmill-dark
