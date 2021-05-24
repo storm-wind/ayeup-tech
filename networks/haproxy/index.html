@@ -16,7 +16,7 @@
     
     
       
-        <title>Podman - To Not Forget</title>
+        <title>HAProxy - To Not Forget</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#podman" class="md-skip">
+        <a href="#haproxy" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Podman
+              HAProxy
             
           </span>
         </div>
@@ -184,14 +184,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         Linux
@@ -209,7 +207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
+      <a href="../../linux/docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -221,7 +219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lvm/" class="md-nav__link">
+      <a href="../../linux/lvm/" class="md-nav__link">
         LVM
       </a>
     </li>
@@ -231,51 +229,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Podman
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../linux/podman/" class="md-nav__link">
         Podman
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bind-podman-container-to-local-directory" class="md-nav__link">
-    Bind podman container to local directory
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -285,7 +243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxmox/" class="md-nav__link">
+      <a href="../../linux/proxmox/" class="md-nav__link">
         Proxmox
       </a>
     </li>
@@ -466,12 +424,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Networks
@@ -487,12 +447,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
       
       <label class="md-nav__link" for="__nav_5_1">
         Proxies
@@ -508,11 +470,51 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../networks/haproxy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          HAProxy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         HAProxy
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#haproxy-example" class="md-nav__link">
+    HAProxy Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -555,8 +557,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bind-podman-container-to-local-directory" class="md-nav__link">
-    Bind podman container to local directory
+  <a href="#haproxy-example" class="md-nav__link">
+    HAProxy Example
   </a>
   
 </li>
@@ -574,10 +576,129 @@
               
                 
                 
-                <h1 id="podman">Podman</h1>
-<p>Podman is Redhats answer to Docker. You can un docker continaers as a <strong>systemd</strong> service.</p>
-<h3 id="bind-podman-container-to-local-directory">Bind podman container to local directory</h3>
-<p>sudo podman run -it -p 80:80 --name nginx-proxy -v /opt/podman/nginx/conf.d:/etc/nginx/conf.d nginx sh</p>
+                <h1 id="haproxy">HAProxy</h1>
+<p>Haproxy is a kick ass proxy which is scalable and has a multitude of uses.</p>
+<h3 id="haproxy-example">HAProxy Example</h3>
+<p>An example config of HAProxy that is a tcp pass through.</p>
+<pre><code>#---------------------------------------------------------------------
+# Example configuration for a possible web application.  See the
+# full configuration options online.
+#
+#   https://www.haproxy.org/download/1.8/doc/configuration.txt
+#
+#---------------------------------------------------------------------
+
+#---------------------------------------------------------------------
+# Global settings
+#---------------------------------------------------------------------
+global
+    # to have these messages end up in /var/log/haproxy.log you will
+    # need to:
+    #
+    # 1) configure syslog to accept network log events.  This is done
+    #    by adding the '-r' option to the SYSLOGD_OPTIONS in
+    #    /etc/sysconfig/syslog
+    #
+    # 2) configure local2 events to go to the /var/log/haproxy.log
+    #   file. A line like the following can be added to
+    #   /etc/sysconfig/syslog
+    #
+    #    local2.*                       /var/log/haproxy.log
+    #
+    log         127.0.0.1 local2
+
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     4000
+    user        haproxy
+    group       haproxy
+    daemon
+
+    # turn on stats unix socket
+    stats socket /var/lib/haproxy/stats
+
+    # utilize system-wide crypto-policies
+    ssl-default-bind-ciphers PROFILE=SYSTEM
+    ssl-default-server-ciphers PROFILE=SYSTEM
+
+#---------------------------------------------------------------------
+# common defaults that all the 'listen' and 'backend' sections will
+# use if not designated in their block
+#---------------------------------------------------------------------
+defaults
+    mode                    http
+    log                     global
+    option                  httplog
+    option                  dontlognull
+    option http-server-close
+    option forwardfor       except 127.0.0.0/8
+    option                  redispatch
+    retries                 3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client          1m
+    timeout server          1m
+    timeout http-keep-alive 10s
+    timeout check           10s
+    maxconn                 3000
+
+#---------------------------------------------------------------------
+# main frontend which proxys to the backends
+#---------------------------------------------------------------------
+#frontend main
+#    bind *:5000
+#    acl url_static       path_beg       -i /static /images /javascript /stylesheets
+#    acl url_static       path_end       -i .jpg .gif .png .css .js
+
+#    use_backend static          if url_static
+#    default_backend             app
+frontend https_in
+        mode tcp
+        option tcplog
+        bind *:443
+        acl tls req.ssl_hello_type 1
+        tcp-request inspect-delay 5s
+        tcp-request content accept if tls
+
+        acl &lt;server1&gt; req.ssl_sni -i &lt;sub domain name&gt;
+        acl &lt;server1&gt; req.ssl_sni -i &lt;sub domain name&gt;
+        acl &lt;server2&gt; req.ssl_sni -i &lt;sub domain name&gt;
+        acl &lt;server2&gt; req.ssl_sni -i &lt;sub domain name&gt;
+
+        use_backend &lt;server1&gt; if &lt;server1&gt;
+        use_backend &lt;server2&gt; if &lt;server2&gt;
+
+#---------------------------------------------------------------------
+# static backend for serving up images, stylesheets and such
+#---------------------------------------------------------------------
+#backend static
+#    balance     roundrobin
+#    server      static 127.0.0.1:4331 check
+
+backend &lt;server1&gt;
+        mode tcp
+        option tcplog
+        option ssl-hello-chk
+        server &lt;server1&gt; &lt;ip address of backend server&gt;:&lt;port&gt;
+
+backend &lt;server2&gt;
+        mode tcp
+        option tcplog
+        option ssl-hello-chk
+        server &lt;server2&gt; &lt;ip address of backend server&gt;:&lt;port&gt;
+
+#---------------------------------------------------------------------
+# round robin balancing between the various backends
+#---------------------------------------------------------------------
+#backend app
+#    balance     roundrobin
+#    server  app1 127.0.0.1:5001 check
+#    server  app2 127.0.0.1:5002 check
+#    server  app3 127.0.0.1:5003 check
+#    server  app4 127.0.0.1:5004 check
+
+</code></pre>
                 
               
               
@@ -596,7 +717,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../lvm/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../platforms/vmware/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -605,25 +726,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              LVM
+              VMware
             </div>
           </div>
         </a>
       
-      
-        <a href="../proxmox/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Proxmox
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

@@ -242,6 +242,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#stop-a-difficult-container" class="md-nav__link">
+    Stop a difficult container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-commands" class="md-nav__link">
     Docker Commands
   </a>
@@ -487,6 +494,75 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Networks
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Networks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Networks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      <label class="md-nav__link" for="__nav_5_1">
+        Proxies
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Proxies" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Proxies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networks/haproxy/" class="md-nav__link">
+        HAProxy
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -511,6 +587,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stop-a-difficult-container" class="md-nav__link">
+    Stop a difficult container
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#docker-commands" class="md-nav__link">
@@ -561,6 +644,12 @@
                 
                 <h1 id="docker">Docker</h1>
 <p>Some stuff I came across while playing with docker.</p>
+<hr />
+<h3 id="stop-a-difficult-container">Stop a difficult container</h3>
+<p>Sometimes some containers just won't stop or die when you tell them to, so you use this command and it seems to work.</p>
+<pre><code>docker kill ----signal=SIGINT &lt;container id&gt;
+</code></pre>
+<p>more info here https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/</p>
 <hr />
 <h2 id="docker-commands">Docker Commands</h2>
 <hr />
