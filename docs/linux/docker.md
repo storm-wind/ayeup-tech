@@ -3,6 +3,17 @@
 Some stuff I came across while playing with docker.
 
 ***
+### Stop a difficult container
+
+Sometimes some containers just won't stop or die when you tell them to, so you use this command and it seems to work.
+```
+docker kill ----signal=SIGINT <container id>
+```
+
+more info here https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/
+
+
+***
 ## Docker Commands
 ***
 ### Portainer Docker cmd

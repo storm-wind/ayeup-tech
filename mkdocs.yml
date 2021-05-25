@@ -4,6 +4,7 @@ site_author: storm-wind
 nav:
   - Home: index.md
   - Linux:
+    - Cron: linux/cron.md
     - Docker: linux/docker.md
     - LVM: linux/lvm.md
     - Podman: linux/podman.md
@@ -11,10 +12,16 @@ nav:
   - Windows:
     - WSL: windows/wsl.md
   - Platforms:
-    - AWS: platforms/awscli.md    
+    - AWS:
+      - AWS CLI: platforms/awscli.md
     - Cloudflare:
       - Argo: platforms/argo.md
     - VMware: platforms/vmware.md
+  - Networks:
+    - Proxies:
+      - HAProxy: networks/haproxy.md
+    - Security:
+      - Stunnel: networks/stunnel.md
   
 #theme: windmill-dark
 plugins:
