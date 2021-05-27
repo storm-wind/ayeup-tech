@@ -449,6 +449,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    Ports
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -628,6 +635,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    Ports
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -681,6 +695,11 @@ After=network.target
 
 [Service]
 </code></pre>
+<hr />
+<h3 id="ports">Ports</h3>
+<p>Make sure <strong>7844</strong> and <strong>443</strong> are opened up. 
+<strong>7844</strong> is used for the Argo traffic itself.
+<strong>443</strong> is used to update the cloudflared binary and for API calls to make sure the tunnels are up and connected.</p>
                 
               
               

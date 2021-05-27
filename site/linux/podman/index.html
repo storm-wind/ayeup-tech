@@ -628,7 +628,8 @@
                 <h1 id="podman">Podman</h1>
 <p>Podman is Redhats answer to Docker. You can un docker continaers as a <strong>systemd</strong> service.</p>
 <h3 id="bind-podman-container-to-local-directory">Bind podman container to local directory</h3>
-<p>sudo podman run -it -p 80:80 --name nginx-proxy -v /opt/podman/nginx/conf.d:/etc/nginx/conf.d nginx sh</p>
+<pre><code>sudo podman run -it -p 80:80 --name nginx-proxy -v /opt/podman/nginx/conf.d:/etc/nginx/conf.d nginx sh
+</code></pre>
                 
               
               

@@ -62,3 +62,10 @@ After=network.target
 [Service]
 ```
 
+***
+### Ports
+
+Make sure **7844** and **443** are opened up. 
+**7844** is used for the Argo traffic itself.
+**443** is used to update the cloudflared binary and for API calls to make sure the tunnels are up and connected.
+

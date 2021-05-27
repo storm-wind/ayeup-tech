@@ -6,6 +6,7 @@ nav:
   - Linux:
     - Cron: linux/cron.md
     - Docker: linux/docker.md
+    - Logrotate: linux/logrotate.md
     - LVM: linux/lvm.md
     - Podman: linux/podman.md
     - Proxmox: linux/proxmox.md
