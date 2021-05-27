@@ -207,6 +207,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../linux/cron/" class="md-nav__link">
+        Cron
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../linux/docker/" class="md-nav__link">
         Docker
       </a>
@@ -437,6 +449,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    Ports
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -532,6 +551,45 @@
   
 
           
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Security
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Security" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networks/stunnel/" class="md-nav__link">
+        Stunnel
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -573,6 +631,13 @@
         <li class="md-nav__item">
   <a href="#cloudflaredservice" class="md-nav__link">
     cloudflared.service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    Ports
   </a>
   
 </li>
@@ -630,6 +695,11 @@ After=network.target
 
 [Service]
 </code></pre>
+<hr />
+<h3 id="ports">Ports</h3>
+<p>Make sure <strong>7844</strong> and <strong>443</strong> are opened up. 
+<strong>7844</strong> is used for the Argo traffic itself.
+<strong>443</strong> is used to update the cloudflared binary and for API calls to make sure the tunnels are up and connected.</p>
                 
               
               
