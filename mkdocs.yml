@@ -22,8 +22,9 @@ nav:
     - Proxies:
       - HAProxy: networks/haproxy.md
     - Security:
+      - Openssl: security/openssl.md
       - Stunnel: networks/stunnel.md
-  
+      
 #theme: windmill-dark
 plugins:
   - search:

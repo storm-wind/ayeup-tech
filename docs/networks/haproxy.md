@@ -126,5 +126,30 @@ backend <server2>
 #    server  app4 127.0.0.1:5004 check
  
 ```
+***
+
+### The Stats Section
+
+This is a stats page you can login to, to view the HAProxy stats.
+
+```
+mode http
+        bind <ip address of host>:<port> # 
+        ssl crt /etc/ssl/<cert chain - pem format>
+        stats enable
+        stats show-legends
+        stats hide-version
+        stats realm Haproxy\ Statistics
+        stats uri /stats
+        stats refresh 5s
+        stats auth <username>:<password>
+
+```
+
+***
+
+### Another example
+
+Here is an example of frontends listening on different ports and implementing STunnel to enccrpt traffic.
 
 
