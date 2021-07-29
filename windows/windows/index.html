@@ -16,7 +16,7 @@
     
     
       
-        <title>Stunnel - To Not Forget</title>
+        <title>RDP - To Not Forget</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stunnel" class="md-skip">
+        <a href="#rdp-intermittantly-freezes" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stunnel
+              RDP
             
           </span>
         </div>
@@ -285,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zerotier/" class="md-nav__link">
+      <a href="../../networks/zerotier/" class="md-nav__link">
         Zerotier
       </a>
     </li>
@@ -304,12 +304,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Windows
@@ -327,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/wsl/" class="md-nav__link">
+      <a href="../wsl/" class="md-nav__link">
         WSL
       </a>
     </li>
@@ -337,11 +339,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../windows/windows/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         RDP
       </a>
+      
     </li>
   
 
@@ -478,14 +490,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Networks
@@ -524,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../haproxy/" class="md-nav__link">
+      <a href="../../networks/haproxy/" class="md-nav__link">
         HAProxy
       </a>
     </li>
@@ -540,14 +550,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       <label class="md-nav__link" for="__nav_5_2">
         Security
@@ -575,51 +583,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Stunnel
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../networks/stunnel/" class="md-nav__link">
         Stunnel
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    Config
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -655,21 +623,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    Config
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -681,37 +634,9 @@
               
                 
                 
-                <h1 id="stunnel">Stunnel</h1>
-<p>Stunnel is a free linux program to encrypt traffic for any application that does not have encrypted traffic. 
-You basically redirect that applications traffic to the Stunnel port and it will encrypt it across the network.</p>
-<h5 id="config">Config</h5>
-<p>Here is an example configuration.</p>
-<pre><code>/etc/stunnel/stunnel.conf
+                <h1 id="rdp-intermittantly-freezes">RDP intermittantly freezes</h1>
+<pre><code>reg add &quot;HKLM\software\policies\microsoft\windows nt\Terminal Services\Client&quot; /v fClientDisableUDP /d 1 /t REG_DWORD
 </code></pre>
-<pre><code>cert = /etc/pki/tls/certs/stunnel.pem
-; Allow only TLS, thus avoiding SSL
-#sslVersion = all
-options = NO_SSLv2
-chroot = /var/lib/stunnel
-setuid = nobody
-setgid = nobody
-pid = /stunnel.pid
-socket = l:TCP_NODELAY=1
-socket = r:TCP_NODELAY=1
-#foreground = no
-client = yes
-debug = 7
-output = /log/stunnel.log
-
-
-[&lt;name of app to encrypt, ie metricbeat&gt;]
-accept = localhost:5220
-connect = &lt;ip address of destination&gt;:&lt;port number&gt;
-TIMEOUTclose = 0
-verify = 0
-</code></pre>
-<p>This is slightly different to the standard config as its in <strong>/var/lib/stunnel</strong><em> not </em><em>/var/run/stunnel</em><em>.
-This is to get around the issue when server reboots the </em><em>/var/run/stunnel</em>* chroot gets wiped.</p>
                 
               
               
@@ -731,7 +656,7 @@ This is to get around the issue when server reboots the </em><em>/var/run/stunne
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../security/openssl/" class="md-footer__link md-footer__link--prev" aria-label="Previous: openssl" rel="prev">
+        <a href="../wsl/" class="md-footer__link md-footer__link--prev" aria-label="Previous: WSL" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -740,11 +665,26 @@ This is to get around the issue when server reboots the </em><em>/var/run/stunne
               <span class="md-footer__direction">
                 Previous
               </span>
-              openssl
+              WSL
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../../platforms/awscli/" class="md-footer__link md-footer__link--next" aria-label="Next: AWS CLI" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              AWS CLI
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
