@@ -10,8 +10,10 @@ nav:
     - LVM: linux/lvm.md
     - Podman: linux/podman.md
     - Proxmox: linux/proxmox.md
+    - Zerotier: networks/zerotier.md
   - Windows:
     - WSL: windows/wsl.md
+    - RDP: windows/windows.md
   - Platforms:
     - AWS:
       - AWS CLI: platforms/awscli.md
@@ -22,7 +24,7 @@ nav:
     - Proxies:
       - HAProxy: networks/haproxy.md
     - Security:
-      - Openssl: security/openssl.md
+      - openssl: security/openssl.md
       - Stunnel: networks/stunnel.md
       
 #theme: windmill-dark
