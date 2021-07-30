@@ -23,7 +23,7 @@ apt --reinstall install proxmox-widget-toolkit
 
 ***
 
-# Install **qemu** agent
+### Install **qemu** agent
 
 ```
 apt-get install -y qemu-guest-agent
@@ -32,3 +32,22 @@ systemctl enable qemu-guest-agent
 
 systemctl start qemu-guest-agent
 ```
+
+***
+# LXC Containers on Proxmox
+
+LXC containers are containers much like Docker but unlike docker have their own namespaces and utilise the host system kernel. I use LXC for a variety of purposes.
+Mainly for services I want to isolate and have several dependencies around it. For example, Pi-Hole or a reverse proxy. These can be run from Docker as well but I like the fact I can manage these LXC containers through Proxmox UI.
+Anyway, some caveats I found when creating LXC containers.
+
+- SSH is not enabled by default
+- space on filesystem to create SSH session doesn't work. So heres what you do.
+
+```
+systemctl start sshd
+
+mkdir /run/sshd
+```
+
+Thats it.
+
