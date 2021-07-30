@@ -1,4 +1,4 @@
-site_name: To Not Forget
+site_name: Tell me something I don't know
 site_author: storm-wind
 
 nav:
@@ -25,8 +25,8 @@ nav:
       - HAProxy: networks/haproxy.md
     - Security:
       - openssl: security/openssl.md
-      - Stunnel: networks/stunnel.md
-      
+      - Stunnel: networks/stunnel.md 
+
 #theme: windmill-dark
 plugins:
   - search:
@@ -35,3 +35,7 @@ plugins:
 #theme: bootstrap
 theme:
   name:  material
+
+docs:
+   img:
+      test.png
