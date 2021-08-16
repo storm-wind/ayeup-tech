@@ -1,4 +1,4 @@
-site_name: Tell me something I don't know
+site_name: Run that by me again!
 site_author: storm-wind
 
 nav:
@@ -40,3 +40,7 @@ theme:
 docs:
    img:
       test.png
+
+
+markdown_extensions:
+  - attr_list
