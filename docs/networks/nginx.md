@@ -1,5 +1,10 @@
 # Nginx conf example for Bitwarden
 
+
+![](img/nginx-logo.png)
+
+
+
 This example points at a docker container running on the same host.
 
 
