@@ -1,3 +1,6 @@
+
+![](img/clock.png)
+
 # Cron Jobs
 
 Schedule automatic jobs in Linux
@@ -35,5 +38,5 @@ Schedule automatic jobs in Linux
 
 ```
 
-![Screenshot](img/test.png)
+
  

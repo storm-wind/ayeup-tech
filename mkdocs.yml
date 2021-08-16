@@ -23,6 +23,7 @@ nav:
   - Networks:
     - Proxies:
       - HAProxy: networks/haproxy.md
+      - Nginx: networks/nginx.md
     - Security:
       - openssl: security/openssl.md
       - Stunnel: networks/stunnel.md 

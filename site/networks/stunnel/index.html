@@ -525,6 +525,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nginx/" class="md-nav__link">
+        Nginx
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -610,6 +622,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -662,6 +681,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -701,6 +727,13 @@ output = /log/stunnel.log
 [&lt;name of app to encrypt, ie metricbeat&gt;]
 accept = localhost:5220
 connect = &lt;ip address of destination&gt;:&lt;port number&gt;
+TIMEOUTclose = 0
+verify = 0
+</code></pre>
+<h5 id="example">Example</h5>
+<pre><code>[metricbeat]
+accept = localhost:5220
+connect = 192.168.1.10:5225
 TIMEOUTclose = 0
 verify = 0
 </code></pre>

@@ -38,6 +38,17 @@ TIMEOUTclose = 0
 verify = 0
 ```
 
+##### Example
+
+```
+[metricbeat]
+accept = localhost:5220
+connect = 192.168.1.10:5225
+TIMEOUTclose = 0
+verify = 0
+```
+
+
 This is slightly different to the standard config as its in **/var/lib/stunnel*** not **/var/run/stunnel**.
 This is to get around the issue when server reboots the **/var/run/stunnel** chroot gets wiped.
 
