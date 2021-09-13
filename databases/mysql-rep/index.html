@@ -817,11 +817,22 @@ Binary log files are setup as part of replication - see above.</p>
 <h4 id="how-to-expire-binary-logs-after-a-period-of-time">How to Expire Binary logs after a period of time</h4>
 <p>When I setup replication the binary log files quickly filled up the filesystem and with me not being a DBA didn't realise.
 So I had to setup log files to expire. The default is <strong><em>0</em></strong> whcih means they never expire.</p>
-<p>Heres how to do it
-```
-mysql -u <username> -p</p>
-<p>SHOW VARIABLES LIKE 'expire_logs_days';
-SET GLOBAL expire_logs_days=<num of days>;</p>
+<p>Heres how to do it</p>
+<pre><code>mysql -u &lt;username&gt; -p
+
+SHOW VARIABLES LIKE 'expire_logs_days';
+    -&gt; ;
++------------------+-------+
+| Variable_name    | Value |
++------------------+-------+
+| expire_logs_days | 0     |
++------------------+-------+
+1 row in set (0.00 sec)
+
+
+SET GLOBAL expire_logs_days=&lt;num of days&gt;;
+
+</code></pre>
                 
               
               
