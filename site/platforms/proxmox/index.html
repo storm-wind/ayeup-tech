@@ -16,7 +16,7 @@
     
     
       
-        <title>HAProxy - Run that by me again!</title>
+        <title>Proxmox - Run that by me again!</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#haproxy" class="md-skip">
+        <a href="#proxmox-initial-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              HAProxy
+              Proxmox
             
           </span>
         </div>
@@ -348,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zerotier/" class="md-nav__link">
+      <a href="../../networks/zerotier/" class="md-nav__link">
         Zerotier
       </a>
     </li>
@@ -433,12 +433,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Platforms
@@ -477,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/awscli/" class="md-nav__link">
+      <a href="../awscli/" class="md-nav__link">
         AWS CLI
       </a>
     </li>
@@ -516,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/argo/" class="md-nav__link">
+      <a href="../argo/" class="md-nav__link">
         Argo
       </a>
     </li>
@@ -532,11 +534,72 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../platforms/proxmox/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Proxmox
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Proxmox
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disable-commercial-repo" class="md-nav__link">
+    Disable Commercial Repo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-pve-community-repo" class="md-nav__link">
+    Add PVE Community Repo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-nag" class="md-nav__link">
+    Remove nag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-qemu-agent" class="md-nav__link">
+    Install qemu agent
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -546,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/vmware/" class="md-nav__link">
+      <a href="../vmware/" class="md-nav__link">
         VMware
       </a>
     </li>
@@ -565,14 +628,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       <label class="md-nav__link" for="__nav_6">
         Networks
@@ -588,14 +649,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
       
       <label class="md-nav__link" for="__nav_6_1">
         Proxies
@@ -611,65 +670,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          HAProxy
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../networks/haproxy/" class="md-nav__link">
         HAProxy
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#haproxy-example" class="md-nav__link">
-    HAProxy Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-stats-section" class="md-nav__link">
-    The Stats Section
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#another-example" class="md-nav__link">
-    Another example
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -679,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nginx/" class="md-nav__link">
+      <a href="../../networks/nginx/" class="md-nav__link">
         Nginx
       </a>
     </li>
@@ -730,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stunnel/" class="md-nav__link">
+      <a href="../../networks/stunnel/" class="md-nav__link">
         Stunnel
       </a>
     </li>
@@ -775,22 +780,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#haproxy-example" class="md-nav__link">
-    HAProxy Example
+  <a href="#disable-commercial-repo" class="md-nav__link">
+    Disable Commercial Repo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-stats-section" class="md-nav__link">
-    The Stats Section
+  <a href="#add-pve-community-repo" class="md-nav__link">
+    Add PVE Community Repo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#another-example" class="md-nav__link">
-    Another example
+  <a href="#remove-nag" class="md-nav__link">
+    Remove nag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-qemu-agent" class="md-nav__link">
+    Install qemu agent
   </a>
   
 </li>
@@ -808,147 +820,41 @@
               
                 
                 
-                <h1 id="haproxy">HAProxy</h1>
-<p>Haproxy is a kick ass proxy which is scalable and has a multitude of uses.</p>
-<h3 id="haproxy-example">HAProxy Example</h3>
-<p>An example config of HAProxy that is a tcp pass through.</p>
-<pre><code>#---------------------------------------------------------------------
-# Example configuration for a possible web application.  See the
-# full configuration options online.
-#
-#   https://www.haproxy.org/download/1.8/doc/configuration.txt
-#
-#---------------------------------------------------------------------
-
-#---------------------------------------------------------------------
-# Global settings
-#---------------------------------------------------------------------
-global
-    # to have these messages end up in /var/log/haproxy.log you will
-    # need to:
-    #
-    # 1) configure syslog to accept network log events.  This is done
-    #    by adding the '-r' option to the SYSLOGD_OPTIONS in
-    #    /etc/sysconfig/syslog
-    #
-    # 2) configure local2 events to go to the /var/log/haproxy.log
-    #   file. A line like the following can be added to
-    #   /etc/sysconfig/syslog
-    #
-    #    local2.*                       /var/log/haproxy.log
-    #
-    log         127.0.0.1 local2
-
-    chroot      /var/lib/haproxy
-    pidfile     /var/run/haproxy.pid
-    maxconn     4000
-    user        haproxy
-    group       haproxy
-    daemon
-
-    # turn on stats unix socket
-    stats socket /var/lib/haproxy/stats
-
-    # utilize system-wide crypto-policies
-    ssl-default-bind-ciphers PROFILE=SYSTEM
-    ssl-default-server-ciphers PROFILE=SYSTEM
-
-#---------------------------------------------------------------------
-# common defaults that all the 'listen' and 'backend' sections will
-# use if not designated in their block
-#---------------------------------------------------------------------
-defaults
-    mode                    http
-    log                     global
-    option                  httplog
-    option                  dontlognull
-    option http-server-close
-    option forwardfor       except 127.0.0.0/8
-    option                  redispatch
-    retries                 3
-    timeout http-request    10s
-    timeout queue           1m
-    timeout connect         10s
-    timeout client          1m
-    timeout server          1m
-    timeout http-keep-alive 10s
-    timeout check           10s
-    maxconn                 3000
-
-#---------------------------------------------------------------------
-# main frontend which proxys to the backends
-#---------------------------------------------------------------------
-#frontend main
-#    bind *:5000
-#    acl url_static       path_beg       -i /static /images /javascript /stylesheets
-#    acl url_static       path_end       -i .jpg .gif .png .css .js
-
-#    use_backend static          if url_static
-#    default_backend             app
-frontend https_in
-        mode tcp
-        option tcplog
-        bind *:443
-        acl tls req.ssl_hello_type 1
-        tcp-request inspect-delay 5s
-        tcp-request content accept if tls
-
-        acl &lt;server1&gt; req.ssl_sni -i &lt;sub domain name&gt;
-        acl &lt;server1&gt; req.ssl_sni -i &lt;sub domain name&gt;
-        acl &lt;server2&gt; req.ssl_sni -i &lt;sub domain name&gt;
-        acl &lt;server2&gt; req.ssl_sni -i &lt;sub domain name&gt;
-
-        use_backend &lt;server1&gt; if &lt;server1&gt;
-        use_backend &lt;server2&gt; if &lt;server2&gt;
-
-#---------------------------------------------------------------------
-# static backend for serving up images, stylesheets and such
-#---------------------------------------------------------------------
-#backend static
-#    balance     roundrobin
-#    server      static 127.0.0.1:4331 check
-
-backend &lt;server1&gt;
-        mode tcp
-        option tcplog
-        option ssl-hello-chk
-        server &lt;server1&gt; &lt;ip address of backend server&gt;:&lt;port&gt;
-
-backend &lt;server2&gt;
-        mode tcp
-        option tcplog
-        option ssl-hello-chk
-        server &lt;server2&gt; &lt;ip address of backend server&gt;:&lt;port&gt;
-
-#---------------------------------------------------------------------
-# round robin balancing between the various backends
-#---------------------------------------------------------------------
-#backend app
-#    balance     roundrobin
-#    server  app1 127.0.0.1:5001 check
-#    server  app2 127.0.0.1:5002 check
-#    server  app3 127.0.0.1:5003 check
-#    server  app4 127.0.0.1:5004 check
-
+                <h1 id="proxmox-initial-setup">ProxMox Initial setup</h1>
+<h3 id="disable-commercial-repo">Disable Commercial Repo</h3>
+<pre><code>sed -i &quot;s/^deb/\#deb/&quot; /etc/apt/sources.list.d/pve-enterprise.list
+apt-get update
+</code></pre>
+<h3 id="add-pve-community-repo">Add PVE Community Repo</h3>
+<pre><code>echo &quot;deb http://download.proxmox.com/debian/pve $(grep &quot;VERSION=&quot; /etc/os-release | sed -n 's/.*(\(.*\)).*/\1/p') pve-no-subscription&quot; &gt; /etc/apt/sources.list.d/pve-no-enterprise.list
+apt-get update
+</code></pre>
+<h3 id="remove-nag">Remove nag</h3>
+<pre><code>echo &quot;DPkg::Post-Invoke { \&quot;dpkg -V proxmox-widget-toolkit | grep -q '/proxmoxlib\.js$'; if [ \$? -eq 1 ]; then { echo 'Removing subscription nag from UI...'; sed -i '/data.status/{s/\!//;s/Active/NoMoreNagging/}' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js; }; fi\&quot;; };&quot; &gt; /etc/apt/apt.conf.d/no-nag-script
+apt --reinstall install proxmox-widget-toolkit
 </code></pre>
 <hr />
-<h3 id="the-stats-section">The Stats Section</h3>
-<p>This is a stats page you can login to, to view the HAProxy stats.</p>
-<pre><code>mode http
-        bind &lt;ip address of host&gt;:&lt;port&gt; # 
-        ssl crt /etc/ssl/&lt;cert chain - pem format&gt;
-        stats enable
-        stats show-legends
-        stats hide-version
-        stats realm Haproxy\ Statistics
-        stats uri /stats
-        stats refresh 5s
-        stats auth &lt;username&gt;:&lt;password&gt;
+<h3 id="install-qemu-agent">Install <strong>qemu</strong> agent</h3>
+<pre><code>apt-get install -y qemu-guest-agent
 
+systemctl enable qemu-guest-agent
+
+systemctl start qemu-guest-agent
 </code></pre>
 <hr />
-<h3 id="another-example">Another example</h3>
-<p>Here is an example of frontends listening on different ports and implementing STunnel to enccrpt traffic.</p>
+<h1 id="lxc-containers-on-proxmox">LXC Containers on Proxmox</h1>
+<p>LXC containers are containers much like Docker but unlike docker have their own namespaces and utilise the host system kernel. I use LXC for a variety of purposes.
+Mainly for services I want to isolate and have several dependencies around it. For example, Pi-Hole or a reverse proxy. These can be run from Docker as well but I like the fact I can manage these LXC containers through Proxmox UI.
+Anyway, some caveats I found when creating LXC containers.</p>
+<ul>
+<li>SSH is not enabled by default</li>
+<li>space on filesystem to create SSH session doesn't work. So heres what you do.</li>
+</ul>
+<pre><code>systemctl start sshd
+
+mkdir /run/sshd
+</code></pre>
+<p>Thats it.</p>
                 
               
               
@@ -967,7 +873,7 @@ backend &lt;server2&gt;
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../../platforms/vmware/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../argo/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -976,19 +882,19 @@ backend &lt;server2&gt;
               <span class="md-footer__direction">
                 Previous
               </span>
-              VMware
+              Argo
             </div>
           </div>
         </a>
       
       
-        <a href="../nginx/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../vmware/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Nginx
+              VMware
             </div>
           </div>
           <div class="md-footer__button md-icon">

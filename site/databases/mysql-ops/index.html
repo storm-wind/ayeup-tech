@@ -16,7 +16,7 @@
     
     
       
-        <title>Proxmox - Run that by me again!</title>
+        <title>Typical Operations of MySQL/MariaDB - Run that by me again!</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#proxmox-initial-setup" class="md-skip">
+        <a href="#typical-operations-of-mysqlmariadb" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Proxmox
+              Typical Operations of MySQL/MariaDB
             
           </span>
         </div>
@@ -184,21 +184,88 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
+        Databases
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Databases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Databases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        MySQL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="MySQL" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          MySQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql-rep/" class="md-nav__link">
+        Replication
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
         Linux
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Linux" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Linux
         </label>
@@ -209,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cron/" class="md-nav__link">
+      <a href="../../linux/cron/" class="md-nav__link">
         Cron
       </a>
     </li>
@@ -221,7 +288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
+      <a href="../../linux/docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -233,7 +300,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../logrotate/" class="md-nav__link">
+      <a href="../../linux/filesystems/" class="md-nav__link">
+        FileSystems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/logrotate/" class="md-nav__link">
         Logrotate
       </a>
     </li>
@@ -245,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lvm/" class="md-nav__link">
+      <a href="../../linux/lvm/" class="md-nav__link">
         LVM
       </a>
     </li>
@@ -257,82 +336,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../podman/" class="md-nav__link">
+      <a href="../../linux/podman/" class="md-nav__link">
         Podman
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Proxmox
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Proxmox
-      </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#disable-commercial-repo" class="md-nav__link">
-    Disable Commercial Repo
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-pve-community-repo" class="md-nav__link">
-    Add PVE Community Repo
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove-nag" class="md-nav__link">
-    Remove nag
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-qemu-agent" class="md-nav__link">
-    Install qemu agent
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -366,14 +372,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
-      <label class="md-nav__link" for="__nav_3">
+      <label class="md-nav__link" for="__nav_4">
         Windows
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Windows" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Windows
         </label>
@@ -403,6 +409,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/adduserstogroup/" class="md-nav__link">
+        Powershell
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -420,14 +438,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="__nav_4">
+      <label class="md-nav__link" for="__nav_5">
         Platforms
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Platforms" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Platforms
         </label>
@@ -441,14 +459,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
       
-      <label class="md-nav__link" for="__nav_4_1">
+      <label class="md-nav__link" for="__nav_5_1">
         AWS
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="AWS" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_1">
+        <label class="md-nav__title" for="__nav_5_1">
           <span class="md-nav__icon md-icon"></span>
           AWS
         </label>
@@ -480,14 +498,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
-      <label class="md-nav__link" for="__nav_4_2">
+      <label class="md-nav__link" for="__nav_5_2">
         Cloudflare
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Cloudflare" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_2">
+        <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           Cloudflare
         </label>
@@ -507,6 +525,18 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platforms/proxmox/" class="md-nav__link">
+        Proxmox
+      </a>
     </li>
   
 
@@ -540,14 +570,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_5">
+      <label class="md-nav__link" for="__nav_6">
         Networks
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Networks" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Networks
         </label>
@@ -561,14 +591,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
       
-      <label class="md-nav__link" for="__nav_5_1">
+      <label class="md-nav__link" for="__nav_6_1">
         Proxies
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Proxies" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_1">
+        <label class="md-nav__title" for="__nav_6_1">
           <span class="md-nav__icon md-icon"></span>
           Proxies
         </label>
@@ -612,14 +642,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
       
-      <label class="md-nav__link" for="__nav_5_2">
+      <label class="md-nav__link" for="__nav_6_2">
         Security
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Security" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_2">
+        <label class="md-nav__title" for="__nav_6_2">
           <span class="md-nav__icon md-icon"></span>
           Security
         </label>
@@ -680,42 +710,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#disable-commercial-repo" class="md-nav__link">
-    Disable Commercial Repo
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-pve-community-repo" class="md-nav__link">
-    Add PVE Community Repo
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove-nag" class="md-nav__link">
-    Remove nag
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-qemu-agent" class="md-nav__link">
-    Install qemu agent
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -727,41 +721,8 @@
               
                 
                 
-                <h1 id="proxmox-initial-setup">ProxMox Initial setup</h1>
-<h3 id="disable-commercial-repo">Disable Commercial Repo</h3>
-<pre><code>sed -i &quot;s/^deb/\#deb/&quot; /etc/apt/sources.list.d/pve-enterprise.list
-apt-get update
-</code></pre>
-<h3 id="add-pve-community-repo">Add PVE Community Repo</h3>
-<pre><code>echo &quot;deb http://download.proxmox.com/debian/pve $(grep &quot;VERSION=&quot; /etc/os-release | sed -n 's/.*(\(.*\)).*/\1/p') pve-no-subscription&quot; &gt; /etc/apt/sources.list.d/pve-no-enterprise.list
-apt-get update
-</code></pre>
-<h3 id="remove-nag">Remove nag</h3>
-<pre><code>echo &quot;DPkg::Post-Invoke { \&quot;dpkg -V proxmox-widget-toolkit | grep -q '/proxmoxlib\.js$'; if [ \$? -eq 1 ]; then { echo 'Removing subscription nag from UI...'; sed -i '/data.status/{s/\!//;s/Active/NoMoreNagging/}' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js; }; fi\&quot;; };&quot; &gt; /etc/apt/apt.conf.d/no-nag-script
-apt --reinstall install proxmox-widget-toolkit
-</code></pre>
+                <h1 id="typical-operations-of-mysqlmariadb">Typical Operations of MySQL/MariaDB</h1>
 <hr />
-<h3 id="install-qemu-agent">Install <strong>qemu</strong> agent</h3>
-<pre><code>apt-get install -y qemu-guest-agent
-
-systemctl enable qemu-guest-agent
-
-systemctl start qemu-guest-agent
-</code></pre>
-<hr />
-<h1 id="lxc-containers-on-proxmox">LXC Containers on Proxmox</h1>
-<p>LXC containers are containers much like Docker but unlike docker have their own namespaces and utilise the host system kernel. I use LXC for a variety of purposes.
-Mainly for services I want to isolate and have several dependencies around it. For example, Pi-Hole or a reverse proxy. These can be run from Docker as well but I like the fact I can manage these LXC containers through Proxmox UI.
-Anyway, some caveats I found when creating LXC containers.</p>
-<ul>
-<li>SSH is not enabled by default</li>
-<li>space on filesystem to create SSH session doesn't work. So heres what you do.</li>
-</ul>
-<pre><code>systemctl start sshd
-
-mkdir /run/sshd
-</code></pre>
-<p>Thats it.</p>
                 
               
               
@@ -777,39 +738,6 @@ mkdir /run/sshd
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../podman/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Podman
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../../networks/zerotier/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Zerotier
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

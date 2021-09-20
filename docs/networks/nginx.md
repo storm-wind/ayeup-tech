@@ -1,4 +1,7 @@
-![](img/nginx-logo.png)
+![](img/nginx-logo/600x400/eee/aaa){ align=right }
+
+
+#![](img/nginx-logo.png)
 
 # Nginx conf example for Bitwarden
 

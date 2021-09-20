@@ -3,22 +3,27 @@ site_author: storm-wind
 
 nav:
   - Home: index.md
+  - Databases:
+    - MySQL: 
+      - Replication: databases/mysql-rep.md
   - Linux:
     - Cron: linux/cron.md
     - Docker: linux/docker.md
+    - FileSystems: linux/filesystems.md
     - Logrotate: linux/logrotate.md
     - LVM: linux/lvm.md
     - Podman: linux/podman.md
-    - Proxmox: linux/proxmox.md
     - Zerotier: networks/zerotier.md
   - Windows:
     - WSL: windows/wsl.md
     - RDP: windows/windows.md
+    - Powershell: windows/adduserstogroup.md
   - Platforms:
     - AWS:
       - AWS CLI: platforms/awscli.md
     - Cloudflare:
       - Argo: platforms/argo.md
+    - Proxmox: platforms/proxmox.md
     - VMware: platforms/vmware.md
   - Networks:
     - Proxies:
