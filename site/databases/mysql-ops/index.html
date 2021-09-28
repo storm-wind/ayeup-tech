@@ -710,6 +710,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-purge-binary-logs" class="md-nav__link">
+    How to purge binary logs
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -722,6 +737,26 @@
                 
                 
                 <h1 id="typical-operations-of-mysqlmariadb">Typical Operations of MySQL/MariaDB</h1>
+<hr />
+<h4 id="how-to-purge-binary-logs">How to purge binary logs</h4>
+<pre><code>mysql -u root -p
+</code></pre>
+<pre><code>SHOW BINARY LOGS;
+</code></pre>
+<p>and then purge from selectd binary files. Command below will purge logs from last week.</p>
+<pre><code>PURGE BINARY LOGS BEFORE DATE(NOW() - INTERVAL 7 DAY) + INTERVAL 0 SECOND;
+</code></pre>
+<p>You can set binary logs to expire as well. In the <code>/etc/my.cnf</code>.</p>
+<pre><code>expire_logs_days = 7;
+</code></pre>
+<p>To set it without restart MYSQL you can run this,</p>
+<pre><code>SET GLOBAL expire_logs_days = 7;
+</code></pre>
+<p>Also setting max binlog file size as above.</p>
+<pre><code>max_binlog_size = 100M
+</code></pre>
+<pre><code>SET GLOBAL max_binlog_size = 100M;
+</code></pre>
 <hr />
                 
               
