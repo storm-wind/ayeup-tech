@@ -1,4 +1,6 @@
-# ProxMox Initial setup
+# Proxmox
+
+## ProxMox Initial setup
 
 ### Disable Commercial Repo
 
@@ -51,3 +53,15 @@ mkdir /run/sshd
 
 Thats it.
 
+## Proxmox further setup
+
+### Add a custom backup location
+
+Located in `/etc/pve/storage.cfg'
+
+```
+dir: backup
+        path /mnt/backup
+        content backup
+        maxfiles 7
+```

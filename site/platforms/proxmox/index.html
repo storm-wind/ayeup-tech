@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#proxmox-initial-setup" class="md-skip">
+        <a href="#proxmox" class="md-skip">
           Skip to content
         </a>
       
@@ -569,30 +569,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#proxmox-initial-setup" class="md-nav__link">
+    ProxMox Initial setup
+  </a>
+  
+    <nav class="md-nav" aria-label="ProxMox Initial setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#disable-commercial-repo" class="md-nav__link">
     Disable Commercial Repo
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#add-pve-community-repo" class="md-nav__link">
     Add PVE Community Repo
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#remove-nag" class="md-nav__link">
     Remove nag
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#install-qemu-agent" class="md-nav__link">
     Install qemu agent
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -780,30 +793,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#proxmox-initial-setup" class="md-nav__link">
+    ProxMox Initial setup
+  </a>
+  
+    <nav class="md-nav" aria-label="ProxMox Initial setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#disable-commercial-repo" class="md-nav__link">
     Disable Commercial Repo
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#add-pve-community-repo" class="md-nav__link">
     Add PVE Community Repo
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#remove-nag" class="md-nav__link">
     Remove nag
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#install-qemu-agent" class="md-nav__link">
     Install qemu agent
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -820,7 +846,8 @@
               
                 
                 
-                <h1 id="proxmox-initial-setup">ProxMox Initial setup</h1>
+                <h1 id="proxmox">Proxmox</h1>
+<h2 id="proxmox-initial-setup">ProxMox Initial setup</h2>
 <h3 id="disable-commercial-repo">Disable Commercial Repo</h3>
 <pre><code>sed -i &quot;s/^deb/\#deb/&quot; /etc/apt/sources.list.d/pve-enterprise.list
 apt-get update
@@ -855,6 +882,14 @@ Anyway, some caveats I found when creating LXC containers.</p>
 mkdir /run/sshd
 </code></pre>
 <p>Thats it.</p>
+<h2 id="proxmox-further-setup">Proxmox further setup</h2>
+<h3 id="add-a-custom-backup-location">Add a custom backup location</h3>
+<p>Located in `/etc/pve/storage.cfg'</p>
+<pre><code>dir: backup
+        path /mnt/backup
+        content backup
+        maxfiles 7
+</code></pre>
                 
               
               
