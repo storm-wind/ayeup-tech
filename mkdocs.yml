@@ -5,6 +5,7 @@ nav:
   - Home: index.md
   - Databases:
     - MySQL: 
+      - MySQL Ops: databases/mysql-ops.md
       - Replication: databases/mysql-rep.md
   - Linux:
     - Cron: linux/cron.md
