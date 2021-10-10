@@ -616,6 +616,61 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lxc-containers-on-proxmox" class="md-nav__link">
+    LXC Containers on Proxmox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-further-setup" class="md-nav__link">
+    Proxmox further setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox further setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-custom-backup-location" class="md-nav__link">
+    Add a custom backup location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-proxmox-from-a-laptop" class="md-nav__link">
+    Run Proxmox from a Laptop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-suspension-on-lid-closure" class="md-nav__link">
+    Disable suspension on lid closure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-apparmour-policy-for-nfs-mounts-in-cts" class="md-nav__link">
+    Change AppArmour policy for NFS mounts in CT's
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-samba-for-windows-shares" class="md-nav__link">
+    Install Samba for Windows Shares
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -840,6 +895,61 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lxc-containers-on-proxmox" class="md-nav__link">
+    LXC Containers on Proxmox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-further-setup" class="md-nav__link">
+    Proxmox further setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox further setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-custom-backup-location" class="md-nav__link">
+    Add a custom backup location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-proxmox-from-a-laptop" class="md-nav__link">
+    Run Proxmox from a Laptop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-suspension-on-lid-closure" class="md-nav__link">
+    Disable suspension on lid closure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-apparmour-policy-for-nfs-mounts-in-cts" class="md-nav__link">
+    Change AppArmour policy for NFS mounts in CT's
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-samba-for-windows-shares" class="md-nav__link">
+    Install Samba for Windows Shares
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -881,7 +991,7 @@ systemctl enable qemu-guest-agent
 systemctl start qemu-guest-agent
 </code></pre>
 <hr />
-<h1 id="lxc-containers-on-proxmox">LXC Containers on Proxmox</h1>
+<h3 id="lxc-containers-on-proxmox">LXC Containers on Proxmox</h3>
 <p>LXC containers are containers much like Docker but unlike docker have their own namespaces and utilise the host system kernel. I use LXC for a variety of purposes.
 Mainly for services I want to isolate and have several dependencies around it. For example, Pi-Hole or a reverse proxy. These can be run from Docker as well but I like the fact I can manage these LXC containers through Proxmox UI.
 Anyway, some caveats I found when creating LXC containers.</p>
@@ -895,8 +1005,8 @@ mkdir /run/sshd
 </code></pre>
 <p>Thats it.</p>
 <hr />
-<h2 id="proxmox-further-setup">Proxmox further setup</h2>
-<h3 id="add-a-custom-backup-location">Add a custom backup location</h3>
+<h3 id="proxmox-further-setup">Proxmox further setup</h3>
+<h4 id="add-a-custom-backup-location">Add a custom backup location</h4>
 <p>Located in `/etc/pve/storage.cfg'</p>
 <pre><code>dir: backup
         path /mnt/backup
@@ -904,7 +1014,7 @@ mkdir /run/sshd
         maxfiles 7
 </code></pre>
 <hr />
-<h1 id="run-proxmox-from-a-laptop">Run Proxmox from a Laptop</h1>
+<h4 id="run-proxmox-from-a-laptop">Run Proxmox from a Laptop</h4>
 <p>I run proxmox on an old laptop for several reasons. 
 Repurposing old hardware.
 Its relatively quiet.
@@ -912,12 +1022,12 @@ Low power consumption.
 Built in UPS (battery)
 Small foot print.</p>
 <p>Once installed there a few extra things to consider.</p>
-<h3 id="disable-suspension-on-lid-closure">Disable suspension on lid closure</h3>
+<h4 id="disable-suspension-on-lid-closure">Disable suspension on lid closure</h4>
 <p>Don't want laptop to shutdown when the lid is closed, </p>
 <p>Run this,</p>
 <pre><code>systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 </code></pre>
-<h3 id="change-apparmour-policy-for-nfs-mounts-in-cts">Change AppArmour policy for NFS mounts in CT's</h3>
+<h4 id="change-apparmour-policy-for-nfs-mounts-in-cts">Change AppArmour policy for NFS mounts in CT's</h4>
 <pre><code>nano /etc/apparmor.d/lxc/lxc-default-cgns
 </code></pre>
 <p>Change it to this,</p>
@@ -942,7 +1052,7 @@ profile lxc-container-default-cgns flags=(attach_disconnected,mediate_deleted) {
 <p>Then reload apparmour service, </p>
 <pre><code>service apparmor reload
 </code></pre>
-<h1 id="install-samba-for-windows-shares">Install Samba for Windows Shares</h1>
+<h3 id="install-samba-for-windows-shares">Install Samba for Windows Shares</h3>
 <p>Do the following to add a smba share and have R/W access.</p>
 <pre><code>apt install samba -y
 adduser &lt;username&gt;
