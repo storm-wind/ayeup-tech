@@ -69,7 +69,7 @@ dir: backup
 
 ```
 
-### Install Samba for Windows Shares
+#### Install Samba for Windows Shares
 Do the following to add a smba share and have R/W access.
 
 ```
@@ -158,37 +158,4 @@ service apparmor reload
 ```
 
 ***
-
-### Install Samba for Windows Shares
-Do the following to add a smba share and have R/W access.
-
-```
-apt install samba -y
-adduser <username>
-smdpasswd -d <username>
-```
-
-```
-nano /etc/samba/smb.conf
-```
-Add the following,
-
-```
-[<share label>]
-comment = <desciption of share>
-path = <location you want to share>
-browseable = yes
-read only = no
-writable = yes
-write list = <username>
-valid users = <username>
-guest = no
-create mask = 0775
-directory mask = 0775
-```
-
-```
-systemctl enable smbd
-systemctl restart smbd
-```
 
