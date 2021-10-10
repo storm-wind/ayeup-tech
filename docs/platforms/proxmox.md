@@ -70,7 +70,7 @@ dir: backup
 
 ***
 
-#### Run Proxmox from a Laptop
+### Run Proxmox from a Laptop
 
 I run proxmox on an old laptop for several reasons. 
 Repurposing old hardware.
@@ -122,6 +122,8 @@ Then reload apparmour service,
 ```
 service apparmor reload
 ```
+
+***
 
 ### Install Samba for Windows Shares
 Do the following to add a smba share and have R/W access.
