@@ -638,15 +638,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#install-samba-for-windows-shares" class="md-nav__link">
     Install Samba for Windows Shares
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -674,13 +674,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-samba-for-windows-shares_1" class="md-nav__link">
-    Install Samba for Windows Shares
-  </a>
   
 </li>
         
@@ -930,15 +923,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#install-samba-for-windows-shares" class="md-nav__link">
     Install Samba for Windows Shares
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -966,13 +959,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-samba-for-windows-shares_1" class="md-nav__link">
-    Install Samba for Windows Shares
-  </a>
   
 </li>
         
@@ -1040,7 +1026,7 @@ mkdir /run/sshd
         maxfiles 7
 
 </code></pre>
-<h3 id="install-samba-for-windows-shares">Install Samba for Windows Shares</h3>
+<h4 id="install-samba-for-windows-shares">Install Samba for Windows Shares</h4>
 <p>Do the following to add a smba share and have R/W access.</p>
 <pre><code>apt install samba -y
 adduser &lt;username&gt;
@@ -1104,30 +1090,6 @@ profile lxc-container-default-cgns flags=(attach_disconnected,mediate_deleted) {
 <pre><code>service apparmor reload
 </code></pre>
 <hr />
-<h3 id="install-samba-for-windows-shares_1">Install Samba for Windows Shares</h3>
-<p>Do the following to add a smba share and have R/W access.</p>
-<pre><code>apt install samba -y
-adduser &lt;username&gt;
-smdpasswd -d &lt;username&gt;
-</code></pre>
-<pre><code>nano /etc/samba/smb.conf
-</code></pre>
-<p>Add the following,</p>
-<pre><code>[&lt;share label&gt;]
-comment = &lt;desciption of share&gt;
-path = &lt;location you want to share&gt;
-browseable = yes
-read only = no
-writable = yes
-write list = &lt;username&gt;
-valid users = &lt;username&gt;
-guest = no
-create mask = 0775
-directory mask = 0775
-</code></pre>
-<pre><code>systemctl enable smbd
-systemctl restart smbd
-</code></pre>
                 
               
               
