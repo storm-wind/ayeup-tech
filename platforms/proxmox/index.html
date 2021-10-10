@@ -638,12 +638,18 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#run-proxmox-from-a-laptop" class="md-nav__link">
     Run Proxmox from a Laptop
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Run Proxmox from a Laptop">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#disable-suspension-on-lid-closure" class="md-nav__link">
@@ -917,12 +923,18 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#run-proxmox-from-a-laptop" class="md-nav__link">
     Run Proxmox from a Laptop
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Run Proxmox from a Laptop">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#disable-suspension-on-lid-closure" class="md-nav__link">
@@ -1014,7 +1026,7 @@ mkdir /run/sshd
         maxfiles 7
 </code></pre>
 <hr />
-<h4 id="run-proxmox-from-a-laptop">Run Proxmox from a Laptop</h4>
+<h3 id="run-proxmox-from-a-laptop">Run Proxmox from a Laptop</h3>
 <p>I run proxmox on an old laptop for several reasons. 
 Repurposing old hardware.
 Its relatively quiet.
@@ -1052,6 +1064,7 @@ profile lxc-container-default-cgns flags=(attach_disconnected,mediate_deleted) {
 <p>Then reload apparmour service, </p>
 <pre><code>service apparmor reload
 </code></pre>
+<hr />
 <h3 id="install-samba-for-windows-shares">Install Samba for Windows Shares</h3>
 <p>Do the following to add a smba share and have R/W access.</p>
 <pre><code>apt install samba -y
