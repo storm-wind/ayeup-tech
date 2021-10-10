@@ -894,6 +894,7 @@ Anyway, some caveats I found when creating LXC containers.</p>
 mkdir /run/sshd
 </code></pre>
 <p>Thats it.</p>
+<hr />
 <h2 id="proxmox-further-setup">Proxmox further setup</h2>
 <h3 id="add-a-custom-backup-location">Add a custom backup location</h3>
 <p>Located in `/etc/pve/storage.cfg'</p>
@@ -901,6 +902,69 @@ mkdir /run/sshd
         path /mnt/backup
         content backup
         maxfiles 7
+</code></pre>
+<hr />
+<h1 id="run-proxmox-from-a-laptop">Run Proxmox from a Laptop</h1>
+<p>I run proxmox on an old laptop for several reasons. 
+Repurposing old hardware.
+Its relatively quiet.
+Low power consumption.
+Built in UPS (battery)
+Small foot print.</p>
+<p>Once installed there a few extra things to consider.</p>
+<h3 id="disable-suspension-on-lid-closure">Disable suspension on lid closure</h3>
+<p>Don't want laptop to shutdown when the lid is closed, </p>
+<p>Run this,</p>
+<pre><code>systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+</code></pre>
+<h3 id="change-apparmour-policy-for-nfs-mounts-in-cts">Change AppArmour policy for NFS mounts in CT's</h3>
+<pre><code>nano /etc/apparmor.d/lxc/lxc-default-cgns
+</code></pre>
+<p>Change it to this,</p>
+<pre><code># Do not load this file.  Rather, load /etc/apparmor.d/lxc-containers, which
+# will source all profiles under /etc/apparmor.d/lxc
+
+profile lxc-container-default-cgns flags=(attach_disconnected,mediate_deleted) {
+  #include &lt;abstractions/lxc/container-base&gt;
+
+  # the container may never be allowed to mount devpts.  If it does, it
+  # will remount the host's devpts.  We could allow it to do it with
+  # the newinstance option (but, right now, we don't).
+  deny mount fstype=devpts,
+
+# Extra stuff added
+  mount fstype=nfs,
+  mount fstype=cgroup -&gt; /sys/fs/cgroup/**,
+  mount fstype=cgroup2 -&gt; /sys/fs/cgroup/**,
+}
+
+</code></pre>
+<p>Then reload apparmour service, </p>
+<pre><code>service apparmor reload
+</code></pre>
+<h1 id="install-samba-for-windows-shares">Install Samba for Windows Shares</h1>
+<p>Do the following to add a smba share and have R/W access.</p>
+<pre><code>apt install samba -y
+adduser &lt;username&gt;
+smdpasswd -d &lt;username&gt;
+</code></pre>
+<pre><code>nano /etc/samba/smb.conf
+</code></pre>
+<p>Add the following,</p>
+<pre><code>[&lt;share label&gt;]
+comment = &lt;desciption of share&gt;
+path = &lt;location you want to share&gt;
+browseable = yes
+read only = no
+writable = yes
+write list = &lt;username&gt;
+valid users = &lt;username&gt;
+guest = no
+create mask = 0775
+directory mask = 0775
+</code></pre>
+<pre><code>systemctl enable smbd
+systemctl restart smbd
 </code></pre>
                 
               
