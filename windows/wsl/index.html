@@ -478,6 +478,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dns-fails-on-wsl-after-upgrade-to-version-2" class="md-nav__link">
+    DNS Fails on WSL after Upgrade to Version 2
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -847,6 +854,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dns-fails-on-wsl-after-upgrade-to-version-2" class="md-nav__link">
+    DNS Fails on WSL after Upgrade to Version 2
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -907,6 +921,37 @@ generateResolvConf = false
 <p>Obviously you can use an absolute path to point to wherever you store private keys you want to use when accessing remote hosts using ssh authentication with keys.</p>
 <hr />
 <hr />
+<h3 id="dns-fails-on-wsl-after-upgrade-to-version-2">DNS Fails on WSL after Upgrade to Version 2</h3>
+<p>Here is how to resolve the DNS issue when you up;grade WSL to version 2 and DNS stops working. I tried several different ones and this worked for me.</p>
+<p><strong><em>In WSL</em></strong></p>
+<pre><code>rm /etc/resolv.conf || true
+rm /etc/wsl.conf || true
+</code></pre>
+<p><strong><em>Enable changing /etc/resolve.conf, Enable extended attributes on Windows drives</em></strong></p>
+<pre><code>cat &lt;&lt;EOF &gt; /etc/wsl.conf
+[network]
+generateResolvConf = false
+[automount]
+enabled = true
+options = &quot;metadata&quot;
+mountFsTab = false
+EOF
+</code></pre>
+<p><strong><em>Use nameservers you define</em></strong></p>
+<pre><code>cat &lt;&lt;EOF &gt; /etc/resolv.conf
+nameserver &lt;your DNS to use&gt;
+nameserver &lt;your DNS to use&gt;
+EOF
+</code></pre>
+<p><strong><em>Exit Linux WSL</em></strong></p>
+<p><strong><em>In Windows, cmd as admin</em></strong></p>
+<pre><code>wsl --shutdown
+netsh winsock reset
+netsh int ip reset all
+netsh winhttp reset proxy
+ipconfig /flushdns
+</code></pre>
+<p><strong><em>Reboot machine</em></strong></p>
                 
               
               
