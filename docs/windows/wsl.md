@@ -82,3 +82,50 @@ Obviously you can use an absolute path to point to wherever you store private ke
 
 ---
 ***
+
+### DNS Fails on WSL after Upgrade to Version 2
+
+Here is how to resolve the DNS issue when you up;grade WSL to version 2 and DNS stops working. I tried several different ones and this worked for me.
+
+***In WSL***
+```
+rm /etc/resolv.conf || true
+rm /etc/wsl.conf || true
+```
+
+***Enable changing /etc/resolve.conf, Enable extended attributes on Windows drives***
+```
+cat <<EOF > /etc/wsl.conf
+[network]
+generateResolvConf = false
+[automount]
+enabled = true
+options = "metadata"
+mountFsTab = false
+EOF
+```
+
+***Use nameservers you define***
+```
+cat <<EOF > /etc/resolv.conf
+nameserver <your DNS to use>
+nameserver <your DNS to use>
+EOF
+```
+
+***Exit Linux WSL***
+
+***In Windows, cmd as admin***
+```
+wsl --shutdown
+netsh winsock reset
+netsh int ip reset all
+netsh winhttp reset proxy
+ipconfig /flushdns
+```
+
+***Reboot machine***
+
+
+
+
