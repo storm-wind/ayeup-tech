@@ -18,6 +18,7 @@ nav:
     - Logrotate: linux/logrotate.md
     - LVM: linux/lvm.md
     - Podman: linux/podman.md
+    - Pi: linux/raspberry-pi.md
     - Zerotier: networks/zerotier.md
   - Windows:
     - WSL: windows/wsl.md
