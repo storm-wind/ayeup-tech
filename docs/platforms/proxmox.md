@@ -76,6 +76,7 @@ Do the following to add a smba share and have R/W access.
 apt install samba -y
 adduser <username>
 smdpasswd -d <username>
+smbdpasswd -a <username>
 ```
 
 ```
@@ -85,7 +86,7 @@ Add the following,
 
 ```
 [<share label>]
-comment = <desciption of share>
+comment = <description of share>
 path = <location you want to share>
 browseable = yes
 read only = no

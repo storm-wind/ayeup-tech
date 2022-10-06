@@ -7,10 +7,14 @@ nav:
     - MySQL: 
       - MySQL Ops: databases/mysql-ops.md
       - Replication: databases/mysql-rep.md
+    - Postgres:
+      - Useful Commands: databases/postgres.md
   - Linux:
+    - Bash: linux/bash.md
     - Cron: linux/cron.md
     - Docker: linux/docker.md
     - FileSystems: linux/filesystems.md
+    - Firewalld: linux/firewalld.md
     - Logrotate: linux/logrotate.md
     - LVM: linux/lvm.md
     - Podman: linux/podman.md

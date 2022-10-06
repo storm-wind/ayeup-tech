@@ -15,7 +15,7 @@
     
     
       
-        <title>VMware - Synaptic Recall</title>
+        <title>Useful Commands - Synaptic Recall</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#most-common-cli-commands-for-vmware-esxi" class="md-skip">
+        <a href="#useful-postgres-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VMware
+              Useful Commands
             
           </span>
         </div>
@@ -196,12 +196,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -250,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../databases/mysql-ops/" class="md-nav__link">
+      <a href="../mysql-ops/" class="md-nav__link">
         MySQL Ops
       </a>
     </li>
@@ -264,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../databases/mysql-rep/" class="md-nav__link">
+      <a href="../mysql-rep/" class="md-nav__link">
         Replication
       </a>
     </li>
@@ -283,12 +285,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -309,11 +313,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../databases/postgres/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Useful Commands
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Useful Commands
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reload-config-for-postgres" class="md-nav__link">
+    Reload config for Postgres
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -574,14 +619,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
@@ -630,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../awscli/" class="md-nav__link">
+      <a href="../../platforms/awscli/" class="md-nav__link">
         AWS CLI
       </a>
     </li>
@@ -677,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../argo/" class="md-nav__link">
+      <a href="../../platforms/argo/" class="md-nav__link">
         Argo
       </a>
     </li>
@@ -698,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxmox/" class="md-nav__link">
+      <a href="../../platforms/proxmox/" class="md-nav__link">
         Proxmox
       </a>
     </li>
@@ -710,21 +753,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../platforms/vmware/" class="md-nav__link">
         VMware
       </a>
-      
     </li>
   
 
@@ -912,6 +945,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reload-config-for-postgres" class="md-nav__link">
+    Reload config for Postgres
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -925,89 +973,15 @@
                   
 
 
-<h1 id="most-common-cli-commands-for-vmware-esxi">Most common CLI commands for VMWare ESXi.</h1>
-<p>Use SSH or esxi shells.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/getallvms
+<h1 id="useful-postgres-commands">Useful postgres Commands</h1>
+<h3 id="reload-config-for-postgres">Reload config for Postgres</h3>
+<p>Login into database using <strong>postgres</strong></p>
+<pre><code>psql
 </code></pre>
-<p>List all VMs running on the host. Also provides vmid, required for commands below.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/power.off vmid
+<p>Then run,</p>
+<pre><code>SELECT pg_reload_conf();
 </code></pre>
-<p>Power off specified VM.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/power.on vmid
-</code></pre>
-<p>Power off specified VM.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/power.reboot vmid
-</code></pre>
-<p>Reboot specified VM.</p>
-<hr />
-<pre><code>vim-cmd solo/registervm /vmfs/volume/datastore/subdir/vm-file.vmx
-</code></pre>
-<p>Register the VM stored at location on the ESX host inventory.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/unregister vmid
-</code></pre>
-<p>Unregister VM from the host. Does not remove the VM's files from the datastore.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/destroy vmid
-</code></pre>
-<p>Delete the specified VM. The VMDK and VMX files will be deleted from storage as well.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/tools.install vmid    
-</code></pre>
-<p>Initiates an installation of VMWare Tools on the VM</p>
-<hr />
-<pre><code>vim-cmd hostsvc/maintenance_mode_enter
-</code></pre>
-<p>Put the host into maintenance mode.</p>
-<hr />
-<pre><code>vim-cmd hostsvc/maintenance_mode_exit
-</code></pre>
-<p>Take the host out of maintenance mode.</p>
-<hr />
-<pre><code>vim-cmd hostsvc/net/info
-</code></pre>
-<p>Show networking information of the host.</p>
-<hr />
-<pre><code>chkconfig -l
-</code></pre>
-<p>Show services running on the host. Can also be used to change startup configuration.</p>
-<hr />
-<pre><code>esxtop  
-</code></pre>
-<p>Display list of processes and its usage of resources. Works similar to linux top.</p>
-<hr />
-<pre><code>esxcfg-info 
-</code></pre>
-<p>Show host's configuration and information.</p>
-<hr />
-<pre><code>esxcfg-nics -l
-</code></pre>
-<p>Show current NIC configuration.</p>
-<hr />
-<pre><code>esxcfg-vswitch -l   
-</code></pre>
-<p>Show current vSwitch configuration.</p>
-<hr />
-<pre><code>vmkerrcode -l   
-</code></pre>
-<p>Display a reference list of VMKernel return codes and descriptions.</p>
-<hr />
-<pre><code>dcui
-</code></pre>
-<p>Start the console UI (when accessing through SSH).</p>
-<hr />
-<pre><code>vsish   
-</code></pre>
-<p>Run the VMWare Interactive Shell (from SSH).</p>
-<hr />
-<pre><code>decodeSel /var/log/ipmi_sel.raw
-</code></pre>
-<p>Read IPMI system log of physical server.
-Replace vmid with the value you retrieved from the getallvms command (first one in the table).Replace path with the full path and file name of a VMX-file (= configuration file of a VM).</p>
+<p>This is when modifying the <strong>pg_hba.conf</strong> file and you want to apply changes. This won't cause an outage.</p>
 
 
 
@@ -1028,7 +1002,7 @@ Replace vmid with the value you retrieved from the getallvms command (first one 
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../proxmox/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Proxmox" rel="prev">
+        <a href="../mysql-rep/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Replication" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1037,20 +1011,20 @@ Replace vmid with the value you retrieved from the getallvms command (first one 
               <span class="md-footer__direction">
                 Previous
               </span>
-              Proxmox
+              Replication
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../networks/haproxy/" class="md-footer__link md-footer__link--next" aria-label="Next: HAProxy" rel="next">
+        <a href="../../linux/bash/" class="md-footer__link md-footer__link--next" aria-label="Next: Bash" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              HAProxy
+              Bash
             </div>
           </div>
           <div class="md-footer__button md-icon">
