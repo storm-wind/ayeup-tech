@@ -15,7 +15,7 @@
     
     
       
-        <title>Powershell - Synaptic Recall</title>
+        <title>Firewalld - Synaptic Recall</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#useful-one-liner-commands-in-powershell" class="md-skip">
+        <a href="#firewall-cmd" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Powershell
+              Firewalld
             
           </span>
         </div>
@@ -291,12 +291,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -319,7 +321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/cron/" class="md-nav__link">
+      <a href="../cron/" class="md-nav__link">
         Cron
       </a>
     </li>
@@ -333,7 +335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/docker/" class="md-nav__link">
+      <a href="../docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -347,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/filesystems/" class="md-nav__link">
+      <a href="../filesystems/" class="md-nav__link">
         FileSystems
       </a>
     </li>
@@ -359,11 +361,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../linux/firewalld/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Firewalld
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Firewalld
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allow-multiple-ports" class="md-nav__link">
+    Allow multiple ports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-a-service" class="md-nav__link">
+    Allow a service
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -375,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/logrotate/" class="md-nav__link">
+      <a href="../logrotate/" class="md-nav__link">
         Logrotate
       </a>
     </li>
@@ -389,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/lvm/" class="md-nav__link">
+      <a href="../lvm/" class="md-nav__link">
         LVM
       </a>
     </li>
@@ -403,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/podman/" class="md-nav__link">
+      <a href="../podman/" class="md-nav__link">
         Podman
       </a>
     </li>
@@ -437,14 +487,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -467,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wsl/" class="md-nav__link">
+      <a href="../../windows/wsl/" class="md-nav__link">
         WSL
       </a>
     </li>
@@ -481,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows/" class="md-nav__link">
+      <a href="../../windows/windows/" class="md-nav__link">
         RDP
       </a>
     </li>
@@ -493,52 +541,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Powershell
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../windows/adduserstogroup/" class="md-nav__link">
         Powershell
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-group-of-users-from-one-ad-group-to-another" class="md-nav__link">
-    Add a group of users from one AD group to another
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -889,8 +896,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#add-a-group-of-users-from-one-ad-group-to-another" class="md-nav__link">
-    Add a group of users from one AD group to another
+  <a href="#allow-multiple-ports" class="md-nav__link">
+    Allow multiple ports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-a-service" class="md-nav__link">
+    Allow a service
   </a>
   
 </li>
@@ -910,10 +924,22 @@
                   
 
 
-<h1 id="useful-one-liner-commands-in-powershell">Useful one liner commands in Powershell</h1>
-<h4 id="add-a-group-of-users-from-one-ad-group-to-another">Add a group of users from one AD group to another</h4>
-<pre><code>Get-ADGroupMember “&lt;Source AD Group&gt;” | Get-ADUser | ForEach-Object {Add-ADGroupMember -Identity “&lt;Destination AD Group&gt;” -Members $_}
+<h1 id="firewall-cmd">firewall-cmd</h1>
+<p>This is the firewall for yum/dnf based distros. Can be installed elsewhere, but examples here are based on RHEL7/8</p>
+<h3 id="allow-multiple-ports">Allow multiple ports</h3>
+<pre><code>for i in { 8300 8301 8302 8400 8500 8600 }
+do
+  firewall-cmd --zone=public --add-port=${i}/tcp
+done
+
+firewall-cmd --reload
+
 </code></pre>
+<h3 id="allow-a-service">Allow a service</h3>
+<pre><code>firewall-cmd --permanent --add-service https
+firewall-cmd --reload
+</code></pre>
+<p>This adds the ports persistantly, not the <strong>--permanent</strong></p>
 
 
 
@@ -934,7 +960,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../windows/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RDP" rel="prev">
+        <a href="../filesystems/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FileSystems" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -943,20 +969,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              RDP
+              FileSystems
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../platforms/awscli/" class="md-footer__link md-footer__link--next" aria-label="Next: AWS CLI" rel="next">
+        <a href="../logrotate/" class="md-footer__link md-footer__link--next" aria-label="Next: Logrotate" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              AWS CLI
+              Logrotate
             </div>
           </div>
           <div class="md-footer__button md-icon">

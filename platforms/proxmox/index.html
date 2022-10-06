@@ -361,6 +361,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../linux/firewalld/" class="md-nav__link">
+        Firewalld
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../linux/logrotate/" class="md-nav__link">
         Logrotate
       </a>
@@ -1137,12 +1151,13 @@ mkdir /run/sshd
 <pre><code>apt install samba -y
 adduser &lt;username&gt;
 smdpasswd -d &lt;username&gt;
+smbdpasswd -a &lt;username&gt;
 </code></pre>
 <pre><code>nano /etc/samba/smb.conf
 </code></pre>
 <p>Add the following,</p>
 <pre><code>[&lt;share label&gt;]
-comment = &lt;desciption of share&gt;
+comment = &lt;description of share&gt;
 path = &lt;location you want to share&gt;
 browseable = yes
 read only = no
