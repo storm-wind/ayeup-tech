@@ -1305,11 +1305,11 @@ profile lxc-container-default-cgns flags=(attach_disconnected,mediate_deleted) {
 <p>Run the following in the main proxmox console</p>
 <pre><code>pct set 1000 -mp0 /mnt/pve/data,mp=/mnt/data
 </code></pre>
-<p>Lets break it down,~
-<code>pct set 1000</code> is the container to apply it to.~
-<code>-mp0</code> the mount point, if you wanted multiple you would add <code>-mp1</code> as an example.~
-<code>/mnt/pve/data</code> is the local mount point in proxmox not in the container.~
-<code>mp=/mnt/data</code> is the mount point created within the container when it starts up. Note you don't need to add anything in the <code>/etc/fstab</code> config in the container. I tried this approach and could never get it working the way I wanted.</p>
+<p>Lets break it down,</p>
+<p><code>pct set 1000</code> is the container to apply it to.</p>
+<p><code>-mp0</code> the mount point, if you wanted multiple you would add <code>-mp1</code> as an example.</p>
+<p><code>/mnt/pve/data</code> is the local mount point in proxmox not in the container.</p>
+<p><code>mp=/mnt/data</code> is the mount point created within the container when it starts up. Note you don't need to add anything in the <code>/etc/fstab</code> config in the container. I tried this approach and could never get it working the way I wanted.</p>
 <hr />
 
 
