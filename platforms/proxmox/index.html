@@ -842,6 +842,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#add-nfs-mount-inside-a-proxmox-container" class="md-nav__link">
+    Add NFS Mount inside a Proxmox Container
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1155,6 +1162,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#add-nfs-mount-inside-a-proxmox-container" class="md-nav__link">
+    Add NFS Mount inside a Proxmox Container
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1285,6 +1299,17 @@ profile lxc-container-default-cgns flags=(attach_disconnected,mediate_deleted) {
 <p>Then reload apparmour service, </p>
 <pre><code>service apparmor reload
 </code></pre>
+<hr />
+<h3 id="add-nfs-mount-inside-a-proxmox-container">Add NFS Mount inside a Proxmox Container</h3>
+<p>Make sure the container is down.</p>
+<p>Run the following in the main proxmox console</p>
+<pre><code>pct set 1000 -mp0 /mnt/pve/data,mp=/mnt/data
+</code></pre>
+<p>Lets break it down,
+<code>pct set 1000</code> is the container to apply it to.
+<code>-mp0</code> the mount point, if you wanted multiple you would add <code>-mp1</code> as an example.
+<code>/mnt/pve/data</code> is the local mount point in proxmox not in the container.
+<code>mp=/mnt/data</code> is the mount point created within the container when it starts up. Note you don't need to add anything in the <code>/etc/fstab</code> config in the container. I tried this approach and could never get it working the way I wanted.</p>
 <hr />
 
 
