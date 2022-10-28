@@ -107,13 +107,13 @@ systemctl restart smbd
 
 ### Run Proxmox from a Laptop
 
-I run proxmox on an old laptop for several reasons. 
-Repurposing old hardware.
-Its relatively quiet.
-Low power consumption.
-Built in UPS (battery)
-Small foot print.
+I run proxmox on an old laptop for several reasons.~
 
+Repurposing old hardware.~
+Its relatively quiet.~
+Low power consumption.~
+Built in UPS (battery)~
+Small foot print.~
 Once installed there a few extra things to consider.
 
 #### Disable suspension on lid closure
@@ -159,4 +159,27 @@ service apparmor reload
 ```
 
 ***
+
+### Add NFS Mount inside a Proxmox Container
+Make sure the container is down.
+
+Run the following in the main proxmox console
+
+```
+pct set 1000 -mp0 /mnt/pve/data,mp=/mnt/data
+```
+
+Lets break it down,
+
+`pct set 1000` is the container to apply it to.
+
+`-mp0` the mount point, if you wanted multiple you would add `-mp1` as an example.
+
+`/mnt/pve/data` is the local mount point in proxmox not in the container.
+
+`mp=/mnt/data` is the mount point created within the container when it starts up. Note you don't need to add anything in the `/etc/fstab` config in the container. I tried this approach and could never get it working the way I wanted.
+
+***
+
+
 

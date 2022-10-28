@@ -17,9 +17,12 @@ nav:
     - Firewalld: linux/firewalld.md
     - Logrotate: linux/logrotate.md
     - LVM: linux/lvm.md
+    - Networking: linux/networking.md
     - Podman: linux/podman.md
     - Pi: linux/raspberry-pi.md
     - Zerotier: networks/zerotier.md
+  - Monitoring:
+    - Prometheus: monitoring/prometheus.md
   - Windows:
     - WSL: windows/wsl.md
     - RDP: windows/windows.md
@@ -37,7 +40,8 @@ nav:
       - Nginx: networks/nginx.md
     - Security:
       - openssl: security/openssl.md
-      - Stunnel: networks/stunnel.md 
+      - Stunnel: networks/stunnel.md
+      - Nessus: security/nessus.md 
 
 #theme: windmill-dark
 plugins:

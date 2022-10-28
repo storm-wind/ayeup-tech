@@ -15,7 +15,7 @@
     
     
       
-        <title>Nginx - Synaptic Recall</title>
+        <title>Prometheus - Synaptic Recall</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#all-things-prometheus" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nginx
+              Prometheus
             
           </span>
         </div>
@@ -506,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zerotier/" class="md-nav__link">
+      <a href="../../networks/zerotier/" class="md-nav__link">
         Zerotier
       </a>
     </li>
@@ -526,12 +526,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -552,11 +554,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../monitoring/prometheus/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Prometheus
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Prometheus
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-node-exporter" class="md-nav__link">
+    How to install node-exporter
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -806,14 +849,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       
       
@@ -834,14 +875,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
       
       
       
@@ -864,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../haproxy/" class="md-nav__link">
+      <a href="../../networks/haproxy/" class="md-nav__link">
         HAProxy
       </a>
     </li>
@@ -876,21 +915,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../networks/nginx/" class="md-nav__link">
         Nginx
       </a>
-      
     </li>
   
 
@@ -949,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stunnel/" class="md-nav__link">
+      <a href="../../networks/stunnel/" class="md-nav__link">
         Stunnel
       </a>
     </li>
@@ -1004,6 +1033,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-node-exporter" class="md-nav__link">
+    How to install node-exporter
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1017,43 +1061,40 @@
                   
 
 
-<p><img align="right" alt="" src="img/nginx-logo/600x400/eee/aaa" /></p>
-<h1 id="_1"><img alt="" src="../img/nginx-logo.png" /></h1>
-<h1 id="nginx-conf-example-for-bitwarden">Nginx conf example for Bitwarden</h1>
-<p>This example points at a docker container running on the same host.</p>
-<pre><code>server  {
-  server_name example.domain.com;
-  location  / {
-    proxy_redirect off;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header X-Forwarded-Protocol $scheme;
-    proxy_set_header X-Url-Scheme $scheme;
-    proxy_pass  http://127.0.0.1:8080/;
-
-    client_max_body_size 0;
-
-    }
-
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/example.domain.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/example.domain.com/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-}
-
-server  {
-    if ($host = example.domain.com) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
-  server_name example.domain.com;
-    listen 80;
-    return 404; # managed by Certbot
+<h1 id="all-things-prometheus">All things Prometheus</h1>
+<hr />
+<h3 id="how-to-install-node-exporter">How to install node-exporter</h3>
+<p>A node-exporter is effectively an agent which talks to Prometheus server to send metrics to it from a host.</p>
+<p>Here is how to set it up.</p>
+<p>Download latest node-exporter</p>
+<pre><code>wget -O node-exporter.tar.gz https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-armv7.tar.gz
+tar -xvf node-exporter.tar.gz --strip-components=1
 </code></pre>
+<p>I usually put this is <strong>/opt</strong></p>
+<p>Now setup as service, make sure you have a user existing for this service.</p>
+<p>Setup user without login</p>
+<pre><code>useradd -s /sbin/nologin prometheus
+</code></pre>
+<p>Create systemctl service</p>
+<pre><code>nano /etc/systemd/system/nodeexporter.service
+
+[Unit]
+Description=Prometheus Node Exporter
+Documentation=https://prometheus.io/docs/guides/node-exporter/
+After=network-online.target
+
+[Service]
+User=prometheus
+Restart=on-failure
+
+ExecStart=/opt/node-exporter/node_exporter
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<pre><code>systemctl daemon-reload
+</code></pre>
+<hr />
 
 
 
@@ -1074,7 +1115,7 @@ server  {
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../haproxy/" class="md-footer__link md-footer__link--prev" aria-label="Previous: HAProxy" rel="prev">
+        <a href="../../networks/zerotier/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Zerotier" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1083,20 +1124,20 @@ server  {
               <span class="md-footer__direction">
                 Previous
               </span>
-              HAProxy
+              Zerotier
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../security/openssl/" class="md-footer__link md-footer__link--next" aria-label="Next: openssl" rel="next">
+        <a href="../../windows/wsl/" class="md-footer__link md-footer__link--next" aria-label="Next: WSL" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              openssl
+              WSL
             </div>
           </div>
           <div class="md-footer__button md-icon">
