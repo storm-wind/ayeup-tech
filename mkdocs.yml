@@ -10,6 +10,7 @@ nav:
     - Postgres:
       - Useful Commands: databases/postgres.md
   - Linux:
+    - AD: linux/ad.md
     - Bash: linux/bash.md
     - Cron: linux/cron.md
     - Docker: linux/docker.md
@@ -17,6 +18,7 @@ nav:
     - Firewalld: linux/firewalld.md
     - Logrotate: linux/logrotate.md
     - LVM: linux/lvm.md
+    - Nano: linux/nano.md
     - Networking: linux/networking.md
     - Podman: linux/podman.md
     - Pi: linux/raspberry-pi.md
@@ -30,6 +32,8 @@ nav:
   - Platforms:
     - AWS:
       - AWS CLI: platforms/awscli.md
+    - Cisco EPNMN:
+      - EPNMN CLI: platforms/ciscoepnmn.md
     - Cloudflare:
       - Argo: platforms/argo.md
     - Proxmox: platforms/proxmox.md
