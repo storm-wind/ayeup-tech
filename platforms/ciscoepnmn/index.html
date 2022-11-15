@@ -817,8 +817,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mnagaing-ncs-services" class="md-nav__link">
-    Mnagaing NCS Services
+  <a href="#managing-ncs-services" class="md-nav__link">
+    Managing NCS Services
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-an-ncs-cleanup" class="md-nav__link">
+    Perform an NCS Cleanup
   </a>
   
 </li>
@@ -1124,8 +1131,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mnagaing-ncs-services" class="md-nav__link">
-    Mnagaing NCS Services
+  <a href="#managing-ncs-services" class="md-nav__link">
+    Managing NCS Services
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-an-ncs-cleanup" class="md-nav__link">
+    Perform an NCS Cleanup
   </a>
   
 </li>
@@ -1154,12 +1168,17 @@
 
 <h1 id="cico-epnmn-cli-commands">Cico EPNMN CLI Commands</h1>
 <hr />
-<h3 id="mnagaing-ncs-services">Mnagaing NCS Services</h3>
+<h3 id="managing-ncs-services">Managing NCS Services</h3>
 <p>Get status of main NCS services</p>
 <pre><code>ncs status
 </code></pre>
 <p>On reboot, sometimes these services don't startup. So run the following.</p>
 <pre><code>ncs start
+</code></pre>
+<h3 id="perform-an-ncs-cleanup">Perform an NCS Cleanup</h3>
+<p>This cleans up logs files, old backup files etc, good for freeing up disk space.</p>
+<p>In exec mode, </p>
+<pre><code>ncs cleanup
 </code></pre>
 <hr />
 <h3 id="managing-network-interfaces">Managing Network interfaces</h3>
