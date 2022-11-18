@@ -22,6 +22,7 @@ nav:
     - Networking: linux/networking.md
     - Podman: linux/podman.md
     - Pi: linux/raspberry-pi.md
+    - Swap: linux/swap.md
     - Zerotier: networks/zerotier.md
   - Monitoring:
     - Prometheus: monitoring/prometheus.md
