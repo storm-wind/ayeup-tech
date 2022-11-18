@@ -576,6 +576,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-display-processes-using-swap-space" class="md-nav__link">
+    How to display processes using swap space
+  </a>
+  
+    <nav class="md-nav" aria-label="How to display processes using swap space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#display-processes-using-swap-space" class="md-nav__link">
+    Display processes using swap space
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-processes-using-swap-space-sorted-by-used-space" class="md-nav__link">
+    Display processes using swap space sorted by used space
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-top-ten-processes-using-swap-space" class="md-nav__link">
+    Display top ten processes using swap space
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-top-ten-processes-using-swap-spac-with-percentage-values" class="md-nav__link">
+    Display top ten processes using swap spac with percentage values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1135,6 +1176,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-display-processes-using-swap-space" class="md-nav__link">
+    How to display processes using swap space
+  </a>
+  
+    <nav class="md-nav" aria-label="How to display processes using swap space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#display-processes-using-swap-space" class="md-nav__link">
+    Display processes using swap space
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-processes-using-swap-space-sorted-by-used-space" class="md-nav__link">
+    Display processes using swap space sorted by used space
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-top-ten-processes-using-swap-space" class="md-nav__link">
+    Display top ten processes using swap space
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-top-ten-processes-using-swap-spac-with-percentage-values" class="md-nav__link">
+    Display top ten processes using swap spac with percentage values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1160,6 +1242,25 @@
 <p>to make persistent, add to <strong>/etc/sysctl.conf</strong></p>
 <pre><code>vm.swappiness=10
 </code></pre>
+<hr />
+<h3 id="how-to-display-processes-using-swap-space">How to display processes using swap space</h3>
+<h4 id="display-processes-using-swap-space">Display processes using swap space</h4>
+<pre><code>find /proc -maxdepth 2 -path &quot;/proc/[0-9]*/status&quot; -readable -exec awk -v FS=&quot;:&quot; '{process[$1]=$2;sub(/^[ \t]+/,&quot;&quot;,process[$1]);} END {if(process[&quot;VmSwap&quot;] &amp;&amp; process[&quot;VmSwap&quot;] != &quot;0 kB&quot;) printf &quot;%10s %-30s %20s\n&quot;,process[&quot;Pid&quot;],process[&quot;Name&quot;],process[&quot;VmSwap&quot;]}' '{}' \;
+</code></pre>
+<h4 id="display-processes-using-swap-space-sorted-by-used-space">Display processes using swap space sorted by used space</h4>
+<pre><code>find /proc -maxdepth 2 -path &quot;/proc/[0-9]*/status&quot; -readable -exec awk -v FS=&quot;:&quot; '{process[$1]=$2;sub(/^[ \t]+/,&quot;&quot;,process[$1]);} END {if(process[&quot;VmSwap&quot;] &amp;&amp; process[&quot;VmSwap&quot;] != &quot;0 kB&quot;) printf &quot;%10s %-30s %20s\n&quot;,process[&quot;Pid&quot;],process[&quot;Name&quot;],process[&quot;VmSwap&quot;]}' '{}' \; | awk '{print $(NF-1),$0}' | sort -h | cut -d &quot; &quot; -f2-
+</code></pre>
+<h4 id="display-top-ten-processes-using-swap-space">Display top ten processes using swap space</h4>
+<pre><code>find /proc -maxdepth 2 -path &quot;/proc/[0-9]*/status&quot; -readable -exec awk -v FS=&quot;:&quot; '{process[$1]=$2;sub(/^[ \t]+/,&quot;&quot;,process[$1]);} END {if(process[&quot;VmSwap&quot;] &amp;&amp; process[&quot;VmSwap&quot;] != &quot;0 kB&quot;) printf &quot;%10s %-30s %20s\n&quot;,process[&quot;Pid&quot;],process[&quot;Name&quot;],process[&quot;VmSwap&quot;]}' '{}' \; | awk '{print $(NF-1),$0}' | sort -hr | head | cut -d &quot; &quot; -f2- 
+</code></pre>
+<h4 id="display-top-ten-processes-using-swap-spac-with-percentage-values">Display top ten processes using swap spac with percentage values</h4>
+<p>To read</p>
+<pre><code>find /proc -maxdepth 2 -path &quot;/proc/[0-9]*/status&quot; -readable -exec awk -v FS=&quot;:&quot; -v TOTSWP=&quot;$(cat /proc/meminfo | sed  -n -e &quot;s/^SwapTotal:[ ]*\([0-9]*\) kB/\1/p&quot;)&quot; '{process[$1]=$2;sub(/^[ \t]+/,&quot;&quot;,process[$1]);} END {if(process[&quot;VmSwap&quot;] &amp;&amp; process[&quot;VmSwap&quot;] != &quot;0 kB&quot;) {used_swap=process[&quot;VmSwap&quot;];sub(/[ a-zA-Z]+/,&quot;&quot;,used_swap);percent=(used_swap/TOTSWP*100); printf &quot;%10s %-30s %20s %6.2f%\n&quot;,process[&quot;Pid&quot;],process[&quot;Name&quot;],process[&quot;VmSwap&quot;],percent} }' '{}' \;  | awk '{print $(NF-2),$0}' | sort -hr | head | cut -d &quot; &quot; -f2-
+</code></pre>
+<p>To calculate</p>
+<pre><code>find /proc -maxdepth 2 -path &quot;/proc/[0-9]*/status&quot; -readable -exec awk -v FS=&quot;:&quot; -v TOTSWP=&quot;$(cat /proc/swaps | sed 1d | awk 'BEGIN{sum=0} {sum=sum+$(NF-2)} END{print sum}')&quot; '{process[$1]=$2;sub(/^[ \t]+/,&quot;&quot;,process[$1]);} END {if(process[&quot;VmSwap&quot;] &amp;&amp; process[&quot;VmSwap&quot;] != &quot;0 kB&quot;) {used_swap=process[&quot;VmSwap&quot;];sub(/[ a-zA-Z]+/,&quot;&quot;,used_swap);percent=(used_swap/TOTSWP*100); printf &quot;%10s %-30s %20s %6.2f%\n&quot;,process[&quot;Pid&quot;],process[&quot;Name&quot;],process[&quot;VmSwap&quot;],percent} }' '{}' \;  | awk '{print $(NF-2),$0}' | sort -hr | head | cut -d &quot; &quot; -f2-
+</code></pre>
+<hr />
 
 
 
