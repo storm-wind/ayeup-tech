@@ -272,6 +272,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/mysqlgen/" class="md-nav__link">
+        MYSQL General
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -481,6 +495,13 @@
         <li class="md-nav__item">
   <a href="#allow-a-service" class="md-nav__link">
     Allow a service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-outgoing-port-on-centosrhel" class="md-nav__link">
+    Block outgoing port on centos/rhel
   </a>
   
 </li>
@@ -1163,6 +1184,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#block-outgoing-port-on-centosrhel" class="md-nav__link">
+    Block outgoing port on centos/rhel
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1194,6 +1222,17 @@ firewall-cmd --reload
 firewall-cmd --reload
 </code></pre>
 <p>This adds the ports persistantly, note the <strong>--permanent</strong> which does this.</p>
+<hr />
+<h3 id="block-outgoing-port-on-centosrhel">Block outgoing port on centos/rhel</h3>
+<p>Examples of how to block some outgoing ports</p>
+<pre><code>firewall-cmd --permanent --direct --add-rule ipv4 filter OUTPUT 0 -p tcp --dport=5225 -j DROP
+firewall-cmd --reload
+</code></pre>
+<p>To remove it</p>
+<pre><code>firewall-cmd --permanent --direct --remove-rule ipv4 filter OUTPUT 0 -p tcp --dport=5225 -j DROP
+firewall-cmd --reload
+</code></pre>
+<hr />
 
 
 
