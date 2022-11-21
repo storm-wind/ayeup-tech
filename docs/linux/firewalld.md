@@ -23,4 +23,20 @@ firewall-cmd --reload
 
 This adds the ports persistantly, note the **--permanent** which does this.
 
+---
+
+### Block outgoing port on centos/rhel
+Examples of how to block some outgoing ports
+```
+firewall-cmd --permanent --direct --add-rule ipv4 filter OUTPUT 0 -p tcp --dport=5225 -j DROP
+firewall-cmd --reload
+```
+
+To remove it
+```
+firewall-cmd --permanent --direct --remove-rule ipv4 filter OUTPUT 0 -p tcp --dport=5225 -j DROP
+firewall-cmd --reload
+```
+
+---
 

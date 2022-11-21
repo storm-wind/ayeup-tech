@@ -272,6 +272,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/mysqlgen/" class="md-nav__link">
+        MYSQL General
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -466,6 +480,20 @@
     <li class="md-nav__item">
       <a href="../../linux/lvm/" class="md-nav__link">
         LVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/mail/" class="md-nav__link">
+        Mail
       </a>
     </li>
   
@@ -1054,6 +1082,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#remove-a-host-from-an-authorized-key" class="md-nav__link">
+    Remove a host from an authorized Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-ssh-hardening" class="md-nav__link">
+    Basic SSH Hardening
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1137,6 +1179,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#remove-a-host-from-an-authorized-key" class="md-nav__link">
+    Remove a host from an authorized Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-ssh-hardening" class="md-nav__link">
+    Basic SSH Hardening
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1159,6 +1215,17 @@
 <pre><code>openssl x509 -noout -subject -in &lt;path to cert&gt;
 </code></pre>
 <p>It will work with .pem etc.</p>
+<hr />
+<h3 id="remove-a-host-from-an-authorized-key">Remove a host from an authorized Key</h3>
+<pre><code>ssh-keygen -R hostname
+</code></pre>
+<hr />
+<h3 id="basic-ssh-hardening">Basic SSH Hardening</h3>
+<p>Only allow root logins via local terminal</p>
+<pre><code>echo &quot;tty1&quot; &gt; /etc/securetty
+chmod 700 /root
+</code></pre>
+<hr />
 
 
 
