@@ -1,0 +1,2009 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="storm-wind">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Azure CLI - Synaptic Recall</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-cli" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Synaptic Recall" class="md-header__button md-logo" aria-label="Synaptic Recall" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Synaptic Recall
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure CLI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Synaptic Recall" class="md-nav__button md-logo" aria-label="Synaptic Recall" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Synaptic Recall
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Databases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Databases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Databases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          MySQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MySQL" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          MySQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/mysql-ops/" class="md-nav__link">
+        MySQL Ops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/mysql-rep/" class="md-nav__link">
+        Replication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/mysqlgen/" class="md-nav__link">
+        MYSQL General
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Postgres
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Postgres" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Postgres
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/postgres/" class="md-nav__link">
+        Useful Commands
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/ad/" class="md-nav__link">
+        AD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/bash/" class="md-nav__link">
+        Bash
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/cron/" class="md-nav__link">
+        Cron
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/filesystems/" class="md-nav__link">
+        FileSystems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/firewalld/" class="md-nav__link">
+        Firewalld
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/logrotate/" class="md-nav__link">
+        Logrotate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/lvm/" class="md-nav__link">
+        LVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/mail/" class="md-nav__link">
+        Mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/nano/" class="md-nav__link">
+        Nano
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/networking/" class="md-nav__link">
+        Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/podman/" class="md-nav__link">
+        Podman
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/raspberry-pi/" class="md-nav__link">
+        Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux.md/redhat.md" class="md-nav__link">
+        RHEL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/swap/" class="md-nav__link">
+        Swap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networks/zerotier/" class="md-nav__link">
+        Zerotier
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Monitoring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Monitoring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Monitoring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../monitoring/prometheus/" class="md-nav__link">
+        Prometheus
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Windows" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/wsl/" class="md-nav__link">
+        WSL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/windows/" class="md-nav__link">
+        RDP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/adduserstogroup/" class="md-nav__link">
+        Powershell
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Platforms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Platforms" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Platforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          AWS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AWS" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          AWS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../awscli/" class="md-nav__link">
+        AWS CLI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Azure" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Azure CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Azure CLI
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-one-command" class="md-nav__link">
+    Install with one command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-install-instructions" class="md-nav__link">
+    Manual install instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-module-issue-on-ubuntu-2004-focalwsl" class="md-nav__link">
+    No module issue on Ubuntu 20.04 (Focal)/WSL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lsb_release-does-not-return-the-correct-base-distribution-version" class="md-nav__link">
+    lsb_release does not return the correct base distribution version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-package-for-your-distribution" class="md-nav__link">
+    No package for your distribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementary-os-eos-fails-to-install-the-azure-cli" class="md-nav__link">
+    Elementary OS (EOS) fails to install the Azure CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-blocks-connection" class="md-nav__link">
+    Proxy blocks connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-fails-to-install-or-run-on-windows-subsystem-for-linux" class="md-nav__link">
+    CLI fails to install or run on Windows Subsystem for Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstall" class="md-nav__link">
+    Uninstall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-vault-in-azure-using-cli" class="md-nav__link">
+    Create a Vault in Azure using CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-access-key-and-export-as-environment-variable" class="md-nav__link">
+    Reference Access key and export as environment variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-locations-in-azure-in-table-format" class="md-nav__link">
+    List all Locations in Azure in Table format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-storage-using-cli" class="md-nav__link">
+    Azure Storage using CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Storage using CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upload-a-file-to-blob-container-in-azure" class="md-nav__link">
+    Upload a file to blob container in Azure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-a-file-from-a-blob-container-or-collection-of-files" class="md-nav__link">
+    Download a file from a blob container or collection of files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quickstart-set-and-retreive-a-secret-from-azure-key-vault" class="md-nav__link">
+    Quickstart - Set and retreive a secret from Azure Key Vault
+  </a>
+  
+    <nav class="md-nav" aria-label="Quickstart - Set and retreive a secret from Azure Key Vault">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-resource-group" class="md-nav__link">
+    Create a resource group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-key-vault" class="md-nav__link">
+    Create a Key Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-secret-to-key-vault" class="md-nav__link">
+    Add a secret to Key Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up-resources" class="md-nav__link">
+    Clean up resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Cisco EPNMN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cisco EPNMN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Cisco EPNMN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ciscoepnmn/" class="md-nav__link">
+        EPNMN CLI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          Cloudflare
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloudflare" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Cloudflare
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argo/" class="md-nav__link">
+        Argo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxmox/" class="md-nav__link">
+        Proxmox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vmware/" class="md-nav__link">
+        VMware
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Networks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Networks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Proxies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Proxies" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Proxies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networks/haproxy/" class="md-nav__link">
+        HAProxy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networks/nginx/" class="md-nav__link">
+        Nginx
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Security" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/openssl/" class="md-nav__link">
+        openssl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networks/stunnel/" class="md-nav__link">
+        Stunnel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/nessus/" class="md-nav__link">
+        Nessus
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-one-command" class="md-nav__link">
+    Install with one command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-install-instructions" class="md-nav__link">
+    Manual install instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-module-issue-on-ubuntu-2004-focalwsl" class="md-nav__link">
+    No module issue on Ubuntu 20.04 (Focal)/WSL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lsb_release-does-not-return-the-correct-base-distribution-version" class="md-nav__link">
+    lsb_release does not return the correct base distribution version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-package-for-your-distribution" class="md-nav__link">
+    No package for your distribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementary-os-eos-fails-to-install-the-azure-cli" class="md-nav__link">
+    Elementary OS (EOS) fails to install the Azure CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-blocks-connection" class="md-nav__link">
+    Proxy blocks connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-fails-to-install-or-run-on-windows-subsystem-for-linux" class="md-nav__link">
+    CLI fails to install or run on Windows Subsystem for Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstall" class="md-nav__link">
+    Uninstall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-vault-in-azure-using-cli" class="md-nav__link">
+    Create a Vault in Azure using CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-access-key-and-export-as-environment-variable" class="md-nav__link">
+    Reference Access key and export as environment variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-locations-in-azure-in-table-format" class="md-nav__link">
+    List all Locations in Azure in Table format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-storage-using-cli" class="md-nav__link">
+    Azure Storage using CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Storage using CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upload-a-file-to-blob-container-in-azure" class="md-nav__link">
+    Upload a file to blob container in Azure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-a-file-from-a-blob-container-or-collection-of-files" class="md-nav__link">
+    Download a file from a blob container or collection of files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quickstart-set-and-retreive-a-secret-from-azure-key-vault" class="md-nav__link">
+    Quickstart - Set and retreive a secret from Azure Key Vault
+  </a>
+  
+    <nav class="md-nav" aria-label="Quickstart - Set and retreive a secret from Azure Key Vault">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-resource-group" class="md-nav__link">
+    Create a resource group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-key-vault" class="md-nav__link">
+    Create a Key Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-secret-to-key-vault" class="md-nav__link">
+    Add a secret to Key Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up-resources" class="md-nav__link">
+    Clean up resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="azure-cli">Azure CLI</h1>
+<p>The current version of the Azure CLI is <strong>2.15.1</strong>. For information about the latest release, see the <a href="https://docs.microsoft.com/en-us/cli/azure/release-notes-azure-cli">release notes</a>. To find your installed version and see if you need to update, run <a href="https://docs.microsoft.com/en-us/cli/azure/reference-index#az_version">az version</a>.</p>
+<p>Note</p>
+<p>The package for Azure CLI installs its own Python interpreter, and does not use the system Python.</p>
+<p>On Ubuntu 20.04 (Focal), there is an <code>azure-cli</code> package with version <code>2.0.81</code> provided by the <code>focal/universe</code> repository. It's outdated and not recommended. If you already installed it, please remove it first by running <code>sudo apt remove azure-cli -y &amp;&amp; sudo apt autoremove -y</code> before following the below steps to install the latest <code>azure-cli</code> package.</p>
+<h3 id="install">Install</h3>
+<p>We offer two ways to install the Azure CLI with distributions that support <code>apt</code>: As an all-in-one script that runs the install commands for you, and instructions that you can run as a step-by-step process on your own.</p>
+<h3 id="install-with-one-command">Install with one command</h3>
+<p>We offer and maintain a script which runs all of the installation commands in one step. Run it by using <code>curl</code> and pipe directly to <code>bash</code>, or download the script to a file and inspect it before running.</p>
+<p>Important</p>
+<p>This script is only verified for Ubuntu 16.04+ and Debian 8+. It may not work on other distributions. If you're using a derived distribution such as Linux Mint, follow the manual install instructions and perform any necessary troubleshooting.</p>
+<pre><code>curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+</code></pre>
+<h3 id="manual-install-instructions">Manual install instructions</h3>
+<p>If you don't want to run a script as superuser or the all-in-one script fails, follow these steps to install the Azure CLI.</p>
+<ol>
+<li>
+<p>Get packages needed for the install process:</p>
+<p>```
+sudo apt-get update
+sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg</p>
+<p>```
+2.  Download and install the Microsoft signing key:</p>
+<p>```
+curl -sL https://packages.microsoft.com/keys/microsoft.asc |
+    gpg --dearmor |
+    sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg &gt; /dev/null</p>
+<p>```
+3.  Add the Azure CLI software repository:</p>
+<p>```
+AZ_REPO=$(lsb_release -cs)
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |
+    sudo tee /etc/apt/sources.list.d/azure-cli.list</p>
+<p><code>``
+4.  Update repository information and install the</code>azure-cli` package:</p>
+<p>```
+sudo apt-get update
+sudo apt-get install azure-cli</p>
+<p>```</p>
+</li>
+</ol>
+<p>Run the Azure CLI with the <code>az</code> command. To sign in, use the <a href="https://docs.microsoft.com/en-us/cli/azure/reference-index#az-login">az login</a> command.</p>
+<ol>
+<li>
+<p>Run the <code>login</code> command.</p>
+<p>```
+az login</p>
+<p>```</p>
+<p>If the CLI can open your default browser, it will do so and load an Azure sign-in page.</p>
+<p>Otherwise, open a browser page at <a href="https://aka.ms/devicelogin">https://aka.ms/devicelogin</a> and enter the authorization code displayed in your terminal.</p>
+<p>If no web browser is available or the web browser fails to open, use device code flow with <strong>az login --use-device-code</strong>.</p>
+</li>
+<li>
+<p>Sign in with your account credentials in the browser.</p>
+</li>
+</ol>
+<p>To learn more about different authentication methods, see <a href="https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli">Sign in with Azure CLI</a>.</p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>Here are some common problems seen when installing with <code>apt</code>. If you experience a problem not covered here, <a href="https://github.com/Azure/azure-cli/issues">file an issue on github</a>.</p>
+<h3 id="no-module-issue-on-ubuntu-2004-focalwsl">No module issue on Ubuntu 20.04 (Focal)/WSL</h3>
+<p>If you installed <code>azure-cli</code> on <code>Focal</code> without adding the Azure CLI software repository in <a href="#set-release">step 3</a> of the manual install instructions or using our <a href="#install-with-one-command">script</a>, you may encounter issues such as no module named 'decorator' or 'antlr4' as the package you installed is the outdated <code>azure-cli 2.0.81</code> from the <code>focal/universe</code> repository. Please remove it first by running <code>sudo apt remove azure-cli -y &amp;&amp; sudo apt autoremove -y</code>, then follow the above <a href="#install">instructions</a> to install the latest <code>azure-cli</code> package.</p>
+<h3 id="lsb_release-does-not-return-the-correct-base-distribution-version">lsb_release does not return the correct base distribution version</h3>
+<p>Some Ubuntu- or Debian-derived distributions such as Linux Mint may not return the correct version name from <code>lsb_release</code>. This value is used in the install process to determine the package to install. If you know the code name of the Ubuntu or Debian version your distribution is derived from, you can set the <code>AZ_REPO</code> value manually when <a href="#set-release">adding the repository</a>. Otherwise, look up information for your distribution on how to determine the base distribution code name and set <code>AZ_REPO</code> to the correct value.</p>
+<h3 id="no-package-for-your-distribution">No package for your distribution</h3>
+<p>Sometimes it may be a while after a distribution is released before there's an Azure CLI package available for it. The Azure CLI designed to be resilient with regards to future versions of dependencies and rely on as few of them as possible. If there's no package available for your base distribution, try a package for an earlier distribution.</p>
+<p>To do this, set the value of <code>AZ_REPO</code> manually when <a href="#set-release">adding the repository</a>. For Ubuntu distributions use the <code>bionic</code> repository, and for Debian distributions use <code>stretch</code>. Distributions released before Ubuntu Trusty and Debian Wheezy are not supported.</p>
+<h3 id="elementary-os-eos-fails-to-install-the-azure-cli">Elementary OS (EOS) fails to install the Azure CLI</h3>
+<p>EOS fails to install the Azure cli because <code>lsb_release</code> returns <code>HERA</code>, which is the EOS release name. The solution is to fix the file <code>/etc/apt/sources.list.d/azure-cli.list</code> and change <code>hera main</code> to <code>bionic main</code>.</p>
+<p>Original file contents:</p>
+<pre><code>deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ hera main
+
+</code></pre>
+<p>Modified file contents</p>
+<pre><code>deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ bionic main
+
+</code></pre>
+<h3 id="proxy-blocks-connection">Proxy blocks connection</h3>
+<p>If you're unable to connect to an external resource due to a proxy, make sure that you've correctly set the <code>HTTP_PROXY</code> and <code>HTTPS_PROXY</code> variables in your shell. You will need to contact your system administrator to know what host(s) and port(s) to use for these proxies.</p>
+<p>These values are respected by many Linux programs, including those which are used in the install process. To set these values:</p>
+<pre><code># No auth
+export HTTP_PROXY=http://[proxy]:[port]
+export HTTPS_PROXY=https://[proxy]:[port]
+
+# Basic auth
+export HTTP_PROXY=http://[username]:[password]@[proxy]:[port]
+export HTTPS_PROXY=https://[username]:[password]@[proxy]:[port]
+
+</code></pre>
+<p>Important</p>
+<p>If you are behind a proxy, these shell variables must be set to connect to Azure services with the CLI. If you are not using basic auth, it's recommended to export these variables in your <code>.bashrc</code> file. Always follow your business' security policies and the requirements of your system administrator.</p>
+<p>You may also want to explicitly configure <code>apt</code> to use this proxy at all times. Make sure that the following lines appear in an <code>apt</code> configuration file in <code>/etc/apt/apt.conf.d/</code>. We recommend using either your existing global configuration file, an existing proxy configuration file, <code>40proxies</code>, or <code>99local</code>, but follow your system administration requirements.</p>
+<pre><code>Acquire {
+    http::proxy &quot;http://[username]:[password]@[proxy]:[port]&quot;;
+    https::proxy &quot;https://[username]:[password]@[proxy]:[port]&quot;;
+}
+
+</code></pre>
+<p>If your proxy does not use basic auth, <strong>remove</strong> the <code>[username]:[password]@</code> portion of the proxy URI. If you require more information for proxy configuration, see the official Ubuntu documentation:</p>
+<ul>
+<li><a href="http://manpages.ubuntu.com/manpages/bionic/en/man5/apt.conf.5.html">apt.conf manpage</a></li>
+<li><a href="https://help.ubuntu.com/community/AptGet/Howto#Setting_up_apt-get_to_use_a_http-proxy">Ubuntu wiki - apt-get howto</a></li>
+</ul>
+<p>In order to get the Microsoft signing key and get the package from our repository, your proxy needs to allow HTTPS connections to the following address:</p>
+<ul>
+<li><code>https://packages.microsoft.com</code></li>
+</ul>
+<h3 id="cli-fails-to-install-or-run-on-windows-subsystem-for-linux">CLI fails to install or run on Windows Subsystem for Linux</h3>
+<p>Since <a href="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Subsystem for Linux (WSL)</a> is a system call translation layer on top of the Windows platform, you might experience an error when trying to install or run the Azure CLI. The CLI relies on some features that may have a bug in WSL. If you experience an error no matter how you install the CLI, there's a good chance it's an issue with WSL and not with the CLI install process.</p>
+<p>To troubleshoot your WSL installation and possibly resolve issues:</p>
+<ul>
+<li>If you can, run an identical install process on a Linux machine or VM to see if it succeeds. If it does, your issue is almost certainly related to WSL. To start a Linux VM in Azure, see the <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal">create a Linux VM in the Azure Portal</a> documentation.</li>
+<li>Make sure that you're running the latest version of WSL. To get the latest version, <a href="https://support.microsoft.com/help/4027667/windows-10-update">update your Windows 10 installation</a>.</li>
+<li>Check for any <a href="https://github.com/Microsoft/WSL/issues">open issues</a> with WSL which might address your problem. Often there will be suggestions on how to work around the problem, or information about a release where the issue will be fixed.</li>
+<li>If there are no existing issues for your problem, <a href="https://github.com/Microsoft/WSL/issues/new">file a new issue with WSL</a> and make sure that you include as much information as possible.</li>
+</ul>
+<p>If you continue to have issues installing or running on WSL, consider <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows">installing the CLI for Windows</a>.</p>
+<h3 id="update">Update</h3>
+<p>The CLI provides an in-tool command to update to the latest version:</p>
+<pre><code>az upgrade
+
+</code></pre>
+<p>Note</p>
+<p>The <code>az upgrade</code> command was added in version 2.11.0 and will not work with versions prior to 2.11.0.</p>
+<p>This command will also update all installed extensions by default. For more <code>az upgrade</code> options, please refer to the <a href="https://docs.microsoft.com/en-us/cli/azure/reference-index#az_upgrade">command reference page</a>.</p>
+<p>You can also use <code>apt-get upgrade</code> to update the CLI package.</p>
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade
+
+</code></pre>
+<p>Note</p>
+<p>This command upgrades all of the installed packages on your system that have not had a dependency change. To upgrade the CLI only, use <code>apt-get install</code>.</p>
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get install --only-upgrade -y azure-cli
+
+</code></pre>
+<h3 id="uninstall">Uninstall</h3>
+<ol>
+<li>
+<p>Uninstall with <code>apt-get remove</code>:</p>
+<p>```
+sudo apt-get remove -y azure-cli</p>
+<p>```
+2.  If you don't plan to reinstall the CLI, remove the Azure CLI repository information:</p>
+<p>```
+sudo rm /etc/apt/sources.list.d/azure-cli.list</p>
+<p>```
+3.  If you use no other packages from Microsoft, remove the signing key:</p>
+<p>```
+sudo rm /etc/apt/trusted.gpg.d/microsoft.gpg</p>
+<p>```
+4.  Remove any unneeded packages:</p>
+<p>```
+sudo apt autoremove</p>
+<p>```</p>
+</li>
+</ol>
+<hr />
+<h3 id="create-a-vault-in-azure-using-cli">Create a Vault in Azure using CLI</h3>
+<ul>
+<li>Make sure your logged into Azure first</li>
+<li>Have a storage acocunt created</li>
+<li>Check appropriate <strong>resource group</strong></li>
+</ul>
+<p><code>az keyvault create --name "enainfraterraformvault" --resource-group "ena-infra-terraform" --location australiaeast</code></p>
+<ul>
+<li><code>az</code> is azure cli command line</li>
+<li><code>keyvault create --name "enainfraterraformvault"</code> is the name of keyvault to create</li>
+<li><code>--resource-group "ena-infra-terraform"</code> is the name of resource group, this is very important.</li>
+<li><code>--location</code> australiaeast` location of vault to be located.</li>
+</ul>
+<hr />
+<h3 id="reference-access-key-and-export-as-environment-variable">Reference Access key and export as environment variable</h3>
+<p>This allows you to export Access key for Azure service which is stored in an Azure Vault without having the Access key saved to disk and increasing the security risk.</p>
+<p>Make sure your logged in to Azure by running <code>az login</code> from the cli and follow on screen instructions.</p>
+<pre><code>export ARM_ACCESS_KEY=$(az keyvault secret show --name enainfraterraform --vault-name enainfraterraformvault --query value -o tsv)
+</code></pre>
+<ul>
+<li>ARM_ACCESS_KEY is env variable name</li>
+<li>The rest refeferences the vault</li>
+</ul>
+<hr />
+<h3 id="list-all-locations-in-azure-in-table-format">List all Locations in Azure in Table format</h3>
+<p>This is how you list locations in Azure, there are a few output formats, like <strong>json</strong>, <strong>yaml</strong> as examples.</p>
+<p><code>az account list-locations --out table</code></p>
+<p>Output is something like this,</p>
+<pre><code>DisplayName               Name                 RegionalDisplayName
+------------------------  -------------------  -------------------------------------
+East US                   eastus               (US) East US
+East US 2                 eastus2              (US) East US 2
+South Central US          southcentralus       (US) South Central US
+West US 2                 westus2              (US) West US 2
+Australia East            australiaeast        (Asia Pacific) Australia East
+Southeast Asia            southeastasia        (Asia Pacific) Southeast Asia
+North Europe              northeurope          (Europe) North Europe
+UK South                  uksouth              (Europe) UK South
+West Europe               westeurope           (Europe) West Europe
+Central US                centralus            (US) Central US
+North Central US          northcentralus       (US) North Central US
+West US                   westus               (US) West US
+South Africa North        southafricanorth     (Africa) South Africa North
+Central India             centralindia         (Asia Pacific) Central India
+East Asia                 eastasia             (Asia Pacific) East Asia
+Japan East                japaneast            (Asia Pacific) Japan East
+Korea Central             koreacentral         (Asia Pacific) Korea Central
+Canada Central            canadacentral        (Canada) Canada Central
+France Central            francecentral        (Europe) France Central
+Germany West Central      germanywestcentral   (Europe) Germany West Central
+Norway East               norwayeast           (Europe) Norway East
+Switzerland North         switzerlandnorth     (Europe) Switzerland North
+UAE North                 uaenorth             (Middle East) UAE North
+Brazil South              brazilsouth          (South America) Brazil South
+Central US (Stage)        centralusstage       (US) Central US (Stage)
+East US (Stage)           eastusstage          (US) East US (Stage)
+East US 2 (Stage)         eastus2stage         (US) East US 2 (Stage)
+North Central US (Stage)  northcentralusstage  (US) North Central US (Stage)
+South Central US (Stage)  southcentralusstage  (US) South Central US (Stage)
+West US (Stage)           westusstage          (US) West US (Stage)
+West US 2 (Stage)         westus2stage         (US) West US 2 (Stage)
+Asia                      asia                 Asia
+Asia Pacific              asiapacific          Asia Pacific
+Australia                 australia            Australia
+Brazil                    brazil               Brazil
+Canada                    canada               Canada
+Europe                    europe               Europe
+Global                    global               Global
+India                     india                India
+Japan                     japan                Japan
+United Kingdom            uk                   United Kingdom
+United States             unitedstates         United States
+East Asia (Stage)         eastasiastage        (Asia Pacific) East Asia (Stage)
+Southeast Asia (Stage)    southeastasiastage   (Asia Pacific) Southeast Asia (Stage)
+East US 2 EUAP            eastus2euap          (US) East US 2 EUAP
+West Central US           westcentralus        (US) West Central US
+South Africa West         southafricawest      (Africa) South Africa West
+Australia Central         australiacentral     (Asia Pacific) Australia Central
+Australia Central 2       australiacentral2    (Asia Pacific) Australia Central 2
+Australia Southeast       australiasoutheast   (Asia Pacific) Australia Southeast
+Japan West                japanwest            (Asia Pacific) Japan West
+Korea South               koreasouth           (Asia Pacific) Korea South
+South India               southindia           (Asia Pacific) South India
+West India                westindia            (Asia Pacific) West India
+Canada East               canadaeast           (Canada) Canada East
+France South              francesouth          (Europe) France South
+Germany North             germanynorth         (Europe) Germany North
+Norway West               norwaywest           (Europe) Norway West
+Switzerland West          switzerlandwest      (Europe) Switzerland West
+UK West                   ukwest               (Europe) UK West
+UAE Central               uaecentral           (Middle East) UAE Central
+Brazil Southeast          brazilsoutheast      (South America) Brazil Southeast
+</code></pre>
+<hr />
+<hr />
+<h2 id="azure-storage-using-cli">Azure Storage using CLI</h2>
+<h3 id="upload-a-file-to-blob-container-in-azure">Upload a file to blob container in Azure</h3>
+<p>This command will allow you to upload files to a specific blob container in Azure</p>
+<pre><code>az storage blob upload --account-name enainfraterraform --container-name tfstate --name helloworld-test --file helloworld-test --auth-mode key --account-key $ARM_ACCESS_KEY
+</code></pre>
+<ul>
+<li><code>az storage blob upload --account-name</code> storage account to upload to</li>
+<li><code>--container-name</code> the blob you want to upload into</li>
+<li><code>--name</code> name to call when uploaded</li>
+<li><code>--file</code> the actual filename</li>
+<li><code>--auth-mode key</code> you need to setup an env variable with access key first to use this option</li>
+<li><code>--account-key $ARM_ACCESS_KEY</code> name of env variable you've used to store the access key in</li>
+</ul>
+<p>If successful you will get some like this,</p>
+<pre><code>Finished[#############################################################]  100.0000%
+{
+  &quot;etag&quot;: &quot;\&quot;0x8D85906BA9BD4E6\&quot;&quot;,
+  &quot;lastModified&quot;: &quot;2020-09-14T23:34:30+00:00&quot;
+}
+</code></pre>
+<hr />
+<h3 id="download-a-file-from-a-blob-container-or-collection-of-files">Download a file from a blob container or collection of files</h3>
+<p>To download files recursively, here is how you do it.</p>
+<pre><code>az storage blob download-batch --account-name enainfraterraform -d . -s tfstate --pattern test/* --auth-mode key --account-key $ARM_ACCESS_KEY
+</code></pre>
+<hr />
+<h2 id="quickstart-set-and-retreive-a-secret-from-azure-key-vault">Quickstart - Set and retreive a secret from Azure Key Vault</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>
+<p>Use <a href="https://docs.microsoft.com/en-us/azure/key-vault/secrets/../../cloud-shell/quickstart">Azure Cloud Shell</a> using the bash environment.</p>
+<p><a href="https://shell.azure.com"><img alt="Embed launch" src=":/1b8d8a3b92704ecdb03d32d77368ed59" title="Launch Azure Cloud Shell" /></a></p>
+</li>
+<li>
+<p>If you prefer, <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">install</a> Azure CLI to run CLI reference commands.</p>
+<ul>
+<li>If you're using a local install, sign in with Azure CLI by using the <a href="https://docs.microsoft.com/en-us/cli/azure/reference-index#az-login">az login</a> command. To finish the authentication process, follow the steps displayed in your terminal. See <a href="https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli">Sign in with Azure CLI</a> for additional sign-in options.</li>
+<li>When you're prompted, install Azure CLI extensions on first use. For more information about extensions, see <a href="https://docs.microsoft.com/en-us/cli/azure/azure-cli-extensions-overview">Use extensions with Azure CLI</a>.</li>
+<li>Run <a href="https://docs.microsoft.com/en-us/cli/azure/reference-index?#az_version">az version</a> to find the version and dependent libraries that are installed. To upgrade to the latest version, run <a href="https://docs.microsoft.com/en-us/cli/azure/reference-index?#az_upgrade">az upgrade</a>.</li>
+</ul>
+</li>
+<li>
+<p>This quickstart requires version 2.0.4 or later of the Azure CLI. If using Azure Cloud Shell, the latest version is already installed.</p>
+</li>
+</ul>
+<h3 id="create-a-resource-group">Create a resource group</h3>
+<p>A resource group is a logical container into which Azure resources are deployed and managed. The following example creates a resource group named <em>ContosoResourceGroup</em> in the <em>eastus</em> location.</p>
+<p>Azure CLI</p>
+<pre><code>az group create --name &quot;ContosoResourceGroup&quot; --location eastus
+
+</code></pre>
+<h3 id="create-a-key-vault">Create a Key Vault</h3>
+<p>Next you will create a Key Vault in the resource group created in the previous step. You will need to provide some information:</p>
+<ul>
+<li>For this quickstart we use <strong>Contoso-vault2</strong>. You must provide a unique name in your testing.</li>
+<li>Resource group name <strong>ContosoResourceGroup</strong>.</li>
+<li>The location <strong>East US</strong>.</li>
+</ul>
+<p>Azure CLI</p>
+<pre><code>az keyvault create --name &quot;Contoso-Vault2&quot; --resource-group &quot;ContosoResourceGroup&quot; --location eastus
+
+</code></pre>
+<p>The output of this cmdlet shows properties of the newly created Key Vault. Take note of the two properties listed below:</p>
+<ul>
+<li><strong>Vault Name</strong>: In the example, this is <strong>Contoso-Vault2</strong>. You will use this name for other Key Vault commands.</li>
+<li><strong>Vault URI</strong>: In the example, this is <a href="https://contoso-vault2.vault.azure.net/">https://contoso-vault2.vault.azure.net/</a>. Applications that use your vault through its REST API must use this URI.</li>
+</ul>
+<p>At this point, your Azure account is the only one authorized to perform any operations on this new vault.</p>
+<h3 id="add-a-secret-to-key-vault">Add a secret to Key Vault</h3>
+<p>To add a secret to the vault, you just need to take a couple of additional steps. This password could be used by an application. The password will be called <strong>ExamplePassword</strong> and will store the value of <strong>hVFkk965BuUv</strong> in it.</p>
+<p>Type the commands below to create a secret in Key Vault called <strong>ExamplePassword</strong> that will store the value <strong>hVFkk965BuUv</strong> :</p>
+<p>Azure CLI</p>
+<pre><code>az keyvault secret set --vault-name &quot;Contoso-Vault2&quot; --name &quot;ExamplePassword&quot; --value &quot;hVFkk965BuUv&quot;
+
+</code></pre>
+<p>You can now reference this password that you added to Azure Key Vault by using its URI. Use <strong>'https://Contoso-Vault2.vault.azure.net/secrets/ExamplePassword'</strong> to get the current version.</p>
+<p>To view the value contained in the secret as plain text:</p>
+<p>Azure CLI</p>
+<pre><code>az keyvault secret show --name &quot;ExamplePassword&quot; --vault-name &quot;Contoso-Vault2&quot;
+
+</code></pre>
+<p>Now, you have created a Key Vault, stored a secret, and retrieved it.</p>
+<h3 id="clean-up-resources">Clean up resources</h3>
+<p>Other quickstarts and tutorials in this collection build upon this quickstart. If you plan to continue on to work with subsequent quickstarts and tutorials, you may wish to leave these resources in place. When no longer needed, you can use the <a href="https://docs.microsoft.com/en-us/cli/azure/group">az group delete</a> command to remove the resource group, and all related resources. You can delete the resources as follows:</p>
+<p>Azure CLI</p>
+<pre><code>az group delete --name ContosoResourceGroup
+
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../awscli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS CLI" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              AWS CLI
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ciscoepnmn/" class="md-footer__link md-footer__link--next" aria-label="Next: EPNMN CLI" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              EPNMN CLI
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
