@@ -562,6 +562,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../linux.md/redhat.md" class="md-nav__link">
+        RHEL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../linux/swap/" class="md-nav__link">
         Swap
       </a>
@@ -877,6 +891,26 @@
     Managing Network interfaces
   </a>
   
+    <nav class="md-nav" aria-label="Managing Network interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-interface-from-ha" class="md-nav__link">
+    Remove interface from HA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-ip-address" class="md-nav__link">
+    Change IP Address
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1191,6 +1225,26 @@
     Managing Network interfaces
   </a>
   
+    <nav class="md-nav" aria-label="Managing Network interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-interface-from-ha" class="md-nav__link">
+    Remove interface from HA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-ip-address" class="md-nav__link">
+    Change IP Address
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1223,7 +1277,18 @@
 <pre><code>ncs cleanup
 </code></pre>
 <hr />
-<h3 id="managing-network-interfaces">Managing Network interfaces</h3>
+<h2 id="managing-network-interfaces">Managing Network interfaces</h2>
+<h3 id="remove-interface-from-ha">Remove interface from HA</h3>
+<p>in EXEC mode</p>
+<pre><code>ncs ha monitor interface del GigabitEthernet 0
+</code></pre>
+<h3 id="change-ip-address">Change IP Address</h3>
+<p>In EXEC mode</p>
+<pre><code>show interface
+</code></pre>
+<p>to enter config mode</p>
+<pre><code>configure
+</code></pre>
 
 
 
