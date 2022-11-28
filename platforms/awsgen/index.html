@@ -15,7 +15,7 @@
     
     
       
-        <title>VMware - Synaptic Recall</title>
+        <title>AWS Gen - Synaptic Recall</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#most-common-cli-commands-for-vmware-esxi" class="md-skip">
+        <a href="#aws-general" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VMware
+              AWS Gen
             
           </span>
         </div>
@@ -762,12 +762,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
       
       
       
@@ -802,11 +804,100 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../awsgen/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AWS Gen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         AWS Gen
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aws-technical-essentials" class="md-nav__link">
+    AWS Technical Essentials
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS Technical Essentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-permissions-on-s3" class="md-nav__link">
+    Access permissions on S3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-ebs-storage" class="md-nav__link">
+    Amazon EBS Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-responsibility-aws-security" class="md-nav__link">
+    Shared Responsibility - AWS (Security)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-services" class="md-nav__link">
+    Database Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-dynamodb" class="md-nav__link">
+    Amazon DynamoDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#over-ride-vpc-dns" class="md-nav__link">
+    Over-ride VPC DNS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -978,21 +1069,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vmware/" class="md-nav__link">
         VMware
       </a>
-      
     </li>
   
 
@@ -1194,6 +1275,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aws-technical-essentials" class="md-nav__link">
+    AWS Technical Essentials
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS Technical Essentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-permissions-on-s3" class="md-nav__link">
+    Access permissions on S3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-ebs-storage" class="md-nav__link">
+    Amazon EBS Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-responsibility-aws-security" class="md-nav__link">
+    Shared Responsibility - AWS (Security)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-services" class="md-nav__link">
+    Database Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-dynamodb" class="md-nav__link">
+    Amazon DynamoDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#over-ride-vpc-dns" class="md-nav__link">
+    Over-ride VPC DNS
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1207,89 +1351,72 @@
                   
 
 
-<h1 id="most-common-cli-commands-for-vmware-esxi">Most common CLI commands for VMWare ESXi.</h1>
-<p>Use SSH or esxi shells.</p>
+<h1 id="aws-general">AWS General</h1>
 <hr />
-<pre><code>vim-cmd vmsvc/getallvms
-</code></pre>
-<p>List all VMs running on the host. Also provides vmid, required for commands below.</p>
+<h3 id="aws-technical-essentials">AWS Technical Essentials</h3>
+<p>AWS Technical Essentials
+- S3 umlimited number of objects
+- no bucket size limit
+- HTTP/S enpoint to store and retrieve data
+- Optional server side encryption
+- Access logs for auditing
+- Stores data as objects within buckets
+- Flat hierarchy structure
+    - eg https://doc.s3.amazonaws.com/2006-03-01/AmazonS3.html
+- Can upload and download via SSL
+- Bucket name must be globally unique
+- Objects are denied by default with the permissions
+<blank></p>
+<h5 id="access-permissions-on-s3">Access permissions on S3</h5>
+<ul>
+<li>Define policy statements (there are examples in the policy generator)</li>
+</ul>
+<h5 id="amazon-ebs-storage">Amazon EBS Storage</h5>
+<ul>
+<li>Same availability zone as EC2 instance When creating EBS volume</li>
+<li>Use cases<ul>
+<li>OS - Use for boot/root vol, seocndary volumes</li>
+<li>Databases</li>
+<li>Enterprise apps</li>
+</ul>
+</li>
+</ul>
+<h5 id="shared-responsibility-aws-security">Shared Responsibility - AWS (Security)</h5>
+<ul>
+<li>Need to look into policy scripting for AWS, similiar for user access and general policy access</li>
+<li>IAM has no associated credentials</li>
+<li>IAM can be dynamically assigned</li>
+<li>Can use application authentication to be trusted in AWS environment to access particular resources?</li>
+<li></li>
+</ul>
+<h5 id="database-services">Database Services</h5>
+<ul>
+<li>Push button deployment (RDS)</li>
+<li>EBS storage used</li>
+<li>Can take snapshots to different AWS regions</li>
+<li>Provides backups for DR</li>
+</ul>
+<h5 id="amazon-dynamodb">Amazon DynamoDB</h5>
+<ul>
+<li>No limit on data</li>
+<li>Quick performance</li>
+<li>provision and change the request capacity for each table</li>
+<li>Fully managed, NOSQL database service</li>
+</ul>
 <hr />
-<pre><code>vim-cmd vmsvc/power.off vmid
+<h3 id="over-ride-vpc-dns">Over-ride VPC DNS</h3>
+<p>DNS for EC2's in that VPC are determined by DHCP Sets, whcih define the default DNS any EC2's will use.</p>
+<p>On an ad-hoc basis with a few EC2's or when using IPSEC tunnel and want to use internal network DNS I can do the following on an EC2 to force it to use local DNS from internal LAN or any other DNS server I specify.</p>
+<p>Create or modifiy this file, <code>/etc/dhcp/dhclient.conf</code></p>
+<p>Add the following so it looks like this, as an example.</p>
+<pre><code>timeout 300;
+supersede domain-name-servers 10.130.22.21, 10.130.22.22;
 </code></pre>
-<p>Power off specified VM.</p>
+<p>Modify <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code></p>
+<p>Make sure the <strong>PEERDNS=yes</strong> is set.</p>
+<p>Reboot and good to go.</p>
+<p>More info on DNS for EC2 here, https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html</p>
 <hr />
-<pre><code>vim-cmd vmsvc/power.on vmid
-</code></pre>
-<p>Power off specified VM.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/power.reboot vmid
-</code></pre>
-<p>Reboot specified VM.</p>
-<hr />
-<pre><code>vim-cmd solo/registervm /vmfs/volume/datastore/subdir/vm-file.vmx
-</code></pre>
-<p>Register the VM stored at location on the ESX host inventory.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/unregister vmid
-</code></pre>
-<p>Unregister VM from the host. Does not remove the VM's files from the datastore.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/destroy vmid
-</code></pre>
-<p>Delete the specified VM. The VMDK and VMX files will be deleted from storage as well.</p>
-<hr />
-<pre><code>vim-cmd vmsvc/tools.install vmid    
-</code></pre>
-<p>Initiates an installation of VMWare Tools on the VM</p>
-<hr />
-<pre><code>vim-cmd hostsvc/maintenance_mode_enter
-</code></pre>
-<p>Put the host into maintenance mode.</p>
-<hr />
-<pre><code>vim-cmd hostsvc/maintenance_mode_exit
-</code></pre>
-<p>Take the host out of maintenance mode.</p>
-<hr />
-<pre><code>vim-cmd hostsvc/net/info
-</code></pre>
-<p>Show networking information of the host.</p>
-<hr />
-<pre><code>chkconfig -l
-</code></pre>
-<p>Show services running on the host. Can also be used to change startup configuration.</p>
-<hr />
-<pre><code>esxtop  
-</code></pre>
-<p>Display list of processes and its usage of resources. Works similar to linux top.</p>
-<hr />
-<pre><code>esxcfg-info 
-</code></pre>
-<p>Show host's configuration and information.</p>
-<hr />
-<pre><code>esxcfg-nics -l
-</code></pre>
-<p>Show current NIC configuration.</p>
-<hr />
-<pre><code>esxcfg-vswitch -l   
-</code></pre>
-<p>Show current vSwitch configuration.</p>
-<hr />
-<pre><code>vmkerrcode -l   
-</code></pre>
-<p>Display a reference list of VMKernel return codes and descriptions.</p>
-<hr />
-<pre><code>dcui
-</code></pre>
-<p>Start the console UI (when accessing through SSH).</p>
-<hr />
-<pre><code>vsish   
-</code></pre>
-<p>Run the VMWare Interactive Shell (from SSH).</p>
-<hr />
-<pre><code>decodeSel /var/log/ipmi_sel.raw
-</code></pre>
-<p>Read IPMI system log of physical server.
-Replace vmid with the value you retrieved from the getallvms command (first one in the table).Replace path with the full path and file name of a VMX-file (= configuration file of a VM).</p>
 
 
 
@@ -1310,7 +1437,7 @@ Replace vmid with the value you retrieved from the getallvms command (first one 
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../proxmox/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Proxmox" rel="prev">
+        <a href="../awscli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS CLI" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1319,20 +1446,20 @@ Replace vmid with the value you retrieved from the getallvms command (first one 
               <span class="md-footer__direction">
                 Previous
               </span>
-              Proxmox
+              AWS CLI
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../networks/haproxy/" class="md-footer__link md-footer__link--next" aria-label="Next: HAProxy" rel="next">
+        <a href="../azure/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure CLI" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              HAProxy
+              Azure CLI
             </div>
           </div>
           <div class="md-footer__button md-icon">
