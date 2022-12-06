@@ -659,10 +659,31 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-which-processes-are-using-swap" class="md-nav__link">
+    Check which processes are using swap
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful/" class="md-nav__link">
+        Useful Commands
+      </a>
     </li>
   
 
@@ -1320,6 +1341,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-which-processes-are-using-swap" class="md-nav__link">
+    Check which processes are using swap
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1364,6 +1392,10 @@
 <pre><code>find /proc -maxdepth 2 -path &quot;/proc/[0-9]*/status&quot; -readable -exec awk -v FS=&quot;:&quot; -v TOTSWP=&quot;$(cat /proc/swaps | sed 1d | awk 'BEGIN{sum=0} {sum=sum+$(NF-2)} END{print sum}')&quot; '{process[$1]=$2;sub(/^[ \t]+/,&quot;&quot;,process[$1]);} END {if(process[&quot;VmSwap&quot;] &amp;&amp; process[&quot;VmSwap&quot;] != &quot;0 kB&quot;) {used_swap=process[&quot;VmSwap&quot;];sub(/[ a-zA-Z]+/,&quot;&quot;,used_swap);percent=(used_swap/TOTSWP*100); printf &quot;%10s %-30s %20s %6.2f%\n&quot;,process[&quot;Pid&quot;],process[&quot;Name&quot;],process[&quot;VmSwap&quot;],percent} }' '{}' \;  | awk '{print $(NF-2),$0}' | sort -hr | head | cut -d &quot; &quot; -f2-
 </code></pre>
 <hr />
+<h3 id="check-which-processes-are-using-swap">Check which processes are using swap</h3>
+<pre><code>for file in /proc/*/status ; do awk '/VmSwap|Name/{printf $2 &quot; &quot; $3}END{ print &quot;&quot;}' $file; done | sort -k 2 -n -r | less 
+</code></pre>
+<hr />
 
 
 
@@ -1400,13 +1432,13 @@
       
       
         
-        <a href="../../networks/zerotier/" class="md-footer__link md-footer__link--next" aria-label="Next: Zerotier" rel="next">
+        <a href="../useful/" class="md-footer__link md-footer__link--next" aria-label="Next: Useful Commands" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Zerotier
+              Useful Commands
             </div>
           </div>
           <div class="md-footer__button md-icon">
