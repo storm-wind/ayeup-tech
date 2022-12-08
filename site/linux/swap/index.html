@@ -562,6 +562,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../linux.md/redhat.md" class="md-nav__link">
+        RHEL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -645,10 +659,31 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-which-processes-are-using-swap" class="md-nav__link">
+    Check which processes are using swap
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful/" class="md-nav__link">
+        Useful Commands
+      </a>
     </li>
   
 
@@ -866,6 +901,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platforms/awsgen/" class="md-nav__link">
+        AWS Gen
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -888,12 +937,59 @@
       
       
         <label class="md-nav__link" for="__nav_6_2">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Azure" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platforms/azure/" class="md-nav__link">
+        Azure CLI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
           Cisco EPNMN
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Cisco EPNMN" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_2">
+        <label class="md-nav__title" for="__nav_6_3">
           <span class="md-nav__icon md-icon"></span>
           Cisco EPNMN
         </label>
@@ -929,18 +1025,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_6_3">
+        <label class="md-nav__link" for="__nav_6_4">
           Cloudflare
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Cloudflare" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_3">
+        <label class="md-nav__title" for="__nav_6_4">
           <span class="md-nav__icon md-icon"></span>
           Cloudflare
         </label>
@@ -1245,6 +1341,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-which-processes-are-using-swap" class="md-nav__link">
+    Check which processes are using swap
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1289,6 +1392,10 @@
 <pre><code>find /proc -maxdepth 2 -path &quot;/proc/[0-9]*/status&quot; -readable -exec awk -v FS=&quot;:&quot; -v TOTSWP=&quot;$(cat /proc/swaps | sed 1d | awk 'BEGIN{sum=0} {sum=sum+$(NF-2)} END{print sum}')&quot; '{process[$1]=$2;sub(/^[ \t]+/,&quot;&quot;,process[$1]);} END {if(process[&quot;VmSwap&quot;] &amp;&amp; process[&quot;VmSwap&quot;] != &quot;0 kB&quot;) {used_swap=process[&quot;VmSwap&quot;];sub(/[ a-zA-Z]+/,&quot;&quot;,used_swap);percent=(used_swap/TOTSWP*100); printf &quot;%10s %-30s %20s %6.2f%\n&quot;,process[&quot;Pid&quot;],process[&quot;Name&quot;],process[&quot;VmSwap&quot;],percent} }' '{}' \;  | awk '{print $(NF-2),$0}' | sort -hr | head | cut -d &quot; &quot; -f2-
 </code></pre>
 <hr />
+<h3 id="check-which-processes-are-using-swap">Check which processes are using swap</h3>
+<pre><code>for file in /proc/*/status ; do awk '/VmSwap|Name/{printf $2 &quot; &quot; $3}END{ print &quot;&quot;}' $file; done | sort -k 2 -n -r | less 
+</code></pre>
+<hr />
 
 
 
@@ -1325,13 +1432,13 @@
       
       
         
-        <a href="../../networks/zerotier/" class="md-footer__link md-footer__link--next" aria-label="Next: Zerotier" rel="next">
+        <a href="../useful/" class="md-footer__link md-footer__link--next" aria-label="Next: Useful Commands" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Zerotier
+              Useful Commands
             </div>
           </div>
           <div class="md-footer__button md-icon">

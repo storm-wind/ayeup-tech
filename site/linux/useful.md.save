@@ -1,0 +1,59 @@
+# Useful Commands for General Linux Use
+
+### GZIP on the fly with tar
+
+```
+tar cvf - FILE-LIST | gzip -c > FILE.tar.gz  
+```
+---
+
+### Find file count
+
+```
+find . -xdev -type f | cut -d "/" -f 2 | sort | uniq -c | sort -n
+```
+
+#### PS 
+
+```
+ps -w 
+```
+changes so the display is wide and not limited to 80 columns and not truncated 
+---
+
+#### Special Permissions
+
+Sticky bits
+
+```
+rwxr-xr-t
+```
+Allows only the owner to delete the files in that directory.Protects files from been deleted by anyone who is not the owner.
+Would be used for shared folders, instances like that.
+
+Set user id's 
+In conjunction with executable files, so run the program with the permissions of the file owners, NOT the permissions of whoever runs it. 
+```
+SUID root 
+Set Group ID
+```
+---
+
+#### Check for hung processes
+```
+strace -p <pid>
+```
+Checks i/o calls from application, if nothing happens it is probably hung.
+---
+
+### Shutdown remotely
+```
+shutdown -f -r -m <ipaddress> -t 00
+```
+---
+### How to find HD specification 
+```
+hdparm -I /dev/sda 
+```
+---
+### 

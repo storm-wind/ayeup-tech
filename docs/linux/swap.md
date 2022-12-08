@@ -54,4 +54,10 @@ find /proc -maxdepth 2 -path "/proc/[0-9]*/status" -readable -exec awk -v FS=":"
 
 ---
 
+### Check which processes are using swap
+```
+for file in /proc/*/status ; do awk '/VmSwap|Name/{printf $2 " " $3}END{ print ""}' $file; done | sort -k 2 -n -r | less 
+```
+
+---
 

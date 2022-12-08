@@ -24,7 +24,9 @@ nav:
     - Networking: linux/networking.md
     - Podman: linux/podman.md
     - Pi: linux/raspberry-pi.md
+    - RHEL: linux.md/redhat.md
     - Swap: linux/swap.md
+    - Useful Commands: linux/useful.md
     - Zerotier: networks/zerotier.md
   - Monitoring:
     - Prometheus: monitoring/prometheus.md
@@ -35,6 +37,9 @@ nav:
   - Platforms:
     - AWS:
       - AWS CLI: platforms/awscli.md
+      - AWS Gen: platforms/awsgen.md
+    - Azure:
+      - Azure CLI: platforms/azure.md
     - Cisco EPNMN:
       - EPNMN CLI: platforms/ciscoepnmn.md
     - Cloudflare:

@@ -25,6 +25,23 @@ ncs cleanup
 ```
 
 ---
-### Managing Network interfaces
+## Managing Network interfaces
 
+###  Remove interface from HA
+
+in EXEC mode
+```
+ncs ha monitor interface del GigabitEthernet 0
+```
+
+### Change IP Address 
+In EXEC mode
+```
+show interface
+```
+
+to enter config mode
+```
+configure
+```
 
