@@ -38,5 +38,14 @@ Schedule automatic jobs in Linux
 
 ```
 
+---
 
+### Check Cron for all users
+
+This has to be run as root or superuser.
+```
+for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l; done
+```
+
+---
  

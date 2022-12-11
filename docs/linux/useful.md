@@ -52,3 +52,52 @@ shutdown -f -r -m <ipaddress> -t 00
 ```
 ---
 
+### Zombie Processes
+```
+pstree -ch root | more 
+```
+Don’t use kill -9 to kill the parent process, it does not always allow enough time to kill it cleanly. Just use kill <pid> 
+
+---
+### Check Available memory on Linux
+To check available memory in Linux type free -m command. free  displays  the  total  amount of free and used physical  
+and swap memory in the system, as well as the buffers used by the kernel. 
+  
+Command: 
+```
+free -m 
+free -h 
+free -b 
+free -g 
+```  
+Output:
+
+``` 
+             total       used       free     shared    buffers     cached 
+Mem:          2025       1961         64          0        172       1035 
+-/  buffers/cache:        753       1272 
+Swap:         1906          0       1906 
+
+```
+  
+Description: 
+The -b switch displays the amount of memory in bytes 
+The -k switch (set by default) displays it in kilobytes 
+The -m switch displays it in megabytes 
+The -g switch displays it in gigabytes. 
+  
+Command: 
+```
+vmstat 
+```  
+Output:`
+``` 
+procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu---- 
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa 
+ 0  0      0  63316 176624 1062340    0    0    25    18   39  592  5  1 94  0 
+```  
+Description: 
+swpd: the amount of virtual memory used. 
+ free: the amount of idle memory. 
+ buff: the amount of memory used as buffers. 
+ cache: the amount of memory used as cache.

@@ -457,6 +457,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-cron-for-all-users" class="md-nav__link">
+    Check Cron for all users
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1266,6 +1273,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-cron-for-all-users" class="md-nav__link">
+    Check Cron for all users
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1330,6 +1344,12 @@
 @reboot
 
 </code></pre>
+<hr />
+<h3 id="check-cron-for-all-users">Check Cron for all users</h3>
+<p>This has to be run as root or superuser.</p>
+<pre><code>for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l; done
+</code></pre>
+<hr />
 
 
 
