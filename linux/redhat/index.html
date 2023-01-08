@@ -612,6 +612,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#subscribe-redhat-vm-to-subscription" class="md-nav__link">
+    Subscribe REDHAT VM to subscription
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-conflicts" class="md-nav__link">
     Docker conflicts
   </a>
@@ -1260,6 +1267,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#subscribe-redhat-vm-to-subscription" class="md-nav__link">
+    Subscribe REDHAT VM to subscription
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-conflicts" class="md-nav__link">
     Docker conflicts
   </a>
@@ -1283,6 +1297,12 @@
 
 <hr />
 <h1 id="redhat-specific">REDHAT Specific</h1>
+<hr />
+<h3 id="subscribe-redhat-vm-to-subscription">Subscribe REDHAT VM to subscription</h3>
+<p>There are a few different options, but what I do is change hostname to what I want then do this,</p>
+<pre><code>subscription-manager register --force --username --auto-attach
+</code></pre>
+<p>This removes if already registered and resubscribes with auth attachment so you don;t have to go into UI to do it or eun from CLI.</p>
 <p>You get an issue like <strong>EE crypto too weak.</strong></p>
 <p>does ths,</p>
 <pre><code>update-crypto-policies --show
