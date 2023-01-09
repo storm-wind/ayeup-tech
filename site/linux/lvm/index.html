@@ -466,6 +466,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        GIT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../logrotate/" class="md-nav__link">
         Logrotate
       </a>
@@ -524,6 +538,54 @@
   <a href="#expand-partition-for-active-partition" class="md-nav__link">
     Expand partition for active partition
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parted" class="md-nav__link">
+    Parted
+  </a>
+  
+    <nav class="md-nav" aria-label="Parted">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-enable-boot-option-on-partition" class="md-nav__link">
+    You can enable boot option on partition.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-partition-with-127gb" class="md-nav__link">
+    Logical partition with 127GB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-file-system-on-partition-using-mkfs" class="md-nav__link">
+    Create a file system on Partition using mkfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-parition-and-filesystem-together-using-mkpartfs" class="md-nav__link">
+    Create Parition and filesystem together using mkpartfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resize-partiiton-from-one-size-to-another-using-resize" class="md-nav__link">
+    Resize partiiton from one size to another using resize
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -612,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux.md/redhat.md" class="md-nav__link">
+      <a href="../redhat/" class="md-nav__link">
         RHEL
       </a>
     </li>
@@ -1266,6 +1328,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parted" class="md-nav__link">
+    Parted
+  </a>
+  
+    <nav class="md-nav" aria-label="Parted">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-enable-boot-option-on-partition" class="md-nav__link">
+    You can enable boot option on partition.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-partition-with-127gb" class="md-nav__link">
+    Logical partition with 127GB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-file-system-on-partition-using-mkfs" class="md-nav__link">
+    Create a file system on Partition using mkfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-parition-and-filesystem-together-using-mkpartfs" class="md-nav__link">
+    Create Parition and filesystem together using mkpartfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resize-partiiton-from-one-size-to-another-using-resize" class="md-nav__link">
+    Resize partiiton from one size to another using resize
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1385,6 +1495,34 @@ cat /proc/partitions | grep sda
 <pre><code>  PV         VG   Fmt  Attr PSize  PFree
   /dev/sda2  rhel lvm2 a--  34.51g 17.51g
 </code></pre>
+<hr />
+<h2 id="parted">Parted</h2>
+<p>Select disk</p>
+<pre><code>parted
+(parted) select /dev/sda
+</code></pre>
+<p>To see partitions</p>
+<pre><code>(parted) print
+</code></pre>
+<p>This defines START and END of disk locations.</p>
+<pre><code>(parted) mkpart primary 106 16179
+</code></pre>
+<h3 id="you-can-enable-boot-option-on-partition">You can enable boot option on partition.</h3>
+<pre><code>(parted) set 1 boot on
+</code></pre>
+<h3 id="logical-partition-with-127gb">Logical partition with 127GB</h3>
+<pre><code>(parted) mkpart logical 372737 500000
+</code></pre>
+<h3 id="create-a-file-system-on-partition-using-mkfs">Create a file system on Partition using mkfs</h3>
+<pre><code>(parted) mkfs
+</code></pre>
+<h3 id="create-parition-and-filesystem-together-using-mkpartfs">Create Parition and filesystem together using mkpartfs</h3>
+<pre><code>(parted) mkpartfs logical fat32 372737 500000
+</code></pre>
+<h3 id="resize-partiiton-from-one-size-to-another-using-resize">Resize partiiton from one size to another using resize</h3>
+<pre><code>(parted) resize 9
+</code></pre>
+<hr />
 
 
 

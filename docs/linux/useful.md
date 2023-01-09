@@ -101,3 +101,18 @@ swpd: the amount of virtual memory used.
  free: the amount of idle memory. 
  buff: the amount of memory used as buffers. 
  cache: the amount of memory used as cache.
+---
+### Symlinks
+#### Create a Symlink
+The below example is a softlink
+
+```
+ln -s <path to the file/folder to be linked> <the path of the link to be created>
+```
+
+#### Delete a Symlink
+```
+unlink <path-to-symlink>
+```
+---
+

@@ -17,6 +17,7 @@ nav:
     - Docker: linux/docker.md
     - FileSystems: linux/filesystems.md
     - Firewalld: linux/firewalld.md
+    - GIT: linux/git.md
     - Logrotate: linux/logrotate.md
     - LVM: linux/lvm.md
     - Mail: linux/mail.md
@@ -24,7 +25,7 @@ nav:
     - Networking: linux/networking.md
     - Podman: linux/podman.md
     - Pi: linux/raspberry-pi.md
-    - RHEL: linux.md/redhat.md
+    - RHEL: linux/redhat.md
     - Swap: linux/swap.md
     - Useful Commands: linux/useful.md
     - Zerotier: networks/zerotier.md

@@ -141,4 +141,48 @@ pvs
   PV         VG   Fmt  Attr PSize  PFree
   /dev/sda2  rhel lvm2 a--  34.51g 17.51g
 ```
+---
+## Parted
+
+Select disk
+```
+parted
+(parted) select /dev/sda
+```
+
+To see partitions
+```
+(parted) print
+```
+
+This defines START and END of disk locations.
+```
+(parted) mkpart primary 106 16179
+```
+
+### You can enable boot option on partition.
+```
+(parted) set 1 boot on
+```
+
+### Logical partition with 127GB 
+```
+(parted) mkpart logical 372737 500000
+```
+
+### Create a file system on Partition using mkfs
+```
+(parted) mkfs
+```
+
+### Create Parition and filesystem together using mkpartfs
+```
+(parted) mkpartfs logical fat32 372737 500000
+```
+
+### Resize partiiton from one size to another using resize
+```
+(parted) resize 9
+```
+---
 
