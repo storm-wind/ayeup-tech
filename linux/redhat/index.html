@@ -625,6 +625,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#get-detailed-stats-on-a-file" class="md-nav__link">
+    Get detailed stats on a file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-for-updates-etc-and-if-a-system-reboot-is-required" class="md-nav__link">
+    Check for updates etc and if a system reboot is required
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1295,6 +1309,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#get-detailed-stats-on-a-file" class="md-nav__link">
+    Get detailed stats on a file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-for-updates-etc-and-if-a-system-reboot-is-required" class="md-nav__link">
+    Check for updates etc and if a system reboot is required
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1323,10 +1351,24 @@
 <pre><code>update-crypto-policies --show
 update-crypto-policies --set DEFAULT
 </code></pre>
+<p>to make updated system-wide crypto policy active</p>
+<pre><code>update-crypto-policies
+</code></pre>
 <p>usually set to FUTURE</p>
+<hr />
 <h3 id="docker-conflicts">Docker conflicts</h3>
 <p>When installing docker there are conflicts with podman and containerd
 <code>yum erase podman buildah</code></p>
+<hr />
+<h3 id="get-detailed-stats-on-a-file">Get detailed stats on a file</h3>
+<pre><code>stat -L &lt;absolute path to file&gt;
+</code></pre>
+<hr />
+<h3 id="check-for-updates-etc-and-if-a-system-reboot-is-required">Check for updates etc and if a system reboot is required</h3>
+<pre><code>dnf check-update
+dnf needs-restarting -r
+</code></pre>
+<hr />
 
 
 

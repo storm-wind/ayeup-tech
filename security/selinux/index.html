@@ -1233,6 +1233,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-for-unconfined-processes-running-in-unconfined-domains" class="md-nav__link">
+    Check for unconfined processes running in unconfined domains
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1281,6 +1288,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-for-unconfined-processes-running-in-unconfined-domains" class="md-nav__link">
+    Check for unconfined processes running in unconfined domains
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1302,6 +1316,10 @@ I've come across to mitigate some of the pain.</p>
 <h3 id="set-individual-domains-to-permissive">Set individual domains to <strong>permissive</strong></h3>
 <p>Here is an examlpe for the httpd domain.</p>
 <pre><code>semange permissive -a httpd_t
+</code></pre>
+<hr />
+<h3 id="check-for-unconfined-processes-running-in-unconfined-domains">Check for unconfined processes running in unconfined domains</h3>
+<pre><code>ps -eZ | grep unconfined_service_t
 </code></pre>
 <hr />
 

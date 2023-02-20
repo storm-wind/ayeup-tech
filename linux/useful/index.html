@@ -749,6 +749,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    Find
+  </a>
+  
+    <nav class="md-nav" aria-label="Find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-folders-less-than-specified-parameter" class="md-nav__link">
+    Remove folders less than specified parameter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1492,6 +1512,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    Find
+  </a>
+  
+    <nav class="md-nav" aria-label="Find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-folders-less-than-specified-parameter" class="md-nav__link">
+    Remove folders less than specified parameter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1591,6 +1631,14 @@ swpd: the amount of virtual memory used.
 </code></pre>
 <h4 id="delete-a-symlink">Delete a Symlink</h4>
 <pre><code>unlink &lt;path-to-symlink&gt;
+</code></pre>
+<hr />
+<h3 id="find">Find</h3>
+<h4 id="remove-folders-less-than-specified-parameter">Remove folders less than specified parameter</h4>
+<pre><code>find . -mindepth 1 -maxdepth 1 -type d -exec du -ks {} + | awk '$1 &lt;= 250' | cut -f 2- | xargs -d \\n rm -rf
+</code></pre>
+<p>to just see results, then remove below form command above.</p>
+<pre><code>| xargs -d \\n rm -rf
 </code></pre>
 <hr />
 
