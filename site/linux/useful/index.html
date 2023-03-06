@@ -688,19 +688,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checks-io-calls-from-application-if-nothing-happens-it-is-probably-hung" class="md-nav__link">
-    Checks i/o calls from application, if nothing happens it is probably hung.
-  </a>
-  
-    <nav class="md-nav" aria-label="Checks i/o calls from application, if nothing happens it is probably hung.">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#shutdown-remotely" class="md-nav__link">
     Shutdown remotely
@@ -740,6 +727,26 @@
           <li class="md-nav__item">
   <a href="#delete-a-symlink" class="md-nav__link">
     Delete a Symlink
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    Find
+  </a>
+  
+    <nav class="md-nav" aria-label="Find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-folders-less-than-specified-parameter" class="md-nav__link">
+    Remove folders less than specified parameter
   </a>
   
 </li>
@@ -1260,8 +1267,16 @@
 
             
           
-            
-              
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
   
   
   
@@ -1269,18 +1284,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_7_2">
+        <label class="md-nav__link" for="__nav_8">
           Security
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Security" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_2">
+      <nav class="md-nav" aria-label="Security" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Security
         </label>
@@ -1328,8 +1343,15 @@
 
             
           
-        </ul>
-      </nav>
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/selinux/" class="md-nav__link">
+        SElinux
+      </a>
     </li>
   
 
@@ -1416,19 +1438,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checks-io-calls-from-application-if-nothing-happens-it-is-probably-hung" class="md-nav__link">
-    Checks i/o calls from application, if nothing happens it is probably hung.
-  </a>
-  
-    <nav class="md-nav" aria-label="Checks i/o calls from application, if nothing happens it is probably hung.">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#shutdown-remotely" class="md-nav__link">
     Shutdown remotely
@@ -1477,6 +1486,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    Find
+  </a>
+  
+    <nav class="md-nav" aria-label="Find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-folders-less-than-specified-parameter" class="md-nav__link">
+    Remove folders less than specified parameter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1500,18 +1529,23 @@
 <h1 id="useful-commands-for-general-linux-use">Useful Commands for General Linux Use</h1>
 <h3 id="gzip-on-the-fly-with-tar">GZIP on the fly with tar</h3>
 <pre><code>tar cvf - FILE-LIST | gzip -c &gt; FILE.tar.gz  
+
 </code></pre>
 <hr />
 <h3 id="find-file-count">Find file count</h3>
 <pre><code>find . -xdev -type f | cut -d &quot;/&quot; -f 2 | sort | uniq -c | sort -n
+
 </code></pre>
+<hr />
 <h4 id="ps">PS</h4>
 <pre><code>ps -w 
+
 </code></pre>
 <h2 id="changes-so-the-display-is-wide-and-not-limited-to-80-columns-and-not-truncated">changes so the display is wide and not limited to 80 columns and not truncated</h2>
 <h4 id="special-permissions">Special Permissions</h4>
 <p>Sticky bits</p>
 <pre><code>rwxr-xr-t
+
 </code></pre>
 <p>Allows only the owner to delete the files in that directory.Protects files from been deleted by anyone who is not the owner.
 Would be used for shared folders, instances like that.</p>
@@ -1519,18 +1553,22 @@ Would be used for shared folders, instances like that.</p>
 In conjunction with executable files, so run the program with the permissions of the file owners, NOT the permissions of whoever runs it. </p>
 <pre><code>SUID root 
 Set Group ID
+
 </code></pre>
 <hr />
 <h4 id="check-for-hung-processes">Check for hung processes</h4>
 <pre><code>strace -p &lt;pid&gt;
+
 </code></pre>
-<h2 id="checks-io-calls-from-application-if-nothing-happens-it-is-probably-hung">Checks i/o calls from application, if nothing happens it is probably hung.</h2>
+<p>Checks i/o calls from application, if nothing happens it is probably hung.</p>
+<hr />
 <h3 id="shutdown-remotely">Shutdown remotely</h3>
 <pre><code>shutdown -f -r -m &lt;ipaddress&gt; -t 00
 </code></pre>
 <hr />
 <h3 id="zombie-processes">Zombie Processes</h3>
 <pre><code>pstree -ch root | more 
+
 </code></pre>
 <p>Don’t use kill -9 to kill the parent process, it does not always allow enough time to kill it cleanly. Just use kill <pid> </p>
 <hr />
@@ -1542,6 +1580,7 @@ and swap memory in the system, as well as the buffers used by the kernel. </p>
 free -h 
 free -b 
 free -g 
+
 </code></pre>
 <p>Output:</p>
 <pre><code>             total       used       free     shared    buffers     cached 
@@ -1557,11 +1596,13 @@ The -m switch displays it in megabytes
 The -g switch displays it in gigabytes. </p>
 <p>Command: </p>
 <pre><code>vmstat 
+
 </code></pre>
-<p>Output:`</p>
+<p>Output:</p>
 <pre><code>procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu---- 
  r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa 
  0  0      0  63316 176624 1062340    0    0    25    18   39  592  5  1 94  0 
+
 </code></pre>
 <p>Description: 
 swpd: the amount of virtual memory used. 
@@ -1573,9 +1614,21 @@ swpd: the amount of virtual memory used.
 <h4 id="create-a-symlink">Create a Symlink</h4>
 <p>The below example is a softlink</p>
 <pre><code>ln -s &lt;path to the file/folder to be linked&gt; &lt;the path of the link to be created&gt;
+
 </code></pre>
 <h4 id="delete-a-symlink">Delete a Symlink</h4>
 <pre><code>unlink &lt;path-to-symlink&gt;
+
+</code></pre>
+<hr />
+<h3 id="find">Find</h3>
+<h4 id="remove-folders-less-than-specified-parameter">Remove folders less than specified parameter</h4>
+<pre><code>find . -mindepth 1 -maxdepth 1 -type d -exec du -ks {} + | awk '$1 &lt;= 250' | cut -f 2- | xargs -d \\n rm -rf
+
+</code></pre>
+<p>to just see results, then remove below form command above.</p>
+<pre><code>| xargs -d \\n rm -rf
+
 </code></pre>
 <hr />
 

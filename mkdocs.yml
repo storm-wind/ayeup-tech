@@ -51,11 +51,11 @@ nav:
     - Proxies:
       - HAProxy: networks/haproxy.md
       - Nginx: networks/nginx.md
-    - Security:
-      - openssl: security/openssl.md
-      - Stunnel: networks/stunnel.md
-      - Nessus: security/nessus.md 
-
+  - Security:
+    - openssl: security/openssl.md
+    - Stunnel: networks/stunnel.md
+    - Nessus: security/nessus.md 
+    - SElinux: security/selinux.md
 #theme: windmill-dark
 plugins:
   - search:

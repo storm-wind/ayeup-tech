@@ -45,3 +45,26 @@ to enter config mode
 configure
 ```
 
+To configure interface and change IP
+```
+interface GigabitEthernet 0
+```
+
+This will put youn into the interface sub-menu.
+```
+ip address <ip address> <subnet>
+```
+
+You'll be asked to restart interface.
+
+Then exit out of **configure** and savin g config by doing the following,
+```
+write memory
+```
+
+Then check it by running the following,
+```
+show startup-config
+```
+---
+
