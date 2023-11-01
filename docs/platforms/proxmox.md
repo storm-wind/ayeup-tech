@@ -180,6 +180,19 @@ Lets break it down,
 `mp=/mnt/data` is the mount point created within the container when it starts up. Note you don't need to add anything in the `/etc/fstab` config in the container. I tried this approach and could never get it working the way I wanted.
 
 ***
+### Kill a Container or VM that won't shutdown
+
+Log into shell for proxmox host.
+```
+ps aux | grep VMID 
+```
+
+You'll get the pid that way then,
+```
+kill -9 pid
+```
+
+***
 
 
 

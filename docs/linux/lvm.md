@@ -27,6 +27,11 @@ lvextend  -L <+size>   <Logical volume name path>
 
 xfs_growfs /dev/mapper/centos-var
 ```
+
+**Or if filesystem is not XFS then use this instead**
+```
+resize2fs /dev/mapper/centos-var
+```
 ---
 ***
 

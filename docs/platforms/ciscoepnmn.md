@@ -68,3 +68,22 @@ show startup-config
 ```
 ---
 
+### Change time zone
+
+Display time zone in EXEC mode,
+```
+show timezone
+```
+
+Then enter config mode and change by doing this,
+```
+configure
+clock timezone <timezone>
+exit
+```
+then save config
+```
+write memory
+```
+
+

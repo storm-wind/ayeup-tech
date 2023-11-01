@@ -997,6 +997,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-time-zone" class="md-nav__link">
+    Change time zone
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1346,6 +1353,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-time-zone" class="md-nav__link">
+    Change time zone
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1407,6 +1421,18 @@
 <pre><code>show startup-config
 </code></pre>
 <hr />
+<h3 id="change-time-zone">Change time zone</h3>
+<p>Display time zone in EXEC mode,</p>
+<pre><code>show timezone
+</code></pre>
+<p>Then enter config mode and change by doing this,</p>
+<pre><code>configure
+clock timezone &lt;timezone&gt;
+exit
+</code></pre>
+<p>then save config</p>
+<pre><code>write memory
+</code></pre>
 
 
 
