@@ -1131,6 +1131,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#kill-a-container-or-vm-that-wont-shutdown" class="md-nav__link">
+    Kill a Container or VM that won't shutdown
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1480,6 +1487,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#kill-a-container-or-vm-that-wont-shutdown" class="md-nav__link">
+    Kill a Container or VM that won't shutdown
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1621,6 +1635,14 @@ profile lxc-container-default-cgns flags=(attach_disconnected,mediate_deleted) {
 <p><code>-mp0</code> the mount point, if you wanted multiple you would add <code>-mp1</code> as an example.</p>
 <p><code>/mnt/pve/data</code> is the local mount point in proxmox not in the container.</p>
 <p><code>mp=/mnt/data</code> is the mount point created within the container when it starts up. Note you don't need to add anything in the <code>/etc/fstab</code> config in the container. I tried this approach and could never get it working the way I wanted.</p>
+<hr />
+<h3 id="kill-a-container-or-vm-that-wont-shutdown">Kill a Container or VM that won't shutdown</h3>
+<p>Log into shell for proxmox host.</p>
+<pre><code>ps aux | grep VMID 
+</code></pre>
+<p>You'll get the pid that way then,</p>
+<pre><code>kill -9 pid
+</code></pre>
 <hr />
 
 

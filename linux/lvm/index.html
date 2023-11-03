@@ -1427,6 +1427,9 @@ lvextend -l +100%FREE /dev/centos/var
 
 xfs_growfs /dev/mapper/centos-var
 </code></pre>
+<p><strong>Or if filesystem is not XFS then use this instead</strong></p>
+<pre><code>resize2fs /dev/mapper/centos-var
+</code></pre>
 <hr />
 <hr />
 <h3 id="expand-partition-for-active-partition">Expand partition for active partition</h3>
