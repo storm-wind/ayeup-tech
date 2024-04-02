@@ -178,6 +178,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#kill-a-container-or-vm-that-wont-shutdown">Kill a Container or VM that won't shutdown</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-to-do-when-there-is-no-monitoring-appearing-in-proxmox-ui-summary">What to do when there is no monitoring appearing in Proxmox UI Summary</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -360,6 +362,14 @@ profile lxc-container-default-cgns flags=(attach_disconnected,mediate_deleted) {
 <p>You'll get the pid that way then,</p>
 <pre><code>kill -9 pid
 </code></pre>
+<hr />
+<h3 id="what-to-do-when-there-is-no-monitoring-appearing-in-proxmox-ui-summary">What to do when there is no monitoring appearing in Proxmox UI Summary</h3>
+<pre><code>systemctl stop rrdcached
+mv /var/lib/rrdcached/db /var/lib/rrdcached/db.bck
+systemctl start rrdcached
+systemctl restart pve-cluster
+</code></pre>
+<p>Or you could just delete the sub folders like I did if you don;t want the history.</p>
 <hr />
               
             </div>
