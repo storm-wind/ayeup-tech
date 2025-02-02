@@ -70,44 +70,4 @@ exec 2>&1
 
 Deploy multiple contianers in a stack using docker-compose, my preferred way of using docker.
 
-### Firefly docker-compose example
 
-```
----
-networks:
-  firefly_iii_net:
-    driver: bridge
-services:
-  firefly_iii_app:
-    image: jc5x/firefly-iii:latest
-    depends_on:
-      - firefly_iii_db
-    networks:
-      - firefly_iii_net
-    ports:
-      - "8081:80"
-    env_file: .env
-    volumes:
-      -
-        source: firefly_iii_export
-        target: /var/www/firefly-iii/storage/export
-        type: volume
-      -
-        source: firefly_iii_upload
-        target: /var/www/firefly-iii/storage/upload
-        type: volume
-  firefly_iii_db: 
-    image: "postgres:10"
-    environment:
-      - POSTGRES_PASSWORD=secret
-      - POSTGRES_USER=firefly
-    networks: 
-      - firefly_iii_net
-    volumes: 
-      - firefly_iii_db:/var/lib/postgresql/data
-version: "3.2"
-volumes: 
-  firefly_iii_db: ~
-  firefly_iii_export: ~
-  firefly_iii_upload: ~
-```

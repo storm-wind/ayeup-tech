@@ -193,6 +193,16 @@ kill -9 pid
 ```
 
 ***
+### What to do when there is no monitoring appearing in Proxmox UI Summary
+```
+systemctl stop rrdcached
+mv /var/lib/rrdcached/db /var/lib/rrdcached/db.bck
+systemctl start rrdcached
+systemctl restart pve-cluster
+```
+Or you could just delete the sub folders like I did if you don;t want the history.
+
+***
 
 
 

@@ -47,6 +47,10 @@ So **/var/log/httpd/*log** is the location of log file/s.
 
 **postrotate** self explainatory.
 
+### Force logrotate to run
+```
+logrotate --force <config file>
+```
 
 
 

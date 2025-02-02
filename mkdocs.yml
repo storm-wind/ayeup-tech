@@ -1,5 +1,5 @@
-site_name: Synaptic Recall
-site_author: storm-wind
+site_name: Run That By Me Again
+site_author: slipstream
 
 nav:
   - Home: index.md
@@ -46,6 +46,7 @@ nav:
     - Cloudflare:
       - Argo: platforms/argo.md
     - Proxmox: platforms/proxmox.md
+    - TrueNAS: platforms/truenas.md
     - VMware: platforms/vmware.md
   - Networks:
     - Proxies:
@@ -61,9 +62,9 @@ plugins:
   - search:
       min_search_length: 3
       prebuild_index: true
-#theme: bootstrap
-theme:
-  name:  material
+theme: readthedocs
+#theme:
+ # name:  material
 
 docs:
    img:
