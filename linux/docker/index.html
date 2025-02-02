@@ -160,6 +160,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../platforms/proxmox/">Proxmox</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../platforms/truenas/">TrueNAS</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../platforms/vmware/">VMware</a>
                   </li>
               </ul>
@@ -250,45 +252,6 @@ exec 2&gt;&amp;1
 </code></pre>
 <h1 id="docker-compose">docker-compose</h1>
 <p>Deploy multiple contianers in a stack using docker-compose, my preferred way of using docker.</p>
-<h3 id="firefly-docker-compose-example">Firefly docker-compose example</h3>
-<pre><code>---
-networks:
-  firefly_iii_net:
-    driver: bridge
-services:
-  firefly_iii_app:
-    image: jc5x/firefly-iii:latest
-    depends_on:
-      - firefly_iii_db
-    networks:
-      - firefly_iii_net
-    ports:
-      - &quot;8081:80&quot;
-    env_file: .env
-    volumes:
-      -
-        source: firefly_iii_export
-        target: /var/www/firefly-iii/storage/export
-        type: volume
-      -
-        source: firefly_iii_upload
-        target: /var/www/firefly-iii/storage/upload
-        type: volume
-  firefly_iii_db: 
-    image: &quot;postgres:10&quot;
-    environment:
-      - POSTGRES_PASSWORD=secret
-      - POSTGRES_USER=firefly
-    networks: 
-      - firefly_iii_net
-    volumes: 
-      - firefly_iii_db:/var/lib/postgresql/data
-version: &quot;3.2&quot;
-volumes: 
-  firefly_iii_db: ~
-  firefly_iii_export: ~
-  firefly_iii_upload: ~
-</code></pre>
               
             </div>
           </div><footer>

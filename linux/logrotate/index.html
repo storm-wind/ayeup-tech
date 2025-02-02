@@ -87,6 +87,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#example-of-logrotate">Example of logrotate</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#force-logrotate-to-run">Force logrotate to run</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../lvm/">LVM</a>
@@ -153,6 +155,8 @@
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../platforms/proxmox/">Proxmox</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../platforms/truenas/">TrueNAS</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../platforms/vmware/">VMware</a>
                   </li>
@@ -232,6 +236,9 @@
 <p><strong>sharedscripts</strong></p>
 <p><strong>delaycompress</strong> means to compress file on next log rotation.</p>
 <p><strong>postrotate</strong> self explainatory.</p>
+<h3 id="force-logrotate-to-run">Force logrotate to run</h3>
+<pre><code>logrotate --force &lt;config file&gt;
+</code></pre>
               
             </div>
           </div><footer>
